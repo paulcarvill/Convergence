@@ -44,10 +44,14 @@ html, body, p, div, h1, h2, h3, nav {
   	right: 0;
   	bottom: 0;
     z-index: -1;
-	
+	-webkit-transition: opacity 2s;
+	-moz-transition: opacity 2s;
+  	-ms-transition: opacity 2s;
+  	-o-transition: opacity 2s;
+  	transition: opacity 2s;
 
-  	/*-webkit-animation: mymove 12s infinite;
-  	animation: mymove 12s infinite;*/
+  	-webkit-animation: mymove 12s infinite;
+  	animation: mymove 12s infinite;
   }
 
   /* Chrome, Safari, Opera */ 
