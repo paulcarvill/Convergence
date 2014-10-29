@@ -5,6 +5,7 @@ var cvgHeight = window.innerHeight
 
 
 
+<div id="dots" style="position: fixed; left: 0; top: 0; bottom: 0; right: 0; background-image: url(<%= asset_path "dots.png" %>);background-position: 50% 50%; background-size: cover; z-index: 100; background-color: transparent; transform: rotateY(50deg); "></div>
 
 <!-- ********** MAIN EVENTS PANEL ********** -->
 <!-- ********** ***************** ********** -->
@@ -17,6 +18,8 @@ var cvgHeight = window.innerHeight
     <script>
     var splashShift = document.querySelector("#splash-shift");
     splashShift.style.height = cvgHeight + 'px';
+
+    
     </script>
 
     <nav>
@@ -63,6 +66,16 @@ var cvgHeight = window.innerHeight
 </script>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+
+<script>
+var dots = $("#dots");
+
+window.onmousemove = function(e){
+  console.log(e.clientX);
+  console.log(e.clientY);
+  dots.css('transform', 'rotateY('+e.clientX+'deg)').css('transform', 'rotateX('+e.clientY+'deg)')
+}
+</script>
 
 <script type="text/javascript">
 $(document).ready(function() {
