@@ -13,3 +13,94 @@
  *= require_tree .
  *= require_self
  */
+
+html, body, p, div, h1, h2, h3, nav {
+  	margin: 0;
+  	padding: 0;
+  	box-sizing: border-box;
+  }
+
+  html {
+  	overflow-y: scroll;
+  }
+
+  body {
+  	width: 100%;
+  	height: 100%;
+  	overflow: hidden;
+  }
+
+  .row {
+    background: #e8e8e8;
+    float: left;
+    z-index: 1;
+    width: 100%;
+  }
+  
+  .splash {
+  	position: fixed;
+  	top: 0;
+  	left: 0;
+  	right: 0;
+  	bottom: 0;
+    z-index: -1;
+	
+
+  	/*-webkit-animation: mymove 12s infinite;
+  	animation: mymove 12s infinite;*/
+  }
+
+  /* Chrome, Safari, Opera */ 
+@-webkit-keyframes mymove {
+    0%   {transform:scale(1,1)}
+    50%  {transform:scale(1.1,1.1)}
+    100% {transform:scale(1,1)}
+}
+
+@keyframes mymove {
+	0%   {transform:scale(1,1)}
+    50%  {transform:scale(1.1,1.1)}
+    100% {transform:scale(1,1)}
+}
+  nav {
+  	height: 80px;
+  	background: #e8e8e8;
+  	text-align: center;
+  	padding-top: 30px;
+  }
+
+  .stuck {
+    position:fixed;
+    top:0;
+    box-shadow:0 2px 4px rgba(0, 0, 0, .3);
+    width: 100%;
+  }
+
+  p {
+  	padding: 1em 0;
+  	line-height: 1.8em;
+  }
+
+  li {
+  	list-style-type: none;
+  	display: inline;
+  	margin: 0 20px;
+  }
+
+  nav li img {
+  	vertical-align: middle;
+  }
+
+  .events>div {
+	width:20%;
+	position: absolute;
+	left: 0;
+	height: 400px;
+	background: #333;
+	transition: width 0.2s;
+  }
+
+  .events>div:hover {
+  	width: 30%;
+  	transition: width 0.7s;
+  }
