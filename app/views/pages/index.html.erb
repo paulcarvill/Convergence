@@ -3,10 +3,10 @@ var cvgHeight = window.innerHeight
 </script>
 
 
-
+<!-- 
 
 <div id="dots" style="position: fixed; left: 0; top: 0; bottom: 0; right: 0; background-image: url(<%= asset_path "dots.png" %>);background-position: 50% 50%; background-size: cover; z-index: 100; background-color: transparent; transform: rotateY(50deg); "></div>
-
+ -->
 <!-- ********** MAIN EVENTS PANEL ********** -->
 <!-- ********** ***************** ********** -->
 <!-- ********** ***************** ********** -->
@@ -68,13 +68,11 @@ var cvgHeight = window.innerHeight
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 
 <script>
-var dots = $("#dots");
+//var dots = $("#dots");
 
-window.onmousemove = function(e){
-  console.log(e.clientX);
-  console.log(e.clientY);
-  dots.css('transform', 'rotateY('+e.clientX+'deg)').css('transform', 'rotateX('+e.clientY+'deg)')
-}
+// window.onmousemove = function(e){
+//   dots.css('transform', 'rotateY('+e.clientX+'deg)').css('transform', 'rotateX('+e.clientY+'deg)')
+// }
 </script>
 
 <script type="text/javascript">
@@ -226,3 +224,78 @@ cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
 </div>
 <!-- END FOOTER ROW -->
+
+
+
+
+<script type="application/processing">
+var VerletPhysics2D = toxi.physics2d.VerletPhysics2D,
+    GravityBehavior = toxi.physics2d.behaviors.GravityBehavior,
+    VerletParticle2D = toxi.physics2d.VerletParticle2D,
+    VerletSpring2D = toxi.physics2d.VerletSpring2D,
+    Vec2D = toxi.geom.Vec2D,
+    Rect =toxi.geom.Rect;
+
+int DIM=25;
+int REST_LENGTH=screen.width/25;
+float STRENGTH=0.125;
+float INNER_STRENGTH = 0.13;
+
+VerletPhysics2D physics;
+VerletParticle2D head,tail;
+
+void setup() {
+  size(screen.width, screen.height);
+  smooth();
+  physics=new VerletPhysics2D();
+  //physics.addBehavior(new GravityBehavior(new Vec2D(0,0.1)));
+  physics.setWorldBounds(new Rect(0,0,width,height));
+  for(int y=0,idx=0; y<(height/REST_LENGTH); y++) {
+    for(int x=0; x<(width/REST_LENGTH); x++) {
+      VerletParticle2D p = new VerletParticle2D(x*REST_LENGTH,y*REST_LENGTH);
+      physics.addParticle(p);
+      if (x>0) {
+        VerletSpring2D s= new VerletSpring2D(p,physics.particles[idx-1],REST_LENGTH,STRENGTH);
+        physics.addSpring(s);
+      }
+      if (y>0) {
+        VerletSpring2D s = new VerletSpring2D(p,physics.particles[idx-DIM],REST_LENGTH,STRENGTH);
+        physics.addSpring(s);
+      }
+      idx++;
+    }
+  }
+  VerletParticle2D p=physics.particles[0];
+  VerletParticle2D q=physics.particles[physics.particles.length-1];
+  float len=sqrt(sq(REST_LENGTH*(DIM-1))*2);
+  VerletSpring2D s=new VerletSpring2D(p,q,len,INNER_STRENGTH);
+  physics.addSpring(s);
+  p=physics.particles[DIM-1];
+  q=physics.particles[physics.particles.length-DIM];
+  s=new VerletSpring2D(p,q,len,INNER_STRENGTH);
+  physics.addSpring(s);
+  var headIdx = 160;
+  head=physics.particles[Math.floor(headIdx)];
+  head.lock();
+}
+
+void draw() {
+  background(0, 0, 0, 0);
+  stroke(146, 37, 150, 200);
+  head.set(mouseX,mouseY);
+  physics.update();
+  for(int i =0; i< physics.particles.length; i++) {
+    //VerletSpring2D s = physics.springs[i];
+
+    ellipse(physics.particles[i].x, physics.particles[i].y, 2, 2);
+    //line(s.a.x,s.a.y,s.b.x,s.b.y);
+  }
+
+  for(int i =0; i< physics.springs.length; i++) {
+    VerletSpring2D s = physics.springs[i];
+    //line(s.a.x,s.a.y,s.b.x,s.b.y);
+  }
+}</script>
+      <canvas id="myCanvas" style="position: fixed; left:0; right: 0; top: 0; bottom: 0;"></canvas>
+    <script src="http://s3.amazonaws.com/toxiclibsjs/javascripts/vendor/processing.js"></script>
+    <script src="http://s3.amazonaws.com/toxiclibsjs/toxiclibsjs/build/toxiclibs.min.js"></script>
