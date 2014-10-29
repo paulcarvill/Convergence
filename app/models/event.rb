@@ -1,5 +1,7 @@
 class Event < ActiveRecord::Base
 
-	has_many :tickets, dependent: :destroy
-	accepts_nested_attributes_for :tickets, :allow_destroy => true
+	has_attached_file :img1
+
+  	validates_attachment_content_type :img1, :content_type => ["image/jpeg", "image/jpg", "image/gif", "image/png"]
+
 end

@@ -35,7 +35,19 @@
     <%= f.label :price %><br>
     <%= f.number_field :price %>
   </div>
-  
+
+  <p>ticket links</p>
+  <%= f.fields_for :tickets do |ts| %>
+      <div>
+        <%= ts.label :name %>
+        <%= ts.text_field :name %>
+ 
+        <%= ts.label :url %>
+        <%= ts.text_field :url %>
+      <div>
+  <% end %>
+
+
   <div class="actions">
     <%= f.submit %>
   </div>

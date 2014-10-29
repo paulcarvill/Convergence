@@ -3,12 +3,12 @@ module Casein
     
     # Name of website or client — used throughout Casein.
     def casein_config_website_name
-      'Casein'
+      'Convergence'
     end
 
     # Filename of logo image. Ideally, it should be a transparent PNG around 140x30px
     def casein_config_logo
-      'casein/casein.png'
+      'casein/convergence.png'
     end
 
     # The server hostname where Casein will run
@@ -28,7 +28,7 @@ module Casein
     # The initial page the user is shown after they sign in or click the logo. Probably this should be set to the first tab.
     # Do not point this at casein/index!
     def casein_config_dashboard_url
-      url_for :controller => :casein, :action => :blank
+      url_for :controller => :events, :action => :index
     end
   
     # A list of stylesheets to include. Do not remove the core casein/casein, but you can change the load order, if required.

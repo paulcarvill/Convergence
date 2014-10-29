@@ -1,0 +1,116 @@
+<script>
+var cvgHeight = window.innerHeight
+</script>
+
+<% @events.each_with_index do |event, i| %>
+  <% if i == 0 %>
+    <div class="splash" style="background-image: url( <%= event.img1 %>); background-position: 50% 50%; background-size: cover; z-index: -1"></div>
+    <div id="splash-shift"></div>
+
+    <script>
+    var splashShift = document.querySelector("#splash-shift");
+    splashShift.style.height = cvgHeight + 'px';
+    </script>
+
+    <nav>
+      <li>Events</li>
+      <li>Locations</li>
+      <li><img src="<%= asset_path "casein/convergence.png" %>" /></li>
+      <li>About</li>
+      <li>Blog</li>
+    </nav>
+
+  <% else %>
+
+    <div class="sub-splashes" style="background-image: url( <%= event.img1 %>); background-position: 50% 50%; background-size: cover;"></div>
+
+  <% end %>
+<% end %>
+
+<script>
+    var subSplashes = document.querySelectorAll(".sub-splashes");
+    [].forEach.call(subSplashes, function(el){
+      el.style.height = cvgHeight + 'px';
+    })
+</script>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  $('nav').waypoint('sticky');
+});
+</script>
+
+<div style="background: #e8e8e8">
+
+<div style="width:20%; float: left; height: 400px; background: #333;">
+  <div style="height: 200px; margin-top: 200px;>
+      <div style="color: #888;">
+        <p>content here</p>
+        <p>content here</p>
+        <p>content here</p>
+      </div>
+  </div>
+</div>
+<div style="width:20%; float: left; height: 400px; background: #444;"></div>
+<div style="width:20%; float: left; height: 400px; background: #555;"></div>
+<div style="width:20%; float: left; height: 400px; background: #444;"></div>
+<div style="width:20%; float: left; height: 400px; background: #333;"></div>
+
+<div><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
+
+<div><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
+
+<div><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
+
+<div><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
+
+<div><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
+
+<div><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
+
+<div><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
+
+<div><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
+</div>

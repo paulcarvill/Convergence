@@ -2,20 +2,9 @@
 
 <h2>View event</h2>
 
-<%= form_for @event, :url => casein_event_path(@event) do |f| %>
+<%= form_for @event, :url => casein_event_path(@event), :html => { :multipart => true } do |f| %>
 
 	<%= render :partial => 'casein/events/form', :locals => { :f => f } %>
-	
-	<h3>Ticket sellers</h3>
-	<div class="row">
-		<div class="col-lg-6">
-			<%= f.fields_for :ticket do |ticket_form| %>
-		    	<%= render :partial => 'casein/tickets/form', :locals => { :f => ticket_form } %>
-			<% end %>
-		</div>
-	</div>
-
-	<%= render :partial => 'casein/tickets/table', :locals => { :tickets => @event.tickets } %>
 	
 	<p class="submits">
 	  	<%= link_to 'Cancel', casein_events_path, :class => 'btn btn-mini btn-danger' %>
@@ -26,7 +15,4 @@
 
 <%= content_for :sidebar do %>
 	<li><%= link_to "#{casein_show_icon "th-list"}Back to list".html_safe, casein_events_path %></li>
-
-	<li><%= link_to "#{casein_show_icon "plus-sign"}Add a new ticket seller".html_safe, new_casein_ticket_path %></li>
-
 <% end %>

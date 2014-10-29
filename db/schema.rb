@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141028163302) do
+ActiveRecord::Schema.define(version: 20141028225350) do
 
   create_table "casein_admin_users", force: true do |t|
     t.string   "login",                           null: false
@@ -43,14 +43,27 @@ ActiveRecord::Schema.define(version: 20141028163302) do
     t.boolean  "all_day"
     t.integer  "price"
     t.boolean  "featured"
+    t.string   "promoter"
+    t.string   "ticket_one_name"
+    t.string   "ticket_one_url"
+    t.string   "ticket_two_name"
+    t.string   "ticket_two_url"
+    t.string   "ticket_three_name"
+    t.string   "ticket_three_url"
+    t.string   "ticket_four_name"
+    t.string   "ticket_four_url"
+    t.string   "ticket_five_name"
+    t.string   "ticket_five_url"
+    t.string   "img1_file_name"
+    t.string   "img1_content_type"
+    t.integer  "img1_file_size"
+    t.datetime "img1_updated_at"
+    t.text     "img1_meta"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "tickets", force: true do |t|
-    t.string   "name"
-    t.string   "url"
-    t.integer  "event_id"
+  create_table "pages", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
