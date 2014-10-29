@@ -229,73 +229,78 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></di
 
 
 <script type="application/processing">
-var VerletPhysics2D = toxi.physics2d.VerletPhysics2D,
-    GravityBehavior = toxi.physics2d.behaviors.GravityBehavior,
-    VerletParticle2D = toxi.physics2d.VerletParticle2D,
-    VerletSpring2D = toxi.physics2d.VerletSpring2D,
-    Vec2D = toxi.geom.Vec2D,
-    Rect =toxi.geom.Rect;
 
-int DIM=25;
-int REST_LENGTH=screen.width/25;
-float STRENGTH=0.125;
-float INNER_STRENGTH = 0.13;
+ var  VerletPhysics2D = toxi.physics2d.VerletPhysics2D,
+      VerletParticle2D = toxi.physics2d.VerletParticle2D,
+      AttractionBehavior = toxi.physics2d.behaviors.AttractionBehavior,
+      GravityBehavior = toxi.physics2d.behaviors.GravityBehavior,
+      Vec2D = toxi.geom.Vec2D,
+      Rect = toxi.geom.Rect;
 
+import toxi.geom.*;
+import toxi.physics2d.*;
+import toxi.physics2d.behaviors.*;
+
+int NUM_PARTICLES = 250;
+int REST_LENGTH = 35;
 VerletPhysics2D physics;
-VerletParticle2D head,tail;
+AttractionBehavior mouseAttractor;
+
+Vec2D mousePos;
 
 void setup() {
-  size(screen.width, screen.height);
-  smooth();
-  physics=new VerletPhysics2D();
-  //physics.addBehavior(new GravityBehavior(new Vec2D(0,0.1)));
-  physics.setWorldBounds(new Rect(0,0,width,height));
-  for(int y=0,idx=0; y<(height/REST_LENGTH); y++) {
+  size(window.innerWidth, window.innerHeight);
+  physics = new VerletPhysics2D();
+  physics.setDrag(0.05);
+  physics.setWorldBounds(new Rect(0, 0, width, height));
+  //physics.addBehavior(new GravityBehavior(new Vec2D(0, 0.15)));
+
+  for(int y=0; y<(height/REST_LENGTH); y++) {
     for(int x=0; x<(width/REST_LENGTH); x++) {
       VerletParticle2D p = new VerletParticle2D(x*REST_LENGTH,y*REST_LENGTH);
       physics.addParticle(p);
-      if (x>0) {
-        VerletSpring2D s= new VerletSpring2D(p,physics.particles[idx-1],REST_LENGTH,STRENGTH);
-        physics.addSpring(s);
-      }
-      if (y>0) {
-        VerletSpring2D s = new VerletSpring2D(p,physics.particles[idx-DIM],REST_LENGTH,STRENGTH);
-        physics.addSpring(s);
-      }
-      idx++;
+      //physics.addBehavior(new AttractionBehavior(p, 20, -1.2, 0.01));
     }
   }
-  VerletParticle2D p=physics.particles[0];
-  VerletParticle2D q=physics.particles[physics.particles.length-1];
-  float len=sqrt(sq(REST_LENGTH*(DIM-1))*2);
-  VerletSpring2D s=new VerletSpring2D(p,q,len,INNER_STRENGTH);
-  physics.addSpring(s);
-  p=physics.particles[DIM-1];
-  q=physics.particles[physics.particles.length-DIM];
-  s=new VerletSpring2D(p,q,len,INNER_STRENGTH);
-  physics.addSpring(s);
-  var headIdx = 160;
-  head=physics.particles[Math.floor(headIdx)];
-  head.lock();
+}
+
+void addParticle() {
+ // Vec2D randLoc = Vec2D.randomVector().scale(5).addSelf(width / 2, 0);
+ //  VerletParticle2D p = new VerletParticle2D(randLoc);
+ //  physics.addParticle(p); 
+  //physics.addBehavior(new AttractionBehavior(p, 20, -1.2, 0.01));
 }
 
 void draw() {
-  background(0, 0, 0, 0);
-  stroke(146, 37, 150, 200);
-  head.set(mouseX,mouseY);
+  background(0,0,0,0);
+  noStroke();
+  fill(146, 37, 150, 100);
+  // if (physics.particles.length < NUM_PARTICLES) {
+  //   addParticle();
+  // }
   physics.update();
-  for(int i =0; i< physics.particles.length; i++) {
-    //VerletSpring2D s = physics.springs[i];
-
-    ellipse(physics.particles[i].x, physics.particles[i].y, 2, 2);
-    //line(s.a.x,s.a.y,s.b.x,s.b.y);
+  for (int i=0;i<physics.particles.length;i++) {
+    VerletParticle2D p = physics.particles[i];
+    ellipse(p.x, p.y, 5, 5);
   }
+}
 
-  for(int i =0; i< physics.springs.length; i++) {
-    VerletSpring2D s = physics.springs[i];
-    //line(s.a.x,s.a.y,s.b.x,s.b.y);
-  }
-}</script>
-      <canvas id="myCanvas" style="position: fixed; left:0; right: 0; top: 0; bottom: 0;"></canvas>
-    <script src="http://s3.amazonaws.com/toxiclibsjs/javascripts/vendor/processing.js"></script>
-    <script src="http://s3.amazonaws.com/toxiclibsjs/toxiclibsjs/build/toxiclibs.min.js"></script>
+void mousePressed() {
+  addParticle();
+  mousePos = new Vec2D(mouseX, mouseY); 
+  mouseAttractor = new AttractionBehavior(mousePos, 250, 0.9);
+  physics.addBehavior(mouseAttractor);
+}
+
+void mouseDragged() { 
+  mousePos.set(mouseX, mouseY);
+}
+
+void mouseReleased() { 
+  physics.removeBehavior(mouseAttractor);
+}
+</script>
+
+<canvas id="myCanvas" style="position: fixed; left:0; right: 0; top: 0; bottom: 0;"></canvas>
+<script src="http://s3.amazonaws.com/toxiclibsjs/javascripts/vendor/processing.js"></script>
+<script src="http://s3.amazonaws.com/toxiclibsjs/toxiclibsjs/build/toxiclibs.min.js"></script>

@@ -4,22 +4,6 @@
   <title>Casein</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <script type="text/javascript">
-      window.staticUrl = 'http://s3.amazonaws.com/toxiclibsjs/';
-      window.rootUrl = '/toxiclibsjs/';
-      window.requirejs = {
-          baseUrl: 'http://s3.amazonaws.com/toxiclibsjs/javascripts',
-          config: {
-            'site/models/env': {
-                env: 'production',
-                rootUrl: '/toxiclibsjs/',
-                staticUrl: 'http://s3.amazonaws.com/toxiclibsjs/'
-            }
-          }
-      };
-    </script>
-    <script src="http://s3.amazonaws.com/toxiclibsjs/javascripts/vendor/require.js"></script>
-    <script src="http://s3.amazonaws.com/toxiclibsjs/javascripts/main.js" async></script>
 </head>
 <body>
 
