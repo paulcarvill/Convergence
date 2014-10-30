@@ -4,7 +4,7 @@
   <div class="event-container" style="z-index: <%= (i*-1)+5%>; background-image: url(<%= event.img1 %>);">
     <div style="position: relative; height: 160px; margin-top: 340px; padding: 0 12%;">
         <div style="color: #fff; position: absolute; bottom: 0">
-          <p style="line-height: 16px; padding: 0;" ><img src= "<%= asset_path 'cal.gif' %>" style="vertical-align: middle; margin-right: 5px;"><%= event.start_time.strftime('%d %^b') %></p>
+          <p style="line-height: 16px; padding: 0;" ><img src= "<%= asset_path 'cal.gif' %>" style="vertical-align: middle; margin-right: 5px;"><%= event.start_at.strftime('%d %^b') %></p>
           <p style="display: block; height: 3em; font-size: 2em; line-height: 1em; padding: 0.5em 0;"><%= event.name %></p>
           <% if event.details %>
             <p><%= event.details %></p>
