@@ -8,7 +8,7 @@ class CreateEvents < ActiveRecord::Migration
       t.datetime :end_time 
       t.boolean :all_day
       t.integer :price
-      t.boolean :featured, :default => false
+      t.boolean :featured, :default => false, :null => false
       t.string :promoter
       
       t.string :ticket_one_name
