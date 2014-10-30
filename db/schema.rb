@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 20141028225350) do
     t.datetime "end_time"
     t.boolean  "all_day"
     t.integer  "price"
-    t.boolean  "featured",          default: false
+    t.boolean  "featured",          default: false, null: false
     t.string   "promoter"
     t.string   "ticket_one_name"
     t.string   "ticket_one_url"
