@@ -4,8 +4,8 @@ class CreateEvents < ActiveRecord::Migration
       t.string :name
       t.string :venue
       t.string :details
-      t.datetime :start_time
-      t.datetime :end_time 
+      t.datetime :start_at
+      t.datetime :end_at 
       t.boolean :all_day
       t.integer :price
       t.boolean :featured, :default => false, :null => false

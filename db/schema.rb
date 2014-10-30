@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141030185953) do
+ActiveRecord::Schema.define(version: 20141030205501) do
 
   create_table "blogs", force: true do |t|
     t.string   "title"
@@ -53,8 +53,8 @@ ActiveRecord::Schema.define(version: 20141030185953) do
     t.string   "name"
     t.string   "venue"
     t.string   "details"
-    t.datetime "start_time"
-    t.datetime "end_time"
+    t.datetime "start_at"
+    t.datetime "end_at"
     t.boolean  "all_day"
     t.integer  "price"
     t.boolean  "featured",          default: false, null: false
