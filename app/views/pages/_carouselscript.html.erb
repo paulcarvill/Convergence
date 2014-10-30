@@ -1,0 +1,20 @@
+<!-- CAROUSEL -->
+<script>
+if (!Modernizr.touch) {   
+  var splashes = document.querySelectorAll(".splash");
+
+  var current = 0;
+  var numSplashes = splashes.length-1;
+
+  function rotateEvents() {
+    splashes[current].style.opacity = 0;
+    current++;
+    if (current > numSplashes) {
+      current = 0;
+    }
+    splashes[current].style.opacity = 1;
+  }
+
+  window.setInterval(rotateEvents, 5000);
+}
+</script>

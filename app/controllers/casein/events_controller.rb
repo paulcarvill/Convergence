@@ -9,7 +9,7 @@ module Casein
   
     def index
       @casein_page_title = 'Events'
-  		@events = Event.order(sort_order(:name)).paginate :page => params[:page]
+  		@events = Event.includes(:category).order(sort_order(:name)).paginate :page => params[:page]
     end
   
     def show
@@ -66,7 +66,8 @@ module Casein
           :price,
           :featured,
           :all_day,
-          :img1
+          :img1,
+          :category_id
         )
       end
 

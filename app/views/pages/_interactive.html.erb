@@ -1,0 +1,186 @@
+<script type="application/processing">
+
+ var  VerletPhysics2D = toxi.physics2d.VerletPhysics2D,
+      VerletParticle2D = toxi.physics2d.VerletParticle2D,
+      CircularConstraint = toxi.physics2d.constraints.CircularConstraint,
+      AttractionBehavior = toxi.physics2d.behaviors.AttractionBehavior,
+      GravityBehavior = toxi.physics2d.behaviors.GravityBehavior,
+      Circle = toxi.geom.Circle,
+      Vec2D = toxi.geom.Vec2D,
+      VerletSpring2D = toxi.physics2d.VerletSpring2D,
+      Rect = toxi.geom.Rect;
+
+import toxi.geom.*;
+import toxi.physics2d.*;
+import toxi.physics2d.behaviors.*;
+import toxi.color.*;
+import toxi.physics2d.constraints.*;
+
+int REST_LENGTH = 30;
+VerletPhysics2D physics;
+AttractionBehavior mouseAttractor;
+AttractionBehavior antiAttractor;
+AttractionBehavior mouserep;
+CircularConstraint myConstraint;
+Circle c;
+
+Vec2D mousePos;
+ToneMap toneMap;
+Boolean m;
+
+
+
+
+
+/********************************************/
+/*        SETUP                              *
+*********************************************/
+void setup() {
+
+  if (Modernizr.touch) {   
+    return false;
+  }  
+
+  size(window.innerWidth, window.innerHeight);
+  physics = new VerletPhysics2D();
+  //physics.setDrag(0.9);
+  //physics.setWorldBounds(new Rect(0, 0, width, height));
+  //physics.addBehavior(new GravityBehavior(new Vec2D(0, 0.15)));
+  //physics.addBehavior(new AttractionBehavior(new Vec2D(width/2, height/2), 20, 10, 0.01));
+
+  /******/
+  /******/
+  // Get mouse position so we can attract particles to it
+  mousePos = new Vec2D(mouseX, mouseY); 
+  mouseAttractor = new AttractionBehavior(mousePos, 540, 50);
+  physics.addBehavior(mouseAttractor);
+
+  /******/
+  /******/
+  // This stops particles very near the cursor from jittering
+  mouserep = new AttractionBehavior(mousePos, 35, -50);
+  physics.addBehavior(mouserep);
+  /******/
+  /******/
+
+
+  /******/
+  /******/
+  // Set up color gradient for dots
+  ColorGradient gradient = new toxi.color.ColorGradient();
+  gradient.addColorAt(0, toxi.color.NamedColor.PURPLE);
+  gradient.addColorAt(120, toxi.color.NamedColor.DEEPPINK);
+  gradient.addColorAt(255, toxi.color.NamedColor.DODGERBLUE);
+  // now create a ToneMap instance using this gradient
+  toneMap = new toxi.color.ToneMap(0, width/2, gradient);
+  /******/
+  /******/
+
+  for(int y=0; y<(height/REST_LENGTH); y++) {
+    for(int x=0; x<(width/REST_LENGTH); x++) {
+      VerletParticle2D p = new VerletParticle2D(x*REST_LENGTH,y*REST_LENGTH);
+      VerletParticle2D q = new VerletParticle2D(x*REST_LENGTH,y*REST_LENGTH);
+      //ellipse(q.x, q.y, 4, 4);
+      q.lock();
+
+      VerletSpring2D s = new VerletSpring2D(p, q, 0, 0.04);
+      physics.addSpring(s);
+
+      // p.addConstraint(myConstraint);
+      physics.addParticle(p);
+      //physics.addParticle(q);
+    }
+  }
+
+  // c = new Circle(mousePos,175);
+  // myConstraint = new CircularConstraint(c);
+}
+/********************************************/
+/********************************************/
+/********************************************/
+
+
+
+
+
+void addParticle() {
+ // Vec2D randLoc = Vec2D.randomVector().scale(5).addSelf(width / 2, 0);
+ //  VerletParticle2D p = new VerletParticle2D(randLoc);
+ //  physics.addParticle(p); 
+  //physics.addBehavior(new AttractionBehavior(p, 20, -1.2, 0.01));
+}
+
+
+
+
+
+/********************************************/
+/*        DRAW                               *
+*********************************************/
+void draw() {
+  background(0,0,0,0);
+  noStroke();
+  mousePos.set(mouseX, mouseY);
+  physics.update();
+  for (int i=0;i<physics.particles.length;i++) {
+    VerletParticle2D p = physics.particles[i];
+
+
+    fill(toneMap.getARGBToneFor(p.distanceTo(mousePos)));
+
+    /****** SHOW DOTS ******/
+    ellipse(p.x, p.y, 4, 4);
+    /****** ********* ******/
+  }
+
+    for(int i =0; i< physics.springs.length; i++) {
+      VerletSpring2D s = physics.springs[i];
+
+      /* When mouse is down, we giveeach particle a really long spring */
+      if (m == true) {
+        s.setRestLength(100);
+      } else {
+        s.setRestLength(0);
+      }
+
+      /****** SHOW SPRINGS ******/
+      //if (m == true) {
+        stroke(toneMap.getARGBToneFor(s.a.distanceTo(mousePos)));
+        line(s.a.x,s.a.y,s.b.x,s.b.y);
+      //}
+      /****** ************ ******/
+    }
+}
+/********************************************/
+/********************************************/
+/********************************************/
+
+
+
+
+
+/********************************************/
+/*        MOUSE FUNCTIONS                    *
+*********************************************/
+void mousePressed() {
+  m == true ? m = false : m = true;
+  //physics.removeBehavior(mouseAttractor);
+}
+
+void keyPressed() {
+  m == true ? m = false : m = true;
+  //physics.removeBehavior(mouseAttractor);
+}
+
+
+/********************************************/
+/********************************************/
+/********************************************/
+
+
+
+
+
+</script>
+
+<canvas id="myCanvas" style="position: fixed; left:0; right: 0; top: 0; bottom: 0; z-index: 1"></canvas>

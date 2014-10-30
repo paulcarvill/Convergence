@@ -1,0 +1,28 @@
+<!-- ********** MAIN INTERACTIVE PANEL ********** -->
+<!-- ********** ***************** ********** -->
+<!-- ********** ***************** ********** -->
+
+
+<!-- this div makes sure everything gets pushed down below the interactive panel -->
+<div id="splash-shift"></div>
+
+<script>
+  var cvgHeight = window.innerHeight
+  var splashShift = document.querySelector("#splash-shift");
+  splashShift.style.height = cvgHeight + 'px';
+</script>
+
+<%= render "nav" %>
+
+<% @events.each_with_index do |event, i| %>
+  <div class="splash" style="background-image: url(<%=eventImage(event)%>); background-position: 50% 50%; background-size: cover; z-index: -1">
+    <div style="width: 55%; margin: 0 auto; text-align: center; font-size: 2em; line-height: 2em; color: #ededed; height: 100%; padding-top: 300px;">
+      <h1 style="line-height: 1.5em"><%= event.name %></h1>
+      <h2><%= event.details %></h2>
+      <button class="buy" style="margin-top: 1.5em; z-index: 999; text-transform: uppercase; border: 0; color: #fff; width: 148px; height: 50px; background: url(<%= asset_path "button.gif" %>)">Buy tickets</button>
+    </div>
+  </div>  
+<% end %>
+<!-- ********** ***************** ********** -->
+<!-- ********** ***************** ********** -->
+<!-- ********** ***************** ********** -->

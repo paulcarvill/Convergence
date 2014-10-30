@@ -1,3 +1,13 @@
+c = Category.create!({
+    id: 1,
+    name: "Live"
+})
+
+d = Category.create!({
+    id: 2,
+    name: "Exhibition"
+})
+
 Event.create!([
   {
     name: "Bleep10",
@@ -12,7 +22,8 @@ Event.create!([
     ticket_one_name: "Songkick",
     ticket_one_url: "http://www.songkick.com/vu/1",
     ticket_two_name: "See",
-    ticket_two_url: "http://www.see.com/vu/1"
+    ticket_two_url: "http://www.see.com/vu/1",
+    category_id: 1
   },
   {
     name: "Jacques Greene, Koreless & Vaghe Stelle",
@@ -24,7 +35,8 @@ Event.create!([
     featured: true,
     img1: File.open(Rails.root.join("db/seeds","2.jpg")),
     ticket_one_name: "See",
-    ticket_one_url: "http://www.songkick.com/vu/1"
+    ticket_one_url: "http://www.songkick.com/vu/1",
+    category_id: 2
   },
   {
     name: "DJ",

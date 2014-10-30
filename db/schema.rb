@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141028225350) do
+ActiveRecord::Schema.define(version: 20141030161140) do
 
   create_table "casein_admin_users", force: true do |t|
     t.string   "login",                           null: false
@@ -31,6 +31,12 @@ ActiveRecord::Schema.define(version: 20141028225350) do
     t.string   "current_login_ip"
     t.string   "last_login_ip"
     t.string   "time_zone"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "categories", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -60,6 +66,7 @@ ActiveRecord::Schema.define(version: 20141028225350) do
     t.integer  "img1_file_size"
     t.datetime "img1_updated_at"
     t.text     "img1_meta"
+    t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

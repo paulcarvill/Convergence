@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
 
+  resources :categories
+
   resources :pages
 
 	#Casein routes
 	namespace :casein do
+		resources :categories
 		resources :events
 	end
 

@@ -10,11 +10,13 @@
 			<th><%= casein_sort_link "Price", :price %></th>
 			<th><%= casein_sort_link "Featured", :featured %></th>
 			<th><%= casein_sort_link "All day", :all_day %></th>
+			<th><%= casein_sort_link "Category", :category %></th>
 			<th>&nbsp;</th>
 		</tr>
 	</thead>
 	
 	<% events.each do |event| %>
+
 		<tr>
 			<td><%= casein_table_cell_link event.name, casein_event_path(event) %></td>
 			<td><%= casein_table_cell_link event.venue, casein_event_path(event) %></td>
@@ -23,6 +25,11 @@
 			<td><%= casein_table_cell_link event.price, casein_event_path(event) %></td>
 			<td><%= casein_table_cell_link event.featured, casein_event_path(event) %></td>
 			<td><%= casein_table_cell_link event.all_day, casein_event_path(event) %></td>
+			<td>
+				<% if event.category %>
+				<%= casein_table_cell_link event.category.name, casein_event_path(event) %>
+				<% end %>
+			</td>
 			<td class="delete">
 				<%= link_to(casein_show_row_icon("trash"), casein_event_path(event), :method => :delete, :data => { :confirm => "Are you sure you want to delete this event?" }) %>
 			</td>

@@ -14,7 +14,7 @@
  *= require_self
  */
 
-html, body, p, div, h1, h2, h3, nav {
+html, body, p, div, h1, h2, h3, nav, ul, li, a {
   	margin: 0;
   	padding: 0;
   	box-sizing: border-box;
@@ -104,16 +104,153 @@ html, body, p, div, h1, h2, h3, nav {
   	vertical-align: middle;
   }
 
-  .events>div {
-	width:20%;
-	float: left;
-	left: 0;
-	height: 500px;
-	background: #333;
-	/*transition: width 0.2s;*/
-  }
-
   .events>div:hover {
   	/*width: 30%;
   	transition: width 0.7s;*/
   }
+
+
+.event-container {
+  width:20%;
+  float: left;
+  height: 500px;
+  background: #333;
+  /*transition: width 0.2s;*/
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+#blogrow>div {
+  width: 50%;
+  float: left;
+}
+
+#blogrow {
+  clear: left;
+  float: left;
+  height: 600px;
+}
+
+#videorow {
+  clear:left;
+  float: left;
+  height: 700px;
+}
+
+#blogrow>div:nth-of-type(2) {
+  width: 50%;
+  float: right;
+}
+
+#blogrow h1 {
+  font-size: 4em;
+  line-height: 1em;
+  margin: 1em 1em 0.5em 1em;
+}
+
+#blogrow .desc {
+  margin-left: 50%;
+}
+
+#mailinglistrow {
+  height: 300px;
+}
+
+#mailinglistrow input {
+  width: 33%;
+  height: 1em;
+  padding: 1em;
+  color: #666;
+  font-size: 1.5em;
+}
+
+footer {
+  background: #444;
+  height: 200px;
+  color: #aaa;
+}
+
+@media screen and (max-width: 1024px) { 
+  .row {
+    height: auto;
+  }
+  .event-container {
+    width: 33%;
+  }
+}
+
+@media screen and (max-width: 615px) { 
+  .event-container {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 320px) { 
+  .splash {
+    height: 480px;
+    position: static;
+  }
+  #splash-shift {
+    display: none;
+  }
+  .event-container {
+    width: 100%;
+  }
+  .stuck {
+    position: static;
+  }
+  nav {
+    padding: 0;
+    height: auto;
+    font-size: 16px;
+  }
+  nav li,
+  nav li a,
+  footer li,
+  footer li a {
+    display: block;
+    height: 44px;
+    margin: 0;
+  }
+  nav li a,
+  footer li a {
+    padding-top: 12px;
+  }
+  nav li:nth-of-type(3) {
+    display: none;
+  }
+  #blogrow,
+  #videorow {
+    clear: left;
+    float: left;
+    height: auto;
+  }
+  #blogrow img {
+    width: 100%;
+  }
+  #blogrow>div,
+  #blogrow>div:nth-of-type(2) {
+    width: 100%;
+    height: auto;
+  }
+  #blogrow h1 {
+    font-size: 24px;
+  }
+  #blogrow .desc {
+    margin: 0;
+  }
+  #videorow,
+  #videorow iframe {
+    height: 480px;
+  }
+  #mailinglistrow {
+    height: auto;
+    padding-bottom: 2em;
+  }
+  #mailinglistrow input {
+    width: 80%;
+  }
+  footer {
+    height: auto;
+  }
+}

@@ -29,6 +29,9 @@ class CreateEvents < ActiveRecord::Migration
       t.attachment :img1
       t.text :img1_meta
 
+      
+      t.references :category
+
       t.timestamps
     end
   end
