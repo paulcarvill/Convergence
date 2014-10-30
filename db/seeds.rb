@@ -32,7 +32,7 @@ Event.create!([
     end_time: "2014-11-01 20:00:00",
     all_day: false,
     price: 15,
-    featured: false,
+    img1: File.open(Rails.root.join("db/seeds","3.jpg")),
     ticket_one_name: "Ticketmaster",
     ticket_one_url: "http://www.ticketmaster.com/vu/2"
   },
@@ -43,7 +43,7 @@ Event.create!([
     end_time: "2014-11-02 20:01:00",
     all_day: true,
     price: 25,
-    featured: nil,
+    img1: File.open(Rails.root.join("db/seeds","4.jpg")),
     ticket_one_name: "Baebican",
     ticket_one_url: "http://www.barbican.com/vu/1"
   },
@@ -53,7 +53,7 @@ Event.create!([
     end_time: "2014-11-03 17:01:00",
     all_day: false,
     price: 8,
-    featured: nil,
+    img1: File.open(Rails.root.join("db/seeds","5.jpg")),
     ticket_one_name: "Songkick",
     ticket_one_url: "http://www.songkick.com/vu/5"
   },
@@ -64,7 +64,18 @@ Event.create!([
     end_time: "2014-11-04 19:01:00",
     all_day: false,
     price: 14,
-    featured: nil,
+    img1: File.open(Rails.root.join("db/seeds","6.jpg")),
+    ticket_one_name: "Songkick",
+    ticket_one_url: "http://www.songkick.com/vu/3"
+  },
+  {
+    name: "New band showcase",
+    venue: "XOYO",
+    start_time: "2014-11-04 21:01:00",
+    end_time: "2014-11-04 23:01:00",
+    all_day: false,
+    price: 14,
+    img1: File.open(Rails.root.join("db/seeds","7.jpg")),
     ticket_one_name: "Songkick",
     ticket_one_url: "http://www.songkick.com/vu/3"
   }

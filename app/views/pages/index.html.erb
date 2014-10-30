@@ -81,8 +81,9 @@ $(document).ready(function() {
 
 <!-- EVENTS ROW -->
 <div class="events row">
-  <div style="z-index: 5">
-    <div style="height: 200px; margin-top: 200px;">
+  <% @moreEvents.each_with_index do |event, i| %>
+  <div style="z-index: <%= (i*-1)+5%>; left: <%= i*20 %>%; background-image: url(<%= event.img1 %>); background-size: cover; background-position: 50% 50%;">
+    <div style="height: 200px; margin-top: 300px;">
         <div style="color: #888;">
           <p>content here</p>
           <p>content here</p>
@@ -90,136 +91,59 @@ $(document).ready(function() {
         </div>
     </div>
   </div>
-  <div style="left: 20%; background: #444; z-index: 4">
-    <div style="height: 200px; margin-top: 200px;">
-        <div style="color: #888;">
-          <p>content here</p>
-          <p>content here</p>
-          <p>content here</p>
-        </div>
-    </div>
-  </div>
-  <div style="left: 40%; background: #555; z-index: 3">
-    <div style="height: 200px; margin-top: 200px;">
-        <div style="color: #888;">
-          <p>content here</p>
-          <p>content here</p>
-          <p>content here</p>
-        </div>
-    </div>
-  </div>
-  <div style="left: 60%; background: #666; z-index: 2">
-    <div style="height: 200px; margin-top: 200px;">
-        <div style="color: #888;">
-          <p>content here</p>
-          <p>content here</p>
-          <p>content here</p>
-        </div>
-    </div>
-  </div>
-  <div style="left: 80%; background: #777; z-index: 5">
-    <div style="height: 200px; margin-top: 200px;">
-        <div style="color: #888;">
-          <p>content here</p>
-          <p>content here</p>
-          <p>content here</p>
-        </div>
-    </div>
-  </div>
+  <% end %>
 </div>
 <!-- END EVENTS ROW -->
 
 <!-- BLOG ROW -->
-<div class="row">
-  <h2>blog row</h2>
-<div><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
-
-<div><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
-
-<div><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
+<div class="row" style="clear: left; float: left; height: 600px">
+  <div style="width:50%; float: left;">
+    <p style="display: block; text-align: center; margin-top: 2em">Nov 10 | @Ben_Watt</p>
+    <h1 style="font-size: 4em; line-height: 1em; margin: 1em 1em 0.5em 1em">Looking back it was like the Bee Gees or something</h1>
+    <p style="margin-left: 50%">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor.</p>
+  </div>
+  <div style="width:50%; float: right">
+    <%= image_tag "8.jpg" %>
+  </div>
 </div>
 <!-- END BLOG ROW -->
 
 
 <!-- VIDEO ROW -->
-<div class="row">
-  <h2>video row</h2>
-<div><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
-
-<div><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
-
-<div><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
+<div class="row" style="clear:left; float: left; height: 700px;">
+  <div>
+    <iframe width="100%" height="700" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/141161597&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+  </div>
 </div>
 <!-- END VIDEO ROW -->
 
 
 <!-- MAILING LIST ROW -->
-<div class="row">
-  <h2>mailing list row</h2>
-<div><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
+<div class="row" style="height: 300px;">
+<p style="display: block; text-align: center; margin-top: 2em">Subscribe to announcements. Not spam.</p>
 
-<div><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
+<div style="text-align: center">
+  <form>
+      <input type="text" value="enter email" style="width: 33%; height: 1em; padding: 1em; color: #666; font-size: 1.5em" />
+  </form>
+</div>
 </div>
 <!-- END MAILING LIST ROW -->
 
 
 
 <!-- FOOTER ROW -->
-<div class="row">
-  <h2>footer row</h2>
-<div><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
-
-<div><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
+<div class="row" style="background: #444; height: 200px; color: #aaa">
+<h2 style="margin: 1em;">Convergence</h2>
+<ul>
+      <li>Events</li>
+      <li>Locations</li>
+      <li>About</li>
+      <li>Blog</li>
+</ul>
 </div>
 <!-- END FOOTER ROW -->
 
@@ -334,7 +258,7 @@ void draw() {
   for (int i=0;i<physics.particles.length;i++) {
     VerletParticle2D p = physics.particles[i];
 
-    
+
     fill(toneMap.getARGBToneFor(p.distanceTo(mousePos)));
     ellipse(p.x, p.y, 4, 4);
   }
@@ -379,6 +303,6 @@ void mouseReleased() {
 }
 </script>
 
-<canvas id="myCanvas" style="position: fixed; left:0; right: 0; top: 0; bottom: 0;"></canvas>
+<canvas id="myCanvas" style="position: fixed; left:0; right: 0; top: 0; bottom: 0; z-index: -1"></canvas>
 
 
