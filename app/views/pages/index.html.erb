@@ -12,7 +12,13 @@ var cvgHeight = window.innerHeight
 <!-- ********** ***************** ********** -->
 <% @events.each_with_index do |event, i| %>
   <% if i == 0 %>
-    <div class="splash" style="background-image: url(<%=eventImage(event)%>); background-position: 50% 50%; background-size: cover; z-index: -1"></div>
+    <div class="splash" style="background-image: url(<%=eventImage(event)%>); background-position: 50% 50%; background-size: cover; z-index: -1">
+      <div style="text-align: center; font-size: 2em; line-height: 2em; color: #ededed; height: 100%; padding-top: 300px;">
+        <h1>Event 1</h1>
+        <h2>Promoter</h2>
+        <h3>Date of event here</h3>
+      </div>
+    </div>
     <div id="splash-shift"></div>
 
     <script>
@@ -32,7 +38,13 @@ var cvgHeight = window.innerHeight
 
   <% else %>
 
-    <div class="splash sub-splashes" style="background-image: url(<%=eventImage(event)%>); background-position: 50% 50%; background-size: cover; opacity: 0;"></div>
+    <div class="splash sub-splashes" style="background-image: url(<%=eventImage(event)%>); background-position: 50% 50%; background-size: cover; opacity: 0;">
+      <div style="text-align: center; font-size: 2em; line-height: 2em; color: #ededed; height: 100%; padding-top: 300px;">
+        <h1>Event N</h1>
+        <h2>Promoter</h2>
+        <h3>Date of event here</h3>
+      </div>
+    </div>
 
   <% end %>
 <% end %>
@@ -303,6 +315,6 @@ void mouseReleased() {
 }
 </script>
 
-<canvas id="myCanvas" style="position: fixed; left:0; right: 0; top: 0; bottom: 0; z-index: -1"></canvas>
+<canvas id="myCanvas" style="position: fixed; left:0; right: 0; top: 0; bottom: 0; z-index: 1"></canvas>
 
 
