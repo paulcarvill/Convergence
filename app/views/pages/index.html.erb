@@ -289,6 +289,8 @@ void draw() {
 
     for(int i =0; i< physics.springs.length; i++) {
       VerletSpring2D s = physics.springs[i];
+
+      /* When mouse is down, we giveeach particle a really long spring */
       if (m == true) {
         s.setRestLength(100);
       } else {
@@ -316,9 +318,6 @@ void draw() {
 *********************************************/
 void mousePressed() {
   m = true;
-  // addParticle();
-  // mousePos = new Vec2D(mouseX, mouseY); 
-  // 
   physics.removeBehavior(mouseAttractor);
 }
 

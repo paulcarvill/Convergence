@@ -31,6 +31,11 @@ gem 'seed_dump'
 gem 'paperclip', github: 'thoughtbot/paperclip'
 gem 'paperclip-meta'
 
+group :production do
+  gem 'pg', '0.15.1'
+  gem 'rails_12factor', '0.0.2'
+  gem 'thin'
+end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
