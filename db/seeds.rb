@@ -32,7 +32,7 @@ Event.create!([
     end_time: "2014-11-01 20:00:00",
     all_day: false,
     price: 15,
-    featured: true,
+    featured: false,
     ticket_one_name: "Ticketmaster",
     ticket_one_url: "http://www.ticketmaster.com/vu/2"
   },

@@ -62,10 +62,8 @@ var cvgHeight = window.innerHeight
       splashes[current].style.opacity = 1;
     }
 
-    window.setInterval(rotateEvents, 3000);
+    window.setInterval(rotateEvents, 5000);
 </script>
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 
 <script>
 //var dots = $("#dots");
@@ -232,36 +230,89 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></di
 
  var  VerletPhysics2D = toxi.physics2d.VerletPhysics2D,
       VerletParticle2D = toxi.physics2d.VerletParticle2D,
+      CircularConstraint = toxi.physics2d.constraints.CircularConstraint,
       AttractionBehavior = toxi.physics2d.behaviors.AttractionBehavior,
       GravityBehavior = toxi.physics2d.behaviors.GravityBehavior,
+      Circle = toxi.geom.Circle,
       Vec2D = toxi.geom.Vec2D,
+      VerletSpring2D = toxi.physics2d.VerletSpring2D,
       Rect = toxi.geom.Rect;
 
 import toxi.geom.*;
 import toxi.physics2d.*;
 import toxi.physics2d.behaviors.*;
+import toxi.color.*;
+import toxi.physics2d.constraints.*;
 
-int NUM_PARTICLES = 250;
-int REST_LENGTH = 35;
+int REST_LENGTH = 30;
 VerletPhysics2D physics;
 AttractionBehavior mouseAttractor;
+AttractionBehavior antiAttractor;
+AttractionBehavior mouserep;
+CircularConstraint myConstraint;
+Circle c;
 
 Vec2D mousePos;
+ToneMap toneMap;
+Boolean m;
 
 void setup() {
   size(window.innerWidth, window.innerHeight);
   physics = new VerletPhysics2D();
-  physics.setDrag(0.05);
+  physics.setDrag(0.9);
   physics.setWorldBounds(new Rect(0, 0, width, height));
   //physics.addBehavior(new GravityBehavior(new Vec2D(0, 0.15)));
+
+  mousePos = new Vec2D(mouseX, mouseY); 
+  mouseAttractor = new AttractionBehavior(mousePos, 540, 50);
+  physics.addBehavior(mouseAttractor);
+
+  mouserep = new AttractionBehavior(mousePos, 35, -50);
+  physics.addBehavior(mouserep);
+
+
+  // c = new Circle(mousePos,175);
+  // myConstraint = new CircularConstraint(c);
+  
 
   for(int y=0; y<(height/REST_LENGTH); y++) {
     for(int x=0; x<(width/REST_LENGTH); x++) {
       VerletParticle2D p = new VerletParticle2D(x*REST_LENGTH,y*REST_LENGTH);
+      VerletParticle2D q = new VerletParticle2D(x*REST_LENGTH,y*REST_LENGTH);
+      
+      q.lock();
+
+      VerletSpring2D s = new VerletSpring2D(p, q, 0, 0.04);
+      physics.addSpring(s);
+
+      // p.addConstraint(myConstraint);
       physics.addParticle(p);
-      //physics.addBehavior(new AttractionBehavior(p, 20, -1.2, 0.01));
+      //physics.addParticle(q);
     }
   }
+
+  //physics.addBehavior(new AttractionBehavior(new Vec2D(width/2, height/2), 20, 10, 0.01));
+
+  // define a color gradient by adding colors at certain key points
+  // a gradient is like a 1D array with target colors at certain points
+  // all inbetween values are automatically interpolated (customizable too)
+  // this gradient here will contain 256 values
+  ColorGradient gradient = new toxi.color.ColorGradient();
+  gradient.addColorAt(0, toxi.color.NamedColor.PURPLE);
+  gradient.addColorAt(120, toxi.color.NamedColor.DEEPPINK);
+  gradient.addColorAt(255, toxi.color.NamedColor.DODGERBLUE);
+  
+
+  
+
+  //gradient.addColorAt(0, toxi.color.NamedColor.WHITE);
+  //gradient.addColorAt(255, toxi.color.NamedColor.WHITE);
+
+  // now create a ToneMap instance using this gradient
+  // this maps the value range 0.0 .. 0.33 across the entire gradient width
+  // a 0.0 input value will be black, 0.33 white
+  toneMap = new toxi.color.ToneMap(0, width/2, gradient);
+
 }
 
 void addParticle() {
@@ -271,36 +322,63 @@ void addParticle() {
   //physics.addBehavior(new AttractionBehavior(p, 20, -1.2, 0.01));
 }
 
+
+/********************************************/
+/****     DRAW                         ******
+*********************************************/
 void draw() {
   background(0,0,0,0);
   noStroke();
-  fill(146, 37, 150, 100);
-  // if (physics.particles.length < NUM_PARTICLES) {
-  //   addParticle();
-  // }
+  mousePos.set(mouseX, mouseY);
   physics.update();
   for (int i=0;i<physics.particles.length;i++) {
     VerletParticle2D p = physics.particles[i];
-    ellipse(p.x, p.y, 5, 5);
+
+    
+    fill(toneMap.getARGBToneFor(p.distanceTo(mousePos)));
+    ellipse(p.x, p.y, 4, 4);
   }
+
+    for(int i =0; i< physics.springs.length; i++) {
+      VerletSpring2D s = physics.springs[i];
+      if (m == true) {
+        s.setRestLength(100);
+      } else {
+        s.setRestLength(0);
+      }
+      if (m == true) {
+        stroke(toneMap.getARGBToneFor(s.a.distanceTo(mousePos)));
+        line(s.a.x,s.a.y,s.b.x,s.b.y);
+      }
+    }
 }
+/********************************************/
+/****     END DRAW                      ******
+*********************************************/
+
+
+
+
 
 void mousePressed() {
-  addParticle();
-  mousePos = new Vec2D(mouseX, mouseY); 
-  mouseAttractor = new AttractionBehavior(mousePos, 250, 0.9);
-  physics.addBehavior(mouseAttractor);
+  m = true;
+  // addParticle();
+  // mousePos = new Vec2D(mouseX, mouseY); 
+  // 
+  physics.removeBehavior(mouseAttractor);
 }
 
 void mouseDragged() { 
-  mousePos.set(mouseX, mouseY);
+  //mousePos.set(mouseX, mouseY);
 }
 
 void mouseReleased() { 
-  physics.removeBehavior(mouseAttractor);
+  m = false;
+  mouseAttractor = new AttractionBehavior(mousePos, 340, 50);
+  physics.addBehavior(mouseAttractor);
 }
 </script>
 
 <canvas id="myCanvas" style="position: fixed; left:0; right: 0; top: 0; bottom: 0;"></canvas>
-<script src="http://s3.amazonaws.com/toxiclibsjs/javascripts/vendor/processing.js"></script>
-<script src="http://s3.amazonaws.com/toxiclibsjs/toxiclibsjs/build/toxiclibs.min.js"></script>
+
+
