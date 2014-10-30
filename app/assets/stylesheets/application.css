@@ -15,47 +15,57 @@
  */
 
 html, body, p, div, h1, h2, h3, nav, ul, li, a {
-  	margin: 0;
-  	padding: 0;
-  	box-sizing: border-box;
-  }
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
 
-  html {
-  	overflow-y: scroll;
-  }
+html {
+	overflow-y: scroll;
+}
 
-  body {
-  	width: 100%;
-  	height: 100%;
-  	overflow: hidden;
-  }
+body {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
 
-  .row {
-    background: #e8e8e8;
-    float: left;
-    z-index: 1;
-    width: 100%;
-    height: 500px;
-    position: relative;
-    z-index: 3;
-  }
-  
-  .splash {
-  	position: fixed;
-  	top: 0;
-  	left: 0;
-  	right: 0;
-  	bottom: 0;
-    z-index: -1;
-	-webkit-transition: opacity 2s;
-	-moz-transition: opacity 2s;
-  	-ms-transition: opacity 2s;
-  	-o-transition: opacity 2s;
-  	transition: opacity 2s;
+.row {
+  background: #e8e8e8;
+  float: left;
+  z-index: 1;
+  width: 100%;
+  height: 500px;
+  position: relative;
+  z-index: 3;
+}
 
-  	/*-webkit-animation: mymove 12s infinite;
-  	animation: mymove 12s infinite;*/
-  }
+.splash {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+  z-index: -1;
+  -webkit-transition: opacity 2s;
+  -moz-transition: opacity 2s;
+	-ms-transition: opacity 2s;
+	-o-transition: opacity 2s;
+	transition: opacity 2s;
+	/*-webkit-animation: mymove 12s infinite;
+	animation: mymove 12s infinite;*/
+}
+
+.splash>div {
+  width: 55%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 2em;
+  line-height: 2em;
+  color: #ededed;
+  height: 100%;
+  padding-top: 300px;
+}
 
   /* Chrome, Safari, Opera */ 
 @-webkit-keyframes mymove {
@@ -193,6 +203,16 @@ footer {
   #splash-shift {
     display: none;
   }
+  .splash {
+    display: table;
+  }
+  .splash>div {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+    padding-top: 0;
+    font-size: 1em;
+  }
   .event-container {
     width: 100%;
   }
@@ -228,12 +248,19 @@ footer {
   #blogrow img {
     width: 100%;
   }
+  #blogrow>div h1,
+  #blogrow>div p,
+  footer {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
   #blogrow>div,
   #blogrow>div:nth-of-type(2) {
     width: 100%;
     height: auto;
   }
   #blogrow h1 {
+    margin: 0;
     font-size: 24px;
   }
   #blogrow .desc {

@@ -4,5 +4,6 @@ class PagesController < ApplicationController
   def index
     @events = Event.where(featured: true)
     @moreEvents = Event.where(featured: false).limit(5)
+    @blog = Blog.first
   end
 end
