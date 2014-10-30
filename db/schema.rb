@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20141028225350) do
   create_table "events", force: true do |t|
     t.string   "name"
     t.string   "venue"
+    t.string   "details"
     t.datetime "start_time"
     t.datetime "end_time"
     t.boolean  "all_day"

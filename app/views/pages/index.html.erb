@@ -7,46 +7,34 @@ var cvgHeight = window.innerHeight
 
 <div id="dots" style="position: fixed; left: 0; top: 0; bottom: 0; right: 0; background-image: url(<%= asset_path "dots.png" %>);background-position: 50% 50%; background-size: cover; z-index: 100; background-color: transparent; transform: rotateY(50deg); "></div>
  -->
+
+
 <!-- ********** MAIN EVENTS PANEL ********** -->
 <!-- ********** ***************** ********** -->
 <!-- ********** ***************** ********** -->
+
+<div id="splash-shift"></div>
+<script>
+  var splashShift = document.querySelector("#splash-shift");
+  splashShift.style.height = cvgHeight + 'px';
+</script>
+
+<nav>
+  <li>Events</li>
+  <li>Locations</li>
+  <li><img src="<%= asset_path "casein/convergence.png" %>" /></li>
+  <li>About</li>
+  <li>Blog</li>
+</nav>
+
 <% @events.each_with_index do |event, i| %>
-  <% if i == 0 %>
-    <div class="splash" style="background-image: url(<%=eventImage(event)%>); background-position: 50% 50%; background-size: cover; z-index: -1">
-      <div style="text-align: center; font-size: 2em; line-height: 2em; color: #ededed; height: 100%; padding-top: 300px;">
-        <h1>Event 1</h1>
-        <h2>Promoter</h2>
-        <h3>Date of event here</h3>
-      </div>
+  <div class="splash" style="background-image: url(<%=eventImage(event)%>); background-position: 50% 50%; background-size: cover; z-index: -1">
+    <div style="width: 55%; margin: 0 auto; text-align: center; font-size: 2em; line-height: 2em; color: #ededed; height: 100%; padding-top: 300px;">
+      <h1 style="line-height: 1.5em"><%= event.name %></h1>
+      <h2><%= event.details %></h2>
+      <button class="buy" style="margin-top: 1.5em; z-index: 999; text-transform: uppercase; border: 0; color: #fff; width: 148px; height: 50px; background: url(<%= asset_path "button.gif" %>)">Buy tickets</button>
     </div>
-    <div id="splash-shift"></div>
-
-    <script>
-    var splashShift = document.querySelector("#splash-shift");
-    splashShift.style.height = cvgHeight + 'px';
-
-    
-    </script>
-
-    <nav>
-      <li>Events</li>
-      <li>Locations</li>
-      <li><img src="<%= asset_path "casein/convergence.png" %>" /></li>
-      <li>About</li>
-      <li>Blog</li>
-    </nav>
-
-  <% else %>
-
-    <div class="splash sub-splashes" style="background-image: url(<%=eventImage(event)%>); background-position: 50% 50%; background-size: cover; opacity: 0;">
-      <div style="text-align: center; font-size: 2em; line-height: 2em; color: #ededed; height: 100%; padding-top: 300px;">
-        <h1>Event N</h1>
-        <h2>Promoter</h2>
-        <h3>Date of event here</h3>
-      </div>
-    </div>
-
-  <% end %>
+  </div>  
 <% end %>
 <!-- ********** ***************** ********** -->
 <!-- ********** ***************** ********** -->
@@ -95,17 +83,24 @@ $(document).ready(function() {
 <div class="events row">
   <% @moreEvents.each_with_index do |event, i| %>
   <div style="z-index: <%= (i*-1)+5%>; left: <%= i*20 %>%; background-image: url(<%= event.img1 %>); background-size: cover; background-position: 50% 50%;">
-    <div style="height: 200px; margin-top: 300px;">
-        <div style="color: #888;">
-          <p>content here</p>
-          <p>content here</p>
-          <p>content here</p>
+    <div style="height: 200px; margin-top: 340px; padding: 0 12%;">
+        <div style="color: #fff; position: absolute; bottom: 0">
+          <p style="line-height: 16px; padding: 0;" ><img src= "<%= asset_path 'cal.gif' %>" style="vertical-align: middle; margin-right: 5px;"><%= event.start_time.strftime('%d %^b') %></p>
+          <p style="display: block; height: 3em; font-size: 2em; line-height: 1em; padding: 0.5em 0;"><%= event.name %></p>
+          <% if event.details %>
+            <p><%= event.details %></p>
+          <% end %>
+          <p style="padding-top: 2em"><a href="#" style="color: #fff">BUY TICKETS</a></p>
         </div>
     </div>
   </div>
   <% end %>
 </div>
 <!-- END EVENTS ROW -->
+
+
+
+
 
 <!-- BLOG ROW -->
 <div class="row" style="clear: left; float: left; height: 600px">
@@ -192,24 +187,48 @@ Vec2D mousePos;
 ToneMap toneMap;
 Boolean m;
 
+
+
+
+
+/********************************************/
+/*        SETUP                              *
+*********************************************/
 void setup() {
   size(window.innerWidth, window.innerHeight);
   physics = new VerletPhysics2D();
-  physics.setDrag(0.9);
-  physics.setWorldBounds(new Rect(0, 0, width, height));
+  //physics.setDrag(0.9);
+  //physics.setWorldBounds(new Rect(0, 0, width, height));
   //physics.addBehavior(new GravityBehavior(new Vec2D(0, 0.15)));
+  //physics.addBehavior(new AttractionBehavior(new Vec2D(width/2, height/2), 20, 10, 0.01));
 
+  /******/
+  /******/
+  // Get mouse position so we can attract particles to it
   mousePos = new Vec2D(mouseX, mouseY); 
   mouseAttractor = new AttractionBehavior(mousePos, 540, 50);
   physics.addBehavior(mouseAttractor);
 
+  /******/
+  /******/
+  // This stops particles very near the cursor from jittering
   mouserep = new AttractionBehavior(mousePos, 35, -50);
   physics.addBehavior(mouserep);
+  /******/
+  /******/
 
 
-  // c = new Circle(mousePos,175);
-  // myConstraint = new CircularConstraint(c);
-  
+  /******/
+  /******/
+  // Set up color gradient for dots
+  ColorGradient gradient = new toxi.color.ColorGradient();
+  gradient.addColorAt(0, toxi.color.NamedColor.PURPLE);
+  gradient.addColorAt(120, toxi.color.NamedColor.DEEPPINK);
+  gradient.addColorAt(255, toxi.color.NamedColor.DODGERBLUE);
+  // now create a ToneMap instance using this gradient
+  toneMap = new toxi.color.ToneMap(0, width/2, gradient);
+  /******/
+  /******/
 
   for(int y=0; y<(height/REST_LENGTH); y++) {
     for(int x=0; x<(width/REST_LENGTH); x++) {
@@ -227,29 +246,16 @@ void setup() {
     }
   }
 
-  //physics.addBehavior(new AttractionBehavior(new Vec2D(width/2, height/2), 20, 10, 0.01));
-
-  // define a color gradient by adding colors at certain key points
-  // a gradient is like a 1D array with target colors at certain points
-  // all inbetween values are automatically interpolated (customizable too)
-  // this gradient here will contain 256 values
-  ColorGradient gradient = new toxi.color.ColorGradient();
-  gradient.addColorAt(0, toxi.color.NamedColor.PURPLE);
-  gradient.addColorAt(120, toxi.color.NamedColor.DEEPPINK);
-  gradient.addColorAt(255, toxi.color.NamedColor.DODGERBLUE);
-  
-
-  
-
-  //gradient.addColorAt(0, toxi.color.NamedColor.WHITE);
-  //gradient.addColorAt(255, toxi.color.NamedColor.WHITE);
-
-  // now create a ToneMap instance using this gradient
-  // this maps the value range 0.0 .. 0.33 across the entire gradient width
-  // a 0.0 input value will be black, 0.33 white
-  toneMap = new toxi.color.ToneMap(0, width/2, gradient);
-
+  // c = new Circle(mousePos,175);
+  // myConstraint = new CircularConstraint(c);
 }
+/********************************************/
+/********************************************/
+/********************************************/
+
+
+
+
 
 void addParticle() {
  // Vec2D randLoc = Vec2D.randomVector().scale(5).addSelf(width / 2, 0);
@@ -259,8 +265,11 @@ void addParticle() {
 }
 
 
+
+
+
 /********************************************/
-/****     DRAW                         ******
+/*        DRAW                               *
 *********************************************/
 void draw() {
   background(0,0,0,0);
@@ -272,7 +281,10 @@ void draw() {
 
 
     fill(toneMap.getARGBToneFor(p.distanceTo(mousePos)));
+
+    /****** SHOW DOTS ******/
     ellipse(p.x, p.y, 4, 4);
+    /****** ********* ******/
   }
 
     for(int i =0; i< physics.springs.length; i++) {
@@ -282,20 +294,26 @@ void draw() {
       } else {
         s.setRestLength(0);
       }
+
+      /****** SHOW SPRINGS ******/
       if (m == true) {
         stroke(toneMap.getARGBToneFor(s.a.distanceTo(mousePos)));
         line(s.a.x,s.a.y,s.b.x,s.b.y);
       }
+      /****** ************ ******/
     }
 }
 /********************************************/
-/****     END DRAW                      ******
+/********************************************/
+/********************************************/
+
+
+
+
+
+/********************************************/
+/*        MOUSE FUNCTIONS                    *
 *********************************************/
-
-
-
-
-
 void mousePressed() {
   m = true;
   // addParticle();
@@ -310,9 +328,17 @@ void mouseDragged() {
 
 void mouseReleased() { 
   m = false;
-  mouseAttractor = new AttractionBehavior(mousePos, 340, 50);
+  mouseAttractor = new AttractionBehavior(mousePos, 540, 50);
   physics.addBehavior(mouseAttractor);
 }
+/********************************************/
+/********************************************/
+/********************************************/
+
+
+
+
+
 </script>
 
 <canvas id="myCanvas" style="position: fixed; left:0; right: 0; top: 0; bottom: 0; z-index: 1"></canvas>

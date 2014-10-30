@@ -1,7 +1,8 @@
 Event.create!([
   {
-    name: "Launch party",
+    name: "Bleep10",
     venue: "Village Underground",
+    details: "Fuck Buttons + Mount Kimbie + Fennesz + DJ Raj Chaudhuri",
     start_time: "2014-10-28 17:00:00",
     end_time: "2014-10-28 18:00:00",
     all_day: false,
@@ -14,7 +15,7 @@ Event.create!([
     ticket_two_url: "http://www.see.com/vu/1"
   },
   {
-    name: "Band",
+    name: "Jacques Greene, Koreless & Vaghe Stelle",
     venue: "Village Underground",
     start_time: "2014-10-30 17:00:00",
     end_time: "2014-10-30 18:00:00",
