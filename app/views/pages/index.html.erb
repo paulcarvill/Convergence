@@ -234,7 +234,7 @@ void setup() {
     for(int x=0; x<(width/REST_LENGTH); x++) {
       VerletParticle2D p = new VerletParticle2D(x*REST_LENGTH,y*REST_LENGTH);
       VerletParticle2D q = new VerletParticle2D(x*REST_LENGTH,y*REST_LENGTH);
-      
+      //ellipse(q.x, q.y, 4, 4);
       q.lock();
 
       VerletSpring2D s = new VerletSpring2D(p, q, 0, 0.04);
@@ -298,10 +298,10 @@ void draw() {
       }
 
       /****** SHOW SPRINGS ******/
-      if (m == true) {
+      //if (m == true) {
         stroke(toneMap.getARGBToneFor(s.a.distanceTo(mousePos)));
         line(s.a.x,s.a.y,s.b.x,s.b.y);
-      }
+      //}
       /****** ************ ******/
     }
 }
@@ -317,19 +317,16 @@ void draw() {
 /*        MOUSE FUNCTIONS                    *
 *********************************************/
 void mousePressed() {
-  m = true;
-  physics.removeBehavior(mouseAttractor);
+  m == true ? m = false : m = true;
+  //physics.removeBehavior(mouseAttractor);
 }
 
-void mouseDragged() { 
-  //mousePos.set(mouseX, mouseY);
+void keyPressed() {
+  m == true ? m = false : m = true;
+  //physics.removeBehavior(mouseAttractor);
 }
 
-void mouseReleased() { 
-  m = false;
-  mouseAttractor = new AttractionBehavior(mousePos, 540, 50);
-  physics.addBehavior(mouseAttractor);
-}
+
 /********************************************/
 /********************************************/
 /********************************************/
