@@ -307,8 +307,27 @@ footer {
     padding-top: 0;
     font-size: 1em;
   }
+
+  .splash-inner div h1,
+  .splash-inner div h2 {
+    width: 90%;
+    margin: 0 auto;
+    font-size: 0.8em;
+  }
+
   .event-container {
     width: 100%;
+    position: relative;
+    height: 350px;
+  }
+  .event-inner {
+    top: 58px;
+    width: 100%;
+  }
+  .hide1,
+  .hide2 {
+    top: 0;
+    opacity: 1;
   }
   .stuck {
     position: static;
@@ -351,7 +370,13 @@ footer {
   #blogrow>div,
   #blogrow>div:nth-of-type(2) {
     width: 100%;
-    height: auto;
+    height: 300px;
+  }
+  #blogrow .desc {
+    position: relative;
+    right: auto;
+    font-size: 0.8em;
+    width: auto;
   }
   #blogrow h1 {
     margin: 0;
