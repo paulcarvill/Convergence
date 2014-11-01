@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  mount Ckeditor::Engine => '/ckeditor'
   resources :blogs
 
   resources :categories
@@ -23,7 +24,7 @@ Rails.application.routes.draw do
   root 'pages#index'
   get 'about' => 'pages#about'
   get 'locations' => 'pages#map'
-
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
