@@ -52,22 +52,44 @@ body {
 	-ms-transition: opacity 2s;
 	-o-transition: opacity 2s;
 	transition: opacity 2s;
-	/*-webkit-animation: mymove 12s infinite;
-	animation: mymove 12s infinite;*/
+  
+  background-position: 50% 50%;
+  background-size: cover;
+  z-index: -1
 }
 
-.splash>div {
-  width: 55%;
-  margin: 0 auto;
+.splash-inner {
+
+}
+
+.splash-inner {
+  display: table;
+  height: 100%;
+  width:100%;
+}
+
+.splash-inner div {
+  display: table-cell;
+  vertical-align: middle;
   text-align: center;
+  color: #ededed;
   font-size: 2em;
   line-height: 2em;
-  color: #ededed;
-  height: 100%;
-  padding-top: 300px;
+}
+
+.splash-inner div h1,
+.splash-inner div h2 {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.splash-inner h2 {
+  font-size: 1em;
+  line-height: 1.3em;
 }
 
   /* Chrome, Safari, Opera */ 
+}
 @-webkit-keyframes mymove {
     0%   {transform:scale(1,1)}
     50%  {transform:scale(1.1,1.1)}
@@ -128,6 +150,69 @@ body {
   /*transition: width 0.2s;*/
   background-size: cover;
   background-position: 50% 50%;
+}
+
+.event-overlay {
+  position: relative;
+  height: 500px;
+  opacity: 0;
+}
+
+.event-container:hover .event-overlay {
+  background: linear-gradient(rgba(21, 151, 226, 0.6), rgba(231, 0, 146, 0.6));
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+.hide1 {
+  opacity: 0;
+  position: relative;
+  top: 40px;
+}
+
+.hide2 {
+  opacity: 0;
+  position: relative;
+  top: 10px;
+}
+
+.event-container:hover .hide2 {
+  opacity: 1;
+  transition: opacity 3s;
+  top: 0;
+  transition: opacity 1s, top 0.5s;
+}
+
+.event-container:hover .hide1 {
+  opacity: 1;
+  top: 0;
+  transition: opacity 1.5s, top 0.75s;
+}
+
+.event-inner {
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  width: 20%;
+  padding: 0 30px;
+  height: 232px;
+}
+
+.event-inner p {
+  padding: 0;
+  line-height: 2.5em;
+}
+
+.event-inner p:nth-of-type(4) {
+  font-size: 2em;
+  line-height: 1.35em;
+}
+
+.event-inner p:last-of-type {
+  position: absolute;
+  bottom: 24px;
+  font-size: 0.9em;
+  text-transform: uppercase;
 }
 
 #blogrow>div {
