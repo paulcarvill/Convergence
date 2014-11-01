@@ -18,6 +18,7 @@ html, body, p, div, h1, h2, h3, nav, ul, li, a {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+  color: #444;
 }
 
 html {
@@ -52,7 +53,6 @@ body {
 	-ms-transition: opacity 2s;
 	-o-transition: opacity 2s;
 	transition: opacity 2s;
-  
   background-position: 50% 50%;
   background-size: cover;
   z-index: -1
@@ -75,6 +75,10 @@ body {
   color: #ededed;
   font-size: 2em;
   line-height: 2em;
+}
+
+h1, h2 {
+  color: #fff;
 }
 
 .splash-inner div h1,
@@ -140,6 +144,11 @@ body {
   	transition: width 0.7s;*/
   }
 
+.events a,
+.events p,
+footer a {
+  color: #fff;
+}
 
 .event-container {
   width:20%;
@@ -236,15 +245,22 @@ body {
   float: right;
 }
 
-#blogrow h1 {
+#blogrow h3 {
   font-size: 4em;
-  line-height: 1em;
-  margin: 1em 1em 0.5em 1em;
+  line-height: 1.5em;
+  margin: 0.8em 1em 0.5em 1em;
 }
 
 #blogrow p {
   display: block;
   text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+#blogrow p.cat {
+  margin-top: 5em;
+  margin-bottom: 0.5em;
 }
 
 #blogrow .desc {
@@ -260,19 +276,39 @@ body {
   height: 300px;
 }
 
+#mailinglistrow button {
+  width: 64px;
+  height: 64px;
+  background: url(/assets/submit.gif);
+  border: 0;
+  padding: 0;
+  margin: 0;
+  vertical-align: top;
+}
+
 #mailinglistrow input {
   width: 33%;
   height: 1em;
-  padding: 1em;
+  padding: 1.2em 0 1.1em 1em;
   color: #666;
   font-size: 1.5em;
+  border: 0;
 }
 
-footer {
+footer.row {
   background: #444;
   height: 200px;
   color: #aaa;
 }
+
+
+
+
+
+
+
+
+
 
 @media screen and (max-width: 1024px) { 
   .row {
@@ -283,11 +319,29 @@ footer {
   }
 }
 
+
+
+
+
+
+
+
+
+
 @media screen and (max-width: 615px) { 
   .event-container {
     width: 50%;
   }
 }
+
+
+
+
+
+
+
+
+
 
 @media screen and (max-width: 320px) { 
   .splash {
@@ -377,13 +431,11 @@ footer {
     right: auto;
     font-size: 0.8em;
     width: auto;
+    margin: 0;
   }
   #blogrow h1 {
     margin: 0;
     font-size: 24px;
-  }
-  #blogrow .desc {
-    margin: 0;
   }
   #videorow,
   #videorow iframe {
@@ -399,4 +451,9 @@ footer {
   footer {
     height: auto;
   }
+}
+
+.sc-scrubber .sc-played {
+    background: red !important;
+    opacity: 1;
 }

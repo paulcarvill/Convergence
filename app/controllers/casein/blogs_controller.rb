@@ -59,7 +59,7 @@ module Casein
     private
       
       def blog_params
-        params.require(:blog).permit(:title, :body)
+        params.require(:blog).permit(:title, :body, :category_id)
       end
 
   end

@@ -1,3 +1,6 @@
+<script>
+  stopDrawing = false;
+</script>
 <script type="application/processing">
 
  var  VerletPhysics2D = toxi.physics2d.VerletPhysics2D,
@@ -31,6 +34,7 @@ Boolean m;
 
 
 
+/* @pjs pauseOnBlur="true"; */
 
 /********************************************/
 /*        SETUP                              *
@@ -40,6 +44,8 @@ void setup() {
   if (Modernizr.touch) {   
     return false;
   }  
+
+  background(0,0,0,0);
 
   size(window.innerWidth, window.innerHeight);
   physics = new VerletPhysics2D();
@@ -103,21 +109,14 @@ void setup() {
 
 
 
-void addParticle() {
- // Vec2D randLoc = Vec2D.randomVector().scale(5).addSelf(width / 2, 0);
- //  VerletParticle2D p = new VerletParticle2D(randLoc);
- //  physics.addParticle(p); 
-  //physics.addBehavior(new AttractionBehavior(p, 20, -1.2, 0.01));
-}
-
-
-
-
 
 /********************************************/
 /*        DRAW                               *
 *********************************************/
 void draw() {
+
+  if(stopDrawing == false){
+
   background(0,0,0,0);
   noStroke();
   mousePos.set(mouseX, mouseY);
@@ -150,6 +149,7 @@ void draw() {
       //}
       /****** ************ ******/
     }
+  }
 }
 /********************************************/
 /********************************************/
@@ -183,4 +183,4 @@ void keyPressed() {
 
 </script>
 
-<canvas id="myCanvas" style="position: fixed; left:0; right: 0; top: 0; bottom: 0; z-index: 1"></canvas>
+<canvas style="position: fixed; left:0; right: 0; top: 0; bottom: 0; z-index: 1"></canvas>

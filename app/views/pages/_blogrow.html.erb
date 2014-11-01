@@ -1,9 +1,11 @@
 <!-- BLOG ROW -->
 <div id="blogrow" class="row">
   <div>
-    <p><% if @blog.category %><%= @blog.category.name %><% end %></p>
+    <p class="cat"><% if @blog.category %>
+      <img src="<%= asset_path "#{@blog.category.name.downcase}.gif" %>" alt="<%= @blog.category.name %>"/>
+    <% end %></p>
     <p><%= @blog.created_at.strftime("%d %^b") %> | @Ben_Watt</p>
-    <h1>Looking back it was like the Bee Gees or something</h1>
+    <h3><%= @blog.title %></h3>
     <p class="desc"><%= truncate(@blog.body, length: 300) %></p>
   </div>
   <div>

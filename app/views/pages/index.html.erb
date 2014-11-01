@@ -12,11 +12,16 @@
 
 <%= render "footer" %>
 
-<script type="text/javascript">
-$(document).ready(function() {
-  $('nav').waypoint('sticky');
-});
-</script>
-
 <%= render "interactive" %>
 
+<script type="text/javascript">
+
+$(document).ready(function() {
+  $('nav').waypoint('sticky', {
+    handler: function(dir) {
+        stopDrawing = (dir == "down" ? true : false);
+    }
+  })
+ });
+
+</script>
