@@ -280,15 +280,7 @@ footer a {
   height: 300px;
 }
 
-#mailinglistrow button {
-  width: 64px;
-  height: 64px;
-  background: asset-url('submit.gif', image);
-  border: 0;
-  padding: 0;
-  margin: 0;
-  vertical-align: top;
-}
+
 
 #mailinglistrow input {
   width: 33%;
