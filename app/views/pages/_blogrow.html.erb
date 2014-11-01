@@ -6,7 +6,7 @@
     <% end %></p>
     <p><%= @blog.created_at.strftime("%d %^b") %> | @Ben_Watt</p>
     <h3><%= @blog.title %></h3>
-    <p class="desc"><%= truncate(@blog.body, length: 300) %></p>
+    <p class="desc"><%= truncate(@blog.body, length: 300) %> <a style="text-transform:uppercase" href="/blogs/<%= @blog.id %>" />read more</a></p>
   </div>
   <div>
     <%= image_tag "8.jpg" %>

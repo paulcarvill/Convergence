@@ -21,6 +21,10 @@ html, body, p, div, h1, h2, h3, nav, ul, li, a {
   color: #444;
 }
 
+nav a {
+   text-decoration: none
+}
+
 html {
 	overflow-y: scroll;
 }

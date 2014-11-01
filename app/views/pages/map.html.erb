@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style type="text/css">
+      html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
+    </style>
+
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC13-_qtL6-tYNJIu_ofEOTT8OeC3q7Uk8">
+    </script>
+
+    <script type="text/javascript">
+
+    var styles = [
+      {
+        "stylers": [
+          { "saturation": -100 }
+        ]
+      }
+    ]
+
+    var styledMap = new google.maps.StyledMapType(styles, {name: "Styled Map"});
+
+
+
+    function initialize() {
+      var mapOptions = {
+        center: { lat: 51.523555, lng: -0.078709},
+        zoom: 15
+      };
+      var map = new google.maps.Map(document.getElementById('map-canvas'),
+          mapOptions);
+
+
+      var bounds = new google.maps.LatLngBounds();
+
+      map.mapTypes.set('map_style', styledMap);
+      map.setMapTypeId('map_style');
+
+      var myLatlng = new google.maps.LatLng( 51.523555, -0.078709);
+      var marker = new google.maps.Marker({
+          position: myLatlng,
+          map: map,
+          title:"Village Underground"
+      });
+      bounds.extend(marker.position);
+
+      var myLatlng = new google.maps.LatLng(51.519092 , -0.094079);
+      var marker = new google.maps.Marker({
+          position: myLatlng,
+          map: map,
+          title:"Barbican"
+      });
+      bounds.extend(marker.position);
+
+      var myLatlng = new google.maps.LatLng(51.549044 , -0.053231);
+      var marker = new google.maps.Marker({
+          position: myLatlng,
+          map: map,
+          title:"St John-at-Hackney"
+      });
+      bounds.extend(marker.position);
+
+      map.fitBounds(bounds);
+    }
+    
+    google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
+  </head>
+
+
+  <body>
+    <div id="map-canvas"></div>
+  </body>
+
+</html>

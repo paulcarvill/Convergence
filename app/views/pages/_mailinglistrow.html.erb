@@ -37,8 +37,8 @@ SC.get("/tracks/174550060", function(track){
 
   var streamOptions = waveform.optionsForSyncedStream();
   SC.stream(track.uri, streamOptions, function(stream){
-    window.exampleStream = stream;
-    window.exampleStream.play();
+    //window.exampleStream = stream;
+    //window.exampleStream.play();
   });
 
 });

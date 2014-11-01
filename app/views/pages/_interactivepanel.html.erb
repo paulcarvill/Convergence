@@ -12,8 +12,6 @@
   splashShift.style.height = cvgHeight + 'px';
 </script>
 
-<%= render "nav" %>
-
 <% @events.each_with_index do |event, i| %>
   <div class="splash" style="background-image: url(<%=eventImage(event)%>);">
     <div class="splash-inner">
