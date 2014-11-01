@@ -1,6 +1,6 @@
 <h1>Listing events</h1>
 
-<!--
+
 <table>
   <thead>
     <tr>
@@ -11,37 +11,23 @@
       <th>All day?</th>
       <th>Price</th>
       <th>Tickets</th>
-      <th>Tickets</th>
-      <th>Tickets</th>
-      <th>Tickets</th>
-      <th>Tickets</th>
     </tr>
   </thead>
 
   <tbody>
     <% @events.each do |event| %>
       <tr>
-        <td><%= event.name %></td>
+        <td><%= link_to event.name, event %></td>
         <td><%= event.venue %></td>
         <td><%= event.start_at %></td>
         <td><%= event.end_at %></td>
         <td><%= event.all_day %></td>
         <td><%= event.price %></td>
-
         <td><%= event.ticket_one_name %>, <%= event.ticket_one_url %></td>
-
-        <td><%= event.ticket_two_name %>, <%= event.ticket_two_url %></td>
-
-        <td><%= event.ticket_three_name %>, <%= event.ticket_three_url %></td>
-
-        <td><%= event.ticket_four_name %>, <%= event.ticket_four_url %></td>
-
-        <td><%= event.ticket_five_name %>, <%= event.ticket_five_url %></td>
-
       </tr>
     <% end %>
   </tbody>
-</table>-->
+</table>
 
 <script>
   var myEvents = [];

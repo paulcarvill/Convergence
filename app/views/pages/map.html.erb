@@ -37,31 +37,44 @@
       map.mapTypes.set('map_style', styledMap);
       map.setMapTypeId('map_style');
 
-      var myLatlng = new google.maps.LatLng( 51.523555, -0.078709);
-      var marker = new google.maps.Marker({
-          position: myLatlng,
+      var myLatlng1 = new google.maps.LatLng( 51.523555, -0.078709);
+      var marker1 = new google.maps.Marker({
+          position: myLatlng1,
           map: map,
           title:"Village Underground"
       });
-      bounds.extend(marker.position);
+      bounds.extend(marker1.position);
 
-      var myLatlng = new google.maps.LatLng(51.519092 , -0.094079);
-      var marker = new google.maps.Marker({
-          position: myLatlng,
+      var myLatlng2 = new google.maps.LatLng(51.519092 , -0.094079);
+      var marker2 = new google.maps.Marker({
+          position: myLatlng2,
           map: map,
           title:"Barbican"
       });
-      bounds.extend(marker.position);
+      bounds.extend(marker2.position);
 
-      var myLatlng = new google.maps.LatLng(51.549044 , -0.053231);
-      var marker = new google.maps.Marker({
-          position: myLatlng,
+      var myLatlng3 = new google.maps.LatLng(51.549044 , -0.053231);
+      var marker3 = new google.maps.Marker({
+          position: myLatlng3,
           map: map,
           title:"St John-at-Hackney"
       });
-      bounds.extend(marker.position);
+      bounds.extend(marker3.position);
 
       map.fitBounds(bounds);
+
+
+      // var flightPlanCoordinates = [myLatlng1, myLatlng2, myLatlng3, myLatlng1];
+      // var flightPath = new google.maps.Polyline({
+      //   path: flightPlanCoordinates,
+      //   geodesic: true,
+      //   strokeColor: '#FF0000',
+      //   strokeOpacity: 1.0,
+      //   strokeWeight: 2,
+      //   map: map
+      // });
+
+      
     }
     
     google.maps.event.addDomListener(window, 'load', initialize);
