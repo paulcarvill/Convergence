@@ -8,7 +8,7 @@
 
 <%= render "videorow" %>
 
-<% render "interactive" %>
+<%= render "interactive" %>
 
 <script type="text/javascript">
 
@@ -16,6 +16,11 @@ $(document).ready(function() {
   $('nav').waypoint('sticky', {
     handler: function(dir) {
         stopDrawing = (dir == "down" ? true : false);
+        if(dir =="down") {
+        	$('canvas').first().css('display', 'none');
+        } else {
+			$('canvas').first().css('display', 'block');
+        }
     }
   })
  });
