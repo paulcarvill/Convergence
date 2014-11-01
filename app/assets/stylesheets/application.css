@@ -242,8 +242,18 @@ body {
   margin: 1em 1em 0.5em 1em;
 }
 
+#blogrow p {
+  display: block;
+  text-align: center;
+}
+
 #blogrow .desc {
-  margin-left: 50%;
+  position: absolute;
+  bottom: 0;
+  right: 52%;
+  width: 30%;
+  height: 200px;
+  text-align: right;
 }
 
 #mailinglistrow {
