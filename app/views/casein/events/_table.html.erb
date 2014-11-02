@@ -4,7 +4,7 @@
 	<thead>
 		<tr>
 			<th><%= casein_sort_link "Name", :name %></th>
-			<th><%= casein_sort_link "Venue", :venue %></th>
+			<th><%= casein_sort_link "Venue", :venue_id %></th>
 			<th><%= casein_sort_link "Start time", :start_at %></th>
 			<th><%= casein_sort_link "End time", :end_at %></th>
 			<th><%= casein_sort_link "Price", :price %></th>
@@ -19,7 +19,7 @@
 
 		<tr>
 			<td><%= casein_table_cell_link event.name, casein_event_path(event) %></td>
-			<td><%= casein_table_cell_link event.venue, casein_event_path(event) %></td>
+			<td><%= casein_table_cell_link event.venue.name, casein_event_path(event) %></td>
 			<td><%= casein_table_cell_link event.start_at, casein_event_path(event) %></td>
 			<td><%= casein_table_cell_link event.end_at, casein_event_path(event) %></td>
 			<td><%= casein_table_cell_link event.price, casein_event_path(event) %></td>

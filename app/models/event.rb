@@ -4,6 +4,8 @@ class Event < ActiveRecord::Base
   
   belongs_to :category
 
+  belongs_to :venue
+
     validates_attachment_content_type :img1, :content_type => ["image/jpeg", "image/jpg", "image/gif", "image/png"]
 
     def hasImage

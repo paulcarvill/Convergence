@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141101192523) do
+ActiveRecord::Schema.define(version: 20141102152534) do
 
   create_table "blogs", force: true do |t|
     t.string   "title"
@@ -67,14 +67,15 @@ ActiveRecord::Schema.define(version: 20141101192523) do
 
   create_table "events", force: true do |t|
     t.string   "name"
-    t.string   "venue"
+    t.integer  "venue_id"
     t.string   "details"
     t.datetime "start_at"
     t.datetime "end_at"
-    t.boolean  "all_day"
+    t.boolean  "all_day",           default: false, null: false
     t.integer  "price"
     t.boolean  "featured",          default: false, null: false
     t.string   "promoter"
+    t.boolean  "sold_out",          default: false, null: false
     t.string   "ticket_one_name"
     t.string   "ticket_one_url"
     t.string   "ticket_two_name"
@@ -96,6 +97,14 @@ ActiveRecord::Schema.define(version: 20141101192523) do
   end
 
   create_table "pages", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "venues", force: true do |t|
+    t.string   "name"
+    t.string   "location"
+    t.text     "details"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

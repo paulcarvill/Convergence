@@ -2,14 +2,15 @@ class CreateEvents < ActiveRecord::Migration
   def change
     create_table :events do |t|
       t.string :name
-      t.string :venue
+      t.integer :venue_id
       t.string :details
       t.datetime :start_at
       t.datetime :end_at 
-      t.boolean :all_day
+      t.boolean :all_day, :default => false, :null => false
       t.integer :price
       t.boolean :featured, :default => false, :null => false
       t.string :promoter
+      t.boolean :sold_out, :default => false, :null => false
       
       t.string :ticket_one_name
       t.string :ticket_one_url

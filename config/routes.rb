@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :venues
+
   mount Ckeditor::Engine => '/ckeditor'
   resources :blogs
 
@@ -9,6 +11,7 @@ Rails.application.routes.draw do
 
 	#Casein routes
 	namespace :casein do
+		resources :venues
 		resources :blogs
 		resources :categories
 		resources :events
