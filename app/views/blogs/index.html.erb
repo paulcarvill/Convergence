@@ -1,7 +1,16 @@
-<h1>Listing blogs</h1>
+<div id="container">
       
-    <% @blogs.each do |blog| %>
-      <h1><%= link_to blog.title, blog %></h1>
-      <p><%= blog.body.html_safe %></p>
-      <p><% if blog.category %><%= blog.category.name %><% end %></p>
-    <% end %>
+	<% @blogs.each do |blog| %>
+	<div class="heading">
+		<h1><%= link_to blog.title, blog %></h1>
+	</div>
+
+	<div class="content">
+	<img src="#" style="width: 65px; height: 65px; position: absolute; left: -33px; top: -33px; background-color: #444" />
+	<div>
+		<%= blog.body.html_safe %>
+	</div>
+	</div>
+	<% end %>
+
+</div>

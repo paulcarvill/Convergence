@@ -97,6 +97,8 @@ ActiveRecord::Schema.define(version: 20141102152534) do
   end
 
   create_table "pages", force: true do |t|
+    t.string   "title"
+    t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

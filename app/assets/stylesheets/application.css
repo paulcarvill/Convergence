@@ -14,11 +14,29 @@
  *= require_self
  */
 
+html, body {
+  background-color: #e8e8e8;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
 html, body, p, div, h1, h2, h3, nav, ul, li, a {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
   color: #444;
+}
+
+body {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+h1 a,
+h2 a,
+h3 a {
+  text-decoration: none;
 }
 
 nav a {
@@ -81,7 +99,8 @@ body {
   line-height: 2em;
 }
 
-h1, h2 {
+.index h1,
+.index h2 {
   color: #fff;
 }
 
@@ -109,10 +128,37 @@ h1, h2 {
     100% {transform:scale(1,1)}
 }
   nav {
-  	height: 80px;
+  	height: 96px;
   	background: #e8e8e8;
-  	text-align: center;
-  	padding-top: 30px;
+  	text-align: left;
+  }
+
+  nav div {
+    height: 58px;
+    border-bottom: 1px solid #cacccb;
+    padding-top: 22px;
+    margin-left: 96px;
+    padding-left: 30px;
+  }
+
+  nav .logo {
+    width: 96px;
+    height: 96px;
+    margin: 0;
+    display: block;
+    float: left;
+  }
+
+  nav .logo img {
+    width: 96px;
+    height: 96px;
+  }
+
+  nav p {
+    margin-left: 96px;
+    height: 38px;
+    text-align: right;
+    border-bottom: 1px solid #cacccb;
   }
 
   .sticky-wrapper {
@@ -126,6 +172,7 @@ h1, h2 {
     box-shadow:0 2px 4px rgba(0, 0, 0, .3);
     width: 100%;
     z-index: 5;
+    max-width: 1280px;
   }
 
   p {

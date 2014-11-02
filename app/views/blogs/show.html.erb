@@ -1,11 +1,16 @@
-<p id="notice"><%= notice %></p>
+<div id="container">
+      
+	<div class="heading">
+		<h1><%= link_to @blog.title, @blog %></h1>
+	</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @blog.title %>
-</p>
+	<div class="content">
+	<img src="#" style="width: 65px; height: 65px; position: absolute; left: -33px; top: -33px; background-color: #444" />
+	<div>
+		<%= @blog.body.html_safe %>
+	</div>
+	</div>
 
-<p>
-  <strong>Body:</strong>
-  <%= @blog.body.html_safe %>
-</p>
+	
+	
+</div>

@@ -6,4 +6,8 @@ class PagesController < ApplicationController
     @moreEvents = Event.where(featured: false).limit(5)
     @blog = Blog.first
   end
+
+  def about
+  	@about = Page.find(1)
+  end
 end

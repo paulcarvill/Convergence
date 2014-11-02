@@ -1,98 +1,21 @@
-<h1>Listing events</h1>
+<div id="container">
+      
+  <% @events.each do |event| %>
+  <div class="heading">
+    <h1><%= link_to event.name, event %></h1>
+  </div>
 
-<h2><a href="#calendar">switch to calendar view</a></h2>
+  <div class="content">
+    <img src="#" style="width: 65px; height: 65px; position: absolute; left: -33px; top: -33px; background-color: #444" />
+    <div>
+      <p><%= event.venue.name %></p>
+      <p><%= event.start_at %></p>
+      <p><%= event.end_at %></p>
+      <p>all day: <%= event.all_day %></p>
+      <p>£<%= event.price %></p>
+    </div>
+  </div>
 
-<br/><hr/></br/>
-<!-- <table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Venue</th>
-      <th>End time</th>
-      <th>Start time</th>
-      <th>All day?</th>
-      <th>Price</th>
-      <th>Tickets</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @events.each do |event| %>
-      <tr>
-        <td><%= link_to event.name, event %></td>
-        <td><%= event.venue %></td>
-        <td><%= event.start_at %></td>
-        <td><%= event.end_at %></td>
-        <td><%= event.all_day %></td>
-        <td><%= event.price %></td>
-        <td><%= event.ticket_one_name %>, <%= event.ticket_one_url %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table> -->
-<style>
-  p {
-    margin: 0;
-    padding: 0;
-  }
-</style>
-
-<% @events.each do |event| %>
-        <h3><%= link_to event.name, event %></h3>
-        <p><%= event.venue %></p>
-        <p><%= event.start_at %></p>
-        <p><%= event.end_at %></p>
-        <p>all day: <%= event.all_day %></p>
-        <p>£<%= event.price %></p>
-        <p><%= event.ticket_one_name %>, <%= event.ticket_one_url %></p>
-        <br /><br /><br />
-    <% end %>
-
-
-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-
-
-<script>
-  var myEvents = [];
-
-   <% @events.each do |event| %>
-    var event = {
-       id          : '<%= event.id %>',
-       title       : '<%= event.name %>',
-       start       : "<%= event.start_at %>",
-       end         : "<%= event.end_at %>",
-       allDay      : <%= event.all_day %>,
-       editable    : false
-      };
-      myEvents.push(event);
-    <% end %>
-
-</script>
-
-<div id="calendar"></div>
-
-<script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.1.1/fullcalendar.min.js"></script>
-<link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.1.1/fullcalendar.min.css" media="all" rel="stylesheet" />
-<link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.1.1/fullcalendar.print.css" media="all" rel="stylesheet" />
-
-<script>
-$(document).ready(function() {
-
-    // page is now ready, initialize the calendar...
-
-    $('#calendar').fullCalendar({
-        /*defaultDate : new Date('23 march 2015'),*/
-        events: myEvents
-        /* defaultView : 'basicWeek',*/
-        /* dayRender: function(date, cell){
-        if (date > new Date('30 march 2015')){
-            console.log($(cell));
-            $(cell).addClass('disabled');
-        } else {
-          console.log('nope');
-        }
-      }*/
-    })
-
-});
-</script>
+  <% end %>
+  
+</div>

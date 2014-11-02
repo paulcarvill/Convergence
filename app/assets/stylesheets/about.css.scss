@@ -1,0 +1,40 @@
+#container {
+	border-left: 1px solid #cacccb;
+	margin-left: 96px;
+}
+
+#container .heading {
+	border-bottom: 1px solid #cacccb;
+	margin-right: 96px;
+}
+
+
+.events-show h1,
+.events-index h1,
+.blogs-show h1,
+.blogs-index h1,
+.pages-about h1 {
+	font-size: 4em;
+	padding: 1em 1em 0 1em;
+	width: 65%;
+	line-height: 1.5em;
+	padding-bottom: 25px;
+}
+
+.events-show .content,
+.events-index .content,
+.blogs-show .content,
+.blogs-index .content,
+.pages-about .content {
+	position: relative;
+	padding-left: 100px;
+	padding-top: 25px
+}
+
+.events-show .content div,
+.events-index .content div,
+.blogs-show .content div,
+.blogs-index .content div,
+.pages-about .content div {
+	width: 400px;
+}
