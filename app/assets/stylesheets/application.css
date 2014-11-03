@@ -90,17 +90,14 @@ body {
   background-size: cover;
   z-index: -1
 }
-
-.splash-inner {
-
+.initialHide {
+  opacity: 0;
 }
-
 .splash-inner {
   display: table;
   height: 100%;
   width:100%;
 }
-
 .splash-inner div {
   display: table-cell;
   vertical-align: middle;
@@ -448,14 +445,15 @@ footer.row {
     padding-top: 0;
     font-size: 1em;
   }
-
   .splash-inner div h1,
   .splash-inner div h2 {
     width: 90%;
     margin: 0 auto;
     font-size: 0.8em;
   }
-
+  .initialHide {
+    opacity: 1;
+  }
   .event-container {
     width: 100%;
     position: relative;
