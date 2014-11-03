@@ -13,3 +13,19 @@
 //= require jquery
 //= require ckeditor/init
 //= require_tree .
+
+var SM = {};
+SM.revealed = false;
+
+$(function(){
+	$('nav').click(function(){
+	    if(SM.revealed) {
+	        $('nav').toggleClass('open');
+	        SM.revealed = false;
+	    } else {
+	        $('nav').toggleClass('open');
+	        SM.revealed = true;
+	    }
+	    console.log(SM.revealed);
+	})
+})

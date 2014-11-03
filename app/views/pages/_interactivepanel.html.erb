@@ -8,7 +8,7 @@
 </script>
 
 <% @events.each_with_index do |event, i| %>
-  <div class="splash" style="background-image: url(<%=eventImage(event)%>);">
+  <div class="splash" style="background-image: url(<%=eventImage(event)%>);<% if i > 0 %>opacity: 0;<% end %>">
     <div class="splash-inner">
       <div>
           <h1 style="line-height: 1.5em"><%= event.name %></h1>

@@ -74,9 +74,22 @@ void setup() {
   /******/
   // Set up color gradient for dots
   ColorGradient gradient = new toxi.color.ColorGradient();
-  gradient.addColorAt(0, toxi.color.NamedColor.PURPLE);
-  gradient.addColorAt(120, toxi.color.NamedColor.DEEPPINK);
-  gradient.addColorAt(255, toxi.color.NamedColor.DODGERBLUE);
+  
+  //gradient.addColorAt(0, toxi.color.TColor.newRGBA(26, 141, 228, 0.5));
+  //gradient.addColorAt(255, toxi.color.TColor.newRGBA(231, 0, 146, 0.5));
+
+  TColor aa = toxi.color.NamedColor.PURPLE;
+  aa.setAlpha(0.8);
+  gradient.addColorAt(0, aa);
+
+  TColor bb = toxi.color.NamedColor.DEEPPINK;
+  bb.setAlpha(0.6);
+  gradient.addColorAt(100, bb);
+
+  TColor cc = toxi.color.NamedColor.DODGERBLUE;
+  cc.setAlpha(0.5);
+  gradient.addColorAt(255, cc);
+
   // now create a ToneMap instance using this gradient
   toneMap = new toxi.color.ToneMap(0, width/2, gradient);
   /******/

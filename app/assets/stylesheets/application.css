@@ -23,6 +23,7 @@ html, body {
 
 body {
   background-color: #e8e8e8;
+  position: relative;
 }
 
 html, body, p, div, h1, h2, h3, nav, ul, li, a {
@@ -44,7 +45,13 @@ h3 a {
 }
 
 nav a {
-   text-decoration: none
+   text-decoration: none;
+}
+
+nav span:nth-of-type(2) {
+  height: 10px;
+  background: linear-gradient(90deg, #2aa9ea, #e90190);
+  display: block;
 }
 
 html {
@@ -132,7 +139,7 @@ body {
     100% {transform:scale(1,1)}
 }
   nav {
-  	height: 96px;
+  	height: 106px;
   	background: #e8e8e8;
   	text-align: left;
   }
@@ -165,6 +172,10 @@ body {
     border-bottom: 1px solid #cacccb;
   }
 
+  .icon {
+    display: none;
+  }
+  
   .sticky-wrapper {
     position: relative;
     z-index: 5;
@@ -348,6 +359,17 @@ footer.row {
   color: #aaa;
 }
 
+#container .content img {
+  width: 65px;
+  height: 65px;
+  position: absolute;
+  left: -33px;
+  top: -33px;
+  background-color: #444
+}
+
+
+
 
 
 
@@ -363,7 +385,25 @@ footer.row {
   }
   .event-container {
     width: 33%;
+    display: table;
   }
+  .event-overlay {
+    display: none;
+  }
+  .event-inner {
+    position: static;
+    height: 500px;
+    width: 100%;
+    display: table-cell;
+    vertical-align: bottom;
+    padding-bottom: 30px;
+    word-break: break-word;
+  }
+
+  .event-inner p:last-of-type {
+    position: static;
+  }
+
 }
 
 
@@ -438,6 +478,25 @@ footer.row {
     height: auto;
     font-size: 16px;
   }
+  nav span {
+    display: none;
+  }
+  nav span.icon {
+    display: block;
+    height: 18px;
+    width: 23px;
+    float: right;
+    margin: 14px 10px 0 0;
+  }
+
+  nav .logo,
+  nav .logo img {
+    height: 44px;
+    width: 44px;
+  }
+  nav p {
+    border: 0;
+  }
   nav li,
   nav li a,
   footer li,
@@ -450,8 +509,14 @@ footer.row {
   footer li a {
     padding-top: 12px;
   }
-  nav li:nth-of-type(3) {
+  nav div {
     display: none;
+    background: #e8e8e8;
+    margin: 0;
+    height: auto;
+  }
+  nav.open div {
+    display: block;
   }
   #blogrow,
   #videorow {
@@ -480,8 +545,8 @@ footer.row {
     width: auto;
     margin: 0;
   }
-  #blogrow h1 {
-    margin: 0;
+  #blogrow h3 {
+    margin: 0 8px;
     font-size: 24px;
   }
   #videorow,
@@ -493,14 +558,45 @@ footer.row {
     padding-bottom: 2em;
   }
   #mailinglistrow input {
-    width: 80%;
+    width: 60%;
   }
   footer {
     height: auto;
   }
+  #container {
+    border: 0;
+    margin: 0;
+  }
+  #container h1 {
+    font-size: 2em;
+    padding-left: 0.5em;
+    width: auto;
+  }
+  #container .content {
+    padding-left: 1em;
+  }
+  #container .heading {
+    margin-right: 0;
+  }
+  #container .content img {
+    position: static;
+  }
 }
 
-.sc-scrubber .sc-played {
-    background: red !important;
-    opacity: 1;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
