@@ -1,15 +1,21 @@
 <!-- BLOG ROW -->
-<div id="blogrow" class="row">
-  <div>
-    <p class="cat"><% if @blog.category %>
-      <img src="<%= asset_path "#{@blog.category.name.downcase}.gif" %>" alt="<%= @blog.category.name %>"/>
-    <% end %></p>
-    <p><%= @blog.created_at.strftime("%d %^b") %> | @Ben_Watt</p>
-    <h3><%= @blog.title %></h3>
-    <p class="desc"><%= truncate(@blog.body, length: 300) %> <a style="text-transform:uppercase" href="/blogs/<%= @blog.id %>" />read more</a></p>
+<% @blogs.each do |blog| %>
+<div class="blogrow row <%= cycle('odd', 'even')%>">
+<div>
+  <div class="txt">
+    <p class="cat">
+      <% if blog.category %>
+        <img src="<%= asset_path "#{blog.category.name.downcase}.gif" %>" alt="<%= blog.category.name %>"/>
+      <% end %>
+    </p>
+    <p><%= blog.created_at.strftime("%d %^b") %> | @Ben_Watt</p>
+    <h3><%= blog.title %></h3>
+    <p class="desc"><%= truncate(blog.body, length: 300) %> <a style="text-transform:uppercase" href="/blogs/<%= blog.id %>" />read more</a></p>
   </div>
-  <div>
+  <div class="img">
     <%= image_tag "8.jpg" %>
   </div>
+ </div>
 </div>
+<% end %>
 <!-- END BLOG ROW -->

@@ -2,7 +2,9 @@
 
 <%= render "carouselscript" %>
 
+<% if !params['launch'] %>
 <%= render "eventsrow" %>
+<% end %>
 
 <%= render "blogrow" %>
 

@@ -286,15 +286,13 @@ footer a {
   text-transform: uppercase;
 }
 
-#blogrow>div {
+.blogrow div div:nth-of-type(2) {
   width: 50%;
-  float: left;
 }
 
-#blogrow {
+.blogrow {
   clear: left;
   float: left;
-  height: 600px;
 }
 
 #videorow {
@@ -303,36 +301,69 @@ footer a {
   height: 700px;
 }
 
-#blogrow>div:nth-of-type(2) {
-  width: 50%;
-  float: right;
+.blogrow {
+  width: 100%;
 }
 
-#blogrow h3 {
+.blogrow>div:nth-of-type(1) {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+
+.blogrow div div {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.blogrow img {
+  width: 100%;
+  vertical-align: bottom;
+}
+
+.blogrow.even .txt {
+  position: relative;
+  left: 50%;
+}
+
+.blogrow.even .img {
+  position: relative;
+  left: -50%;
+}
+
+.blogrow h3 {
   font-size: 4em;
   line-height: 1.5em;
-  margin: 0.8em 1em 0.5em 1em;
+  margin: 0.8em auto 0.5em auto;
+  text-align: center;
+
 }
 
-#blogrow p {
+.blogrow p {
   display: block;
   text-align: center;
   margin: 0;
   padding: 0;
 }
 
-#blogrow p.cat {
-  margin-top: 5em;
+.blogrow p.cat {
   margin-bottom: 0.5em;
+  text-align: center;
 }
 
-#blogrow .desc {
-  position: absolute;
-  bottom: 0;
-  right: 52%;
-  width: 30%;
-  height: 200px;
-  text-align: right;
+.cat img {
+  width: 50px;
+  height: 50px;
+}
+
+.blogrow .desc {
+  width: 70%;
+  text-align: left;
+  margin: 0 auto;
+}
+
+.blogrow.even .desc {
+  right: 2%;
 }
 
 .meta {
@@ -408,12 +439,38 @@ footer.row {
     position: static;
   }
 
+  .blogrow .cat {
+    display: none;
+  }
+
+  .blogrow h3 {
+    font-size: 2em;
+  }
+
 }
 
 
 
 
-
+@media screen and (max-width: 660px) { 
+  .blogrow div div {
+    display: block;
+  }
+  .txt {
+    width: 100%;
+  }
+  .blogrow div div:nth-of-type(2) {
+    width: 100%;
+    display: block;
+  }
+  .blogrow.even .txt,
+  .blogrow.even .img {
+    left: auto;
+  }
+  .txt {
+    padding: 20px 0;
+  }
+}
 
 
 
@@ -560,34 +617,34 @@ footer.row {
     position: static;
   }
   
-  #blogrow,
+  .blogrow,
   #videorow {
     clear: left;
     float: left;
     height: auto;
   }
-  #blogrow img {
+  .blogrow img {
     width: 100%;
   }
-  #blogrow>div h1,
-  #blogrow>div p,
+  .blogrow>div h1,
+  .blogrow>div p,
   footer {
     padding-left: 8px;
     padding-right: 8px;
   }
-  #blogrow>div,
-  #blogrow>div:nth-of-type(2) {
+  .blogrow>div,
+  .blogrow>div:nth-of-type(2) {
     width: 100%;
     height: 300px;
   }
-  #blogrow .desc {
+  .blogrow .desc {
     position: relative;
     right: auto;
     font-size: 0.8em;
     width: auto;
     margin: 0;
   }
-  #blogrow h3 {
+  .blogrow h3 {
     margin: 0 8px;
     font-size: 24px;
   }
