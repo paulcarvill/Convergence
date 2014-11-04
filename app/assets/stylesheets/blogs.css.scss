@@ -11,3 +11,33 @@
   margin: 0;
   vertical-align: top;
 }
+
+.buttoff {
+	padding: 1px;
+	background: linear-gradient(136deg, #e219e7, #1e7fe9);
+	display: inline-block;
+	margin-top: 1.5em;
+	width: 148px !important;
+	line-height: 1em;
+}
+button {
+	z-index: 999;
+	text-transform: uppercase;
+	border: 0;
+	color: #fff;
+	width: 148px;
+	height: 50px;
+	background: linear-gradient(136deg, #1e7fe9, #e219e7, #1e7fe9, #e219e7);
+	background-size: 400% 400%;
+	cursor: pointer;
+}
+
+@-webkit-keyframes AnimationName {
+	    0%{background-position:0% 7%}
+	    100%{background-position:100% 94%}
+	    
+	}
+
+button:hover {
+	-webkit-animation: AnimationName 4s linear infinite;
+}
