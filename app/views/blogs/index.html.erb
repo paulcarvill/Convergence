@@ -3,6 +3,7 @@
 	<% @blogs.each do |blog| %>
 	<div class="heading">
 		<h1><%= link_to blog.title, blog %></h1>
+		<p class="meta"><%= blog.created_at.strftime("%H:%m %^h %d") %></p>
 	</div>
 
 	<div class="content">

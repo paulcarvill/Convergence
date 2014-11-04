@@ -335,6 +335,13 @@ footer a {
   text-align: right;
 }
 
+.meta {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  
+}
+
 #mailinglistrow {
   height: 300px;
 }
@@ -416,6 +423,87 @@ footer.row {
   .event-container {
     width: 50%;
   }
+
+
+  /*********/
+  /* nav   */
+  /*********/
+  nav {
+    padding: 0;
+    height: auto;
+    font-size: 16px;
+  }
+  .pages-index nav {
+    height: 44px;
+  }
+  nav span:nth-of-type(2) {
+    display: none;
+  }
+  nav span.icon {
+    display: block;
+    height: 18px;
+    width: 23px;
+    float: right;
+    margin: 14px 10px 0 0;
+  }
+
+  nav .logo,
+  nav .logo img {
+    height: 44px;
+    width: 44px;
+  }
+  nav p {
+    border: 0;
+  }
+  nav li,
+  nav li a,
+  footer li,
+  footer li a {
+    display: block;
+    height: 44px;
+    margin: 0;
+  }
+  nav li a,
+  footer li a {
+    padding-top: 12px;
+  }
+  nav div {
+    display: none;
+    background: #e8e8e8;
+    margin: 0;
+    height: auto;
+    text-align: right;
+    padding: 0 0.5em 0 0;
+  }
+  nav.open div {
+    display: block;
+  }
+
+
+  #container {
+    border: 0;
+    margin: 0;
+  }
+  #container h1 {
+    font-size: 2em;
+    padding-left: 0.5em;
+    width: auto;
+  }
+  #container .content {
+    padding-left: 1em;
+  }
+  #container .heading {
+    margin-right: 0;
+  }
+  #container .content img {
+    position: static;
+  }
+
+
+  .meta {
+    padding: 0 0.5em 0 0;
+  }
+
 }
 
 
@@ -471,54 +559,7 @@ footer.row {
   .stuck {
     position: static;
   }
-  nav {
-    padding: 0;
-    height: auto;
-    font-size: 16px;
-  }
-  .pages-index nav {
-    height: 44px;
-  }
-  nav span:nth-of-type(2) {
-    display: none;
-  }
-  nav span.icon {
-    display: block;
-    height: 18px;
-    width: 23px;
-    float: right;
-    margin: 14px 10px 0 0;
-  }
-
-  nav .logo,
-  nav .logo img {
-    height: 44px;
-    width: 44px;
-  }
-  nav p {
-    border: 0;
-  }
-  nav li,
-  nav li a,
-  footer li,
-  footer li a {
-    display: block;
-    height: 44px;
-    margin: 0;
-  }
-  nav li a,
-  footer li a {
-    padding-top: 12px;
-  }
-  nav div {
-    display: none;
-    background: #e8e8e8;
-    margin: 0;
-    height: auto;
-  }
-  nav.open div {
-    display: block;
-  }
+  
   #blogrow,
   #videorow {
     clear: left;
@@ -550,6 +591,13 @@ footer.row {
     margin: 0 8px;
     font-size: 24px;
   }
+  #container h1 {
+    padding-bottom: 0;
+  }
+  .meta {
+    position: static;
+    padding: 0 1em;
+  }
   #videorow,
   #videorow iframe {
     height: 480px;
@@ -563,24 +611,6 @@ footer.row {
   }
   footer {
     height: auto;
-  }
-  #container {
-    border: 0;
-    margin: 0;
-  }
-  #container h1 {
-    font-size: 2em;
-    padding-left: 0.5em;
-    width: auto;
-  }
-  #container .content {
-    padding-left: 1em;
-  }
-  #container .heading {
-    margin-right: 0;
-  }
-  #container .content img {
-    position: static;
   }
 }
 
