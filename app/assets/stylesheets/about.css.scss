@@ -49,3 +49,17 @@
 		width: auto
 	}
 }
+
+@media screen and (max-width: 615px) { 
+	.events-show .content div,
+	.events-index .content div,
+	.blogs-show .content div,
+	.blogs-index .content div,
+	.pages-about .content div {
+	  width: auto;
+	}
+
+	.content {
+	padding-right: 1em
+	}
+}
