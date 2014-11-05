@@ -9,8 +9,9 @@
     <img src="<%= asset_path "" %>"/>
     <div>
       <p><%= event.venue.name %></p>
-      <p><%= event.start_at.strftime("%H:%m") %> - <%= event.end_at.strftime("%H:%m %^h %d") %></p>
+      <p><%= event.start_at.strftime("%H:%M %^h %d") %> - <%= event.end_at.strftime("%H:%M %^h %d") %></p>
       <% if event.all_day %><p>ALL DAY</p><% end %>
+      <% if event.description %><p><%= event.description.html_safe %></p><% end %>
       <p>£<%= event.price %></p>
       <%= render "pages/button" %>
     </div>

@@ -28,6 +28,28 @@ a = Category.create!({
     name: "Book"
 })
 
+dj = Category.create!({
+    id: 5,
+    name: "DJ Set"
+})
+
+inter = Category.create!({
+    id: 6,
+    name: "Interactive"
+})
+
+perf = Category.create!({
+    id: 7,
+    name: "Performance"
+})
+
+talk = Category.create!({
+    id: 8,
+    name: "Talks"
+})
+
+
+
 Blog.create!([
   {
     title: "How digital came together for Convergence",
@@ -251,8 +273,8 @@ Event.create!([
     name: "Bleep10",
     venue_id: 1,
     details: "Fuck Buttons + Mount Kimbie + Fennesz + DJ Raj Chaudhuri",
-    start_at: "2014-10-28 17:00:00",
-    end_at: "2014-10-28 18:00:00",
+    start_at: "2014-03-28 17:00:00",
+    end_at: "2014-03-28 18:00:00",
     all_day: false,
     price: 10,
     featured: true,
@@ -331,5 +353,66 @@ Event.create!([
     img1: File.open(Rails.root.join("db/seeds","7.jpg")),
     ticket_one_name: "Songkick",
     ticket_one_url: "http://www.songkick.com/vu/3"
+  },
+  {
+    name: "Denovali",
+    venue_id: 1,
+    details: "",
+    description: "The Germany based record label highlights strange, beguiling and compelling music. Their roster refuses to be pigeon-holed pulling in music that encompasses from drone, electronica and darker experimental sounds, to ambient music, piano jazz and string compositions. This line-up features Ulrich Schnauss (Live) with Nat Urazmetova, Anna von Hausswolff, The Haxan Cloak, Saffronkeira with trumpet legend Mario Massa, Porter Ricks, Witxes and John Lemke.",
+    start_at: "2014-04-18 16:00:00",
+    end_at: "2014-04-19 02:00:00",
+    all_day: false,
+    price: 28,
+    featured: false,
+    img1: File.open(Rails.root.join("db/seeds","1.jpg")),
+    ticket_one_name: "Songkick",
+    ticket_one_url: "http://aggregator.time.ly/ticket_redirect/eyJsIjoiaHR0cDpcL1wvZGVub3ZhbGkuY29tXC9zd2luZ2Zlc3RcL2xvbmRvblwvIiwiZSI6InMiLCJ2IjoiMS4xMC45LXN0YW5kYXJkIiwiaSI6ImQiLCJjIjoiIiwibyI6Imh0dHA6XC9cL3d3dy5jb252ZXJnZW5jZS1sb25kb24uY29tIn0=",
+    category_id: 1
+  },
+  {
+    name: "Digitalism, BeatauCue",
+    venue_id: 1,
+    details: "",
+    description: "This Kitsuné Convergence and Easter special features a special headline set from German duo Digitalism. Founded in 2004 in Hamburg, Digitalism is Jens “Jence” Moelle and İsmail “Isi” Tüfekçi. Jens likens Digitalism’s songs to simple chapters in a complex novel about social interaction and attraction, with distorted baselines and thumping rhythms comprising the punctuation. Digitalism has remixed tracks for Tom Vek, The Futureheads, Daft Punk, Tiga, Klaxons, White Stripes, Monk, Depeche Mode, Cut Copy and many others. Their tracks and remixes are played by DJs such as Erol Alkan, Soulwax, Boys Noize, and Justice, among others. Joining Digitalism will be BeatauCue, Punks Jump Up, Logo, Jerry Bouthier andTobtok",
+    start_at: "2014-04-19 21:30:00",
+    end_at: "2014-04-19 23:30:00",
+    all_day: false,
+    price: 28,
+    featured: false,
+    img1: File.open(Rails.root.join("db/seeds","1.jpg")),
+    ticket_one_name: "Songkick",
+    ticket_one_url: "http://aggregator.time.ly/ticket_redirect/eyJsIjoiaHR0cDpcL1wvZGVub3ZhbGkuY29tXC9zd2luZ2Zlc3RcL2xvbmRvblwvIiwiZSI6InMiLCJ2IjoiMS4xMC45LXN0YW5kYXJkIiwiaSI6ImQiLCJjIjoiIiwibyI6Imh0dHA6XC9cL3d3dy5jb252ZXJnZW5jZS1sb25kb24uY29tIn0=",
+    category_id: 6
+  },
+  {
+    name: "Mixcloud Curates 2.0",
+    venue_id: 1,
+    details: "* curated conversation; curated audience, curated music *",
+    description: "The second annual Mixcloud Curates event brings together over 200 leading players and pioneers from the music, tech, media and marketing industries for a day of discussion, analysis and connection.
+
+Speakers on the day include:
+
+Jo Vidler – Wilderness Festival
+Glenn Max – Creative Director, Village Underground
+Caspar Llewellyn Smith – Guardian
+Matt Dyke – Founder, AnalogFolk
+Matt Elek – Managing Director, VICE
+Marion Gamel – VP Marketing, EMEA, Eventbrite
+Ben Lawrence – Head of Brand Partnerships, Mixcloud
+
+Plenty more names for the event will be announced in the coming weeks. Stay tuned for more details.
+
+Delegates also receive free entry to Emergence, the Convergence launch party, immediately following Mixcloud Curates.",
+    start_at: "2014-04-22 21:30:00",
+    end_at: "2014-04-22 23:30:00",
+    all_day: true,
+    price: 0,
+    featured: false,
+    img1: File.open(Rails.root.join("db/seeds","1.jpg")),
+    ticket_one_name: "Songkick",
+    ticket_one_url: "http://aggregator.time.ly/ticket_redirect/eyJsIjoiaHR0cDpcL1wvZGVub3ZhbGkuY29tXC9zd2luZ2Zlc3RcL2xvbmRvblwvIiwiZSI6InMiLCJ2IjoiMS4xMC45LXN0YW5kYXJkIiwiaSI6ImQiLCJjIjoiIiwibyI6Imh0dHA6XC9cL3d3dy5jb252ZXJnZW5jZS1sb25kb24uY29tIn0=",
+    category_id: 6
   }
+
+  
 ])

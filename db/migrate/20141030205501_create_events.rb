@@ -4,6 +4,7 @@ class CreateEvents < ActiveRecord::Migration
       t.string :name
       t.integer :venue_id
       t.string :details
+      t.text :description
       t.datetime :start_at
       t.datetime :end_at 
       t.boolean :all_day, :default => false, :null => false

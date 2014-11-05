@@ -61,6 +61,8 @@ module Casein
       def event_params
         params.require(:event).permit(:name,
           :venue,
+          :description,
+          :details,
           :start_time,
           :end_time,
           :price,
