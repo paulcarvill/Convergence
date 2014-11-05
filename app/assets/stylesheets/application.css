@@ -455,13 +455,19 @@ footer.row {
   color: #aaa;
 }
 
-#container .content img {
+/* this is for the blog category image only */
+#container .content>img:nth-of-type(1) {
   width: 65px;
   height: 65px;
   position: absolute;
   left: -33px;
   top: -33px;
   background-color: #444
+}
+
+#container .content div img {
+  width: 100% !important;
+  height: auto !important;
 }
 
 
