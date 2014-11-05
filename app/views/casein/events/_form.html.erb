@@ -38,16 +38,16 @@
 
 <div class="row">
 	<div class="col-lg-6">
-		<%= casein_text_field f, f.object, :price %>
+		<%= casein_text_field f, f.object, :price, { :casein_label => "Price (£)"} %>
 	</div>
 	<div class="col-lg-6">
-		<%= casein_check_box f, f.object, :featured %>
+		<%= casein_check_box f, f.object, :featured, { :casein_label => "Featured on homepage?"}%>
 	</div>
 </div>
 
 <div class="row">
 	<div class="col-lg-6">
-		<%= casein_check_box f, f.object, :all_day %>
+		<%= casein_check_box f, f.object, :all_day, { :casein_label => "All-day event?"} %>
 	</div>
 	<div class="col-lg-6">
 		
@@ -56,7 +56,17 @@
 
 <div class="row">
 	<div class="col-lg-6">
-		<%= casein_file_field f, f.object, "event", :img1 , {} %>
+		<%= casein_file_field f, f.object, "event", :img1 , { :casein_label => "Event image (one image only)"}%>
+	</div>
+	<div class="col-lg-6">
+		<label class="control-label" for="event_img1">Currently loaded image:</label>
+		<%= if @event.img1 then image_tag(@event.img1, width: '300') else content_tag(:span, "No image yet") end %>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-lg-6">
+		<%= casein_select f, f.object, :venues, Venue.all, {multiple: true} %>
 	</div>
 </div>
 

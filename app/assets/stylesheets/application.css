@@ -465,8 +465,8 @@ footer.row {
   background-color: #444
 }
 
-#container .content div img,
-iframe {
+body:not(.pages-index) #container .content div img,
+body:not(.pages-index) iframe {
   width: 100% !important;
   height: auto !important;
 }

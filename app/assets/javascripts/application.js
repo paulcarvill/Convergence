@@ -13,6 +13,8 @@
 //= require jquery
 //= require ckeditor/init
 //= require_tree .
+//= stub toxiclibs.min
+//= stub processing
 
 var SM = {};
 SM.revealed = false;

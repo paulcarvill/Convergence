@@ -42,6 +42,7 @@ group :production do
 end
 
 gem "ckeditor"
+gem "html_truncator", "~>0.2"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

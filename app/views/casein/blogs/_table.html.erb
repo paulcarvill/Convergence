@@ -13,7 +13,7 @@
 	<% blogs.each do |blog| %>
 		<tr>
 			<td><%= casein_table_cell_link blog.title, casein_blog_path(blog) %></td>
-			<td><%= casein_table_cell_link blog.body, casein_blog_path(blog) %></td>
+			<td><%= link_to strip_tags(blog.body).html_safe, casein_blog_path(blog) %></td>
 			<td>
 				<% if blog.category %>
 				<%= casein_table_cell_link blog.category.name, casein_blog_path(blog) %>
