@@ -15,16 +15,22 @@
 <script type="text/javascript">
 
 $(document).ready(function() {
+  var b = $('body');
   $('nav').waypoint('sticky', {
     handler: function(dir) {
+        b.toggleClass('adjust');
         stopDrawing = (dir == "down" ? true : false);
         if(dir =="down") {
         	$('canvas').first().css('display', 'none');
         } else {
 			$('canvas').first().css('display', 'block');
         }
-    }
+    },
+    offset: 116
   })
+
+  
+
  });
 
 </script>

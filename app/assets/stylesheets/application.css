@@ -136,13 +136,22 @@ body {
 }
   nav {
   	height: 106px;
-  	background: #e8e8e8;
+    width: 100%;
+  	background: none;
   	text-align: left;
+    position: absolute;
+    bottom: 0px;
+    border-color: transparent;
+  }
+
+  nav a {
+    color: transparent;
   }
 
   nav div {
     height: 58px;
-    border-bottom: 1px solid #cacccb;
+    border-bottom: 1px solid;
+    border-color: transparent;
     padding-top: 22px;
     margin-left: 96px;
     padding-left: 30px;
@@ -165,7 +174,8 @@ body {
     margin-left: 96px;
     height: 38px;
     text-align: right;
-    border-bottom: 1px solid #cacccb;
+    border-bottom: 1px solid;
+    border-color: transparent;
   }
 
   .icon {
@@ -175,15 +185,42 @@ body {
   .sticky-wrapper {
     position: relative;
     z-index: 5;
+    margin-bottom: 0;
+  }
+  .adjust .sticky-wrapper {
+    margin-bottom: -116px;
+  }
+  .player {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+  .stuck .player {
+    position: static;
   }
 
   .stuck {
     position:fixed;
     top:0;
-    box-shadow:0 2px 4px rgba(0, 0, 0, .3);
+    /*box-shadow:0 2px 4px rgba(0, 0, 0, .3);*/
     width: 100%;
     z-index: 5;
     max-width: 1280px;
+    background-color: #e8e8e8;
+    transition: background-color 1.5s;
+    color: #444;
+    border-color: #aaa;
+  }
+
+  .stuck a {
+    color: #444;
+    transition: color 1s;
+  }
+
+  .stuck p,
+  .stuck div {
+    border-color: #cacccb;
+    transition: border-color 1s;
   }
 
   p {
