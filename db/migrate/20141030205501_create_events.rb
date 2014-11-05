@@ -2,7 +2,6 @@ class CreateEvents < ActiveRecord::Migration
   def change
     create_table :events do |t|
       t.string :name
-      t.integer :venue_id
       t.string :details
       t.text :description
       t.datetime :start_at
@@ -32,6 +31,7 @@ class CreateEvents < ActiveRecord::Migration
       t.text :img1_meta
 
       t.references :category
+      t.references :venue
 
       t.timestamps
     end

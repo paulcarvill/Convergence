@@ -6,6 +6,9 @@ class Event < ActiveRecord::Base
 
   belongs_to :venue
 
+  has_many :tickets
+  accepts_nested_attributes_for :tickets
+
     validates_attachment_content_type :img1, :content_type => ["image/jpeg", "image/jpg", "image/gif", "image/png"]
 
     def hasImage
