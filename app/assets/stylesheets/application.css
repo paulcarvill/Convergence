@@ -26,6 +26,10 @@ body {
   position: relative;
 }
 
+body:not(.pages-index) {
+  padding-top: 116px;
+}
+
 html, body, p, div, h1, h2, h3, nav, ul, li, a {
 	margin: 0;
 	padding: 0;
@@ -64,6 +68,10 @@ body {
 	overflow: hidden;
 }
 
+/*body:not(.pages-index) {
+  padding-top: 116px;
+}
+*/
 .row {
   background: #e8e8e8;
   float: left;
@@ -139,19 +147,37 @@ body {
     width: 100%;
   	background: none;
   	text-align: left;
-    position: absolute;
-    bottom: 0px;
+  }
+
+  .pages-index nav {
     border-color: transparent;
   }
 
-  nav a {
+  .pages-index nav a {
     color: transparent;
+  }
+
+  .pages-index.adjust nav a {
+    color: #444;
+  }
+
+  .pages-index nav p,
+  .pages-index nav div,
+  .pages-index nav div p {
+    border-color: transparent;
+  }
+
+  .pages-index.adjust nav p,
+  .pages-index.adjust nav div,
+  .pages-index.adjust nav div p {
+    border-color: #cacccb;
   }
 
   nav div {
     height: 58px;
-    border-bottom: 1px solid;
-    border-color: transparent;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-color: #cacccb;
     padding-top: 22px;
     margin-left: 96px;
     padding-left: 30px;
@@ -174,8 +200,9 @@ body {
     margin-left: 96px;
     height: 38px;
     text-align: right;
-    border-bottom: 1px solid;
-    border-color: transparent;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-color: #cacccb;
   }
 
   .icon {
@@ -187,10 +214,7 @@ body {
     z-index: 5;
     margin-bottom: 0;
   }
-  .adjust .sticky-wrapper {
-    margin-bottom: -116px;
-  }
-  .player {
+  .pages-index .player {
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -199,8 +223,9 @@ body {
     position: static;
   }
 
+  body:not(.pages-index) nav,
   .stuck {
-    position:fixed;
+    position:fixed !important;
     top:0;
     /*box-shadow:0 2px 4px rgba(0, 0, 0, .3);*/
     width: 100%;
@@ -510,13 +535,29 @@ footer.row {
 
 
 
-
+@media screen and (min-width: 616px) { 
+  .adjust .sticky-wrapper {
+    margin-bottom: -116px;
+  }
+  .pages-index nav {
+    position: absolute;
+    bottom: 0px;
+  }
+}
 
 @media screen and (max-width: 615px) { 
-  .event-container {
-    width: 50%;
+  /* adjust shift element as we no longer have the experimental interaction*/
+  #splash-shift {
+    display: none;
   }
-
+  .splash {
+    height: 480px;
+    position: static;
+  }
+  .initialHide {
+    opacity: 1;
+  }
+  /**********/
 
   /*********/
   /* nav   */
@@ -571,8 +612,11 @@ footer.row {
   nav.open div {
     display: block;
   }
+  /***********/
 
-
+  .event-container {
+    width: 50%;
+  }
   #container {
     border: 0;
     margin: 0;
@@ -609,13 +653,7 @@ footer.row {
 
 
 @media screen and (max-width: 320px) { 
-  .splash {
-    height: 480px;
-    position: static;
-  }
-  #splash-shift {
-    display: none;
-  }
+  
   .splash {
     display: table;
   }
@@ -631,9 +669,6 @@ footer.row {
     width: 90%;
     margin: 0 auto;
     font-size: 0.8em;
-  }
-  .initialHide {
-    opacity: 1;
   }
   .event-container {
     width: 100%;

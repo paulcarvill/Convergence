@@ -26,6 +26,5 @@ $(function(){
 	        $('nav').toggleClass('open');
 	        SM.revealed = true;
 	    }
-	    console.log(SM.revealed);
 	})
 })
