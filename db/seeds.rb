@@ -388,21 +388,20 @@ Event.create!([
     name: "Mixcloud Curates 2.0",
     venue_id: 1,
     details: "* curated conversation; curated audience, curated music *",
-    description: "The second annual Mixcloud Curates event brings together over 200 leading players and pioneers from the music, tech, media and marketing industries for a day of discussion, analysis and connection.
+    description: "<p>The second annual Mixcloud Curates event brings together over 200 leading players and pioneers from the music, tech, media and marketing industries for a day of discussion, analysis and connection.</p>
+<p>Speakers on the day include:</p>
 
-Speakers on the day include:
+<ul><li><b>Jo Vidler</b> – Wilderness Festival</li>
+<li><b>Glenn Max</b> – Creative Director, Village Underground</li>
+<li><b>Caspar Llewellyn Smith</b> – Guardian</li>
+<li><b>Matt Dyke</b> – Founder, AnalogFolk</li>
+<li><b>Matt Elek</b> – Managing Director, VICE</li>
+<li><b>Marion Gamel</b> – VP Marketing, EMEA, Eventbrite</li>
+<li><b>Ben Lawrence</b> – Head of Brand Partnerships, Mixcloud</li>
+</ul>
+<p>Plenty more names for the event will be announced in the coming weeks. Stay tuned for more details.</p>
 
-Jo Vidler – Wilderness Festival
-Glenn Max – Creative Director, Village Underground
-Caspar Llewellyn Smith – Guardian
-Matt Dyke – Founder, AnalogFolk
-Matt Elek – Managing Director, VICE
-Marion Gamel – VP Marketing, EMEA, Eventbrite
-Ben Lawrence – Head of Brand Partnerships, Mixcloud
-
-Plenty more names for the event will be announced in the coming weeks. Stay tuned for more details.
-
-Delegates also receive free entry to Emergence, the Convergence launch party, immediately following Mixcloud Curates.",
+<p>Delegates also receive free entry to Emergence, the Convergence launch party, immediately following Mixcloud Curates.</p>",
     start_at: "2014-04-22 21:30:00",
     end_at: "2014-04-22 23:30:00",
     all_day: true,
