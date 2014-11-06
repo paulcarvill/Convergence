@@ -66,69 +66,36 @@
 	</div>
 </div>
 
-<!-- <div class="row">
-	<div class="col-lg-6">
-		<%= casein_select f, f.object, :ticket_ids, Ticket.all.collect {|c| [c.name.titlecase, c.id]},
-			{:include_blank => '-- None --', :casein_label => "Choose a ticket", multiple: true} %>
-
+	<h2>Ticket links</h2>
+	<%= f.nested_fields_for :tickets do |ff| %>
+	<div class="row">
+		<div class="col-lg-6">
+			<div class="form-group">
+				<label class="control-label" for="event_name">Name</label>
+				<div class="well">
+					<%= ff.text_field :name %>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-6">
+			<div class="form-group">
+				<label class="control-label" for="event_name">URL</label>
+				<div class="well">
+					<%= ff.text_field :url %><span style="margin-left: 20px"><%= ff.remove_nested_fields_link "delete this link" %></span>
+				</div>
+			</div>
+		</div>
 	</div>
-</div> -->
+	<% end %>
+	<%= f.add_nested_fields_link :tickets, "Add another ticket link" %>
+	
+	<br />
+	<br />
+	<br />
 
-<p>Ticket links</p>
-<%= f.nested_fields_for :tickets do |ff| %>
-	<%= ff.remove_nested_fields_link %>
-	<%= ff.text_field :name %>
-	<%= ff.text_field :url %>
-<% end %>
-<%= f.add_nested_fields_link :tickets %>
 
 <script>
 $(document).on("fields_added.nested_form_fields", function(event,param) {
 	console.log(event);	
 });
 </script>
-
-<!-- <div class="row">
-	<div class="col-lg-6">
-		<%= casein_text_field f, f.object, :ticket_one_name %>
-	</div>
-	<div class="col-lg-6">
-		<%= casein_text_field f, f.object, :ticket_one_url %>
-	</div>
-</div>
-
-<div class="row">
-	<div class="col-lg-6">
-		<%= casein_text_field f, f.object, :ticket_two_name %>
-	</div>
-	<div class="col-lg-6">
-		<%= casein_text_field f, f.object, :ticket_two_url %>
-	</div>
-</div>
-
-<div class="row">
-	<div class="col-lg-6">
-		<%= casein_text_field f, f.object, :ticket_three_name %>
-	</div>
-	<div class="col-lg-6">
-		<%= casein_text_field f, f.object, :ticket_three_url %>
-	</div>
-</div>
-
-<div class="row">
-	<div class="col-lg-6">
-		<%= casein_text_field f, f.object, :ticket_four_name %>
-	</div>
-	<div class="col-lg-6">
-		<%= casein_text_field f, f.object, :ticket_four_url %>
-	</div>
-</div>
-
-<div class="row">
-	<div class="col-lg-6">
-		<%= casein_text_field f, f.object, :ticket_five_name %>
-	</div>
-	<div class="col-lg-6">
-		<%= casein_text_field f, f.object, :ticket_five_url %>
-	</div>
-</div> -->

@@ -13,7 +13,9 @@
       <% if @event.all_day %><p>all-day event</p><% end %>
       <% if @event.description %><p><%= @event.description.html_safe %></p><% end %>
       <p>£<%= @event.price %></p>
-      <button class="buy" style="margin-top: 1.5em; z-index: 999; text-transform: uppercase; border: 0; color: #fff; width: 148px; height: 50px; background: url(<%= asset_path "button.gif" %>)">Buy tickets</button>
+      <% @event.tickets.each do |ticket| %>
+        <button class="buy" style="margin-top: 1.5em; z-index: 999; text-transform: uppercase; border: 0; color: #fff; width: 148px; height: 50px; background: url(<%= asset_path "button.gif" %>)">Buy tickets</button>
+      <% end %>
     </div>
   </div>
 
