@@ -70,7 +70,7 @@ module Casein
           :all_day,
           :img1,
           :category_id,
-          tickets_attributes: [:id, :name, :url]
+          tickets_attributes: [:id, :name, :url, :_destroy]
         )
       end
 

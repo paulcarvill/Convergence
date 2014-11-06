@@ -2,6 +2,7 @@
 
 <%= javascript_include_tag 'ckeditor/ckeditor.js' %>
 <%= javascript_include_tag 'ckeditor/config.js' %>
+<%= javascript_include_tag 'nestedforms.js' %>
 
 <div class="row">
 	<div class="col-lg-6">
@@ -73,10 +74,19 @@
 	</div>
 </div> -->
 
-<p>add ticket</p>
-<%= f.fields_for :tickets do |ticket_form| %>
-    <%= render :partial => 'casein/tickets/form', :locals => { :f => ticket_form } %>
+<p>Ticket links</p>
+<%= f.nested_fields_for :tickets do |ff| %>
+	<%= ff.remove_nested_fields_link %>
+	<%= ff.text_field :name %>
+	<%= ff.text_field :url %>
 <% end %>
+<%= f.add_nested_fields_link :tickets %>
+
+<script>
+$(document).on("fields_added.nested_form_fields", function(event,param) {
+	console.log(event);	
+});
+</script>
 
 <!-- <div class="row">
 	<div class="col-lg-6">

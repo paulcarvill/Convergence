@@ -42,7 +42,7 @@ group :production do
 end
 
 gem "ckeditor"
-gem "html_truncator", "~>0.2"
+gem 'nested_form_fields'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
