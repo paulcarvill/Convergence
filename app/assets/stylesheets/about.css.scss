@@ -5,7 +5,6 @@
 
 #container .heading {
 	position: relative;
-	border-bottom: 1px solid #cacccb;
 	margin-right: 96px;
 }
 
@@ -61,5 +60,9 @@
 
 	.content {
 	padding-right: 1em
+	}
+
+	#container {
+		margin-left: 48px;
 	}
 }
