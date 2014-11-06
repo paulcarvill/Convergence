@@ -1,4 +1,5 @@
 $navgrey: #eef0ed;
+$smallscreennav: #444;
 
 html, body {
  
@@ -184,7 +185,7 @@ body {
 
   nav p {
     margin-left: 96px;
-    height: 38px;
+    height: 48px;
     text-align: right;
     border-bottom-width: 1px;
     border-bottom-style: solid;
@@ -591,11 +592,24 @@ body:not(.pages-index) iframe {
   }
   nav div {
     display: none;
-    background: #e8e8e8;
+    background: $smallscreennav;
     margin: 0;
     height: auto;
-    text-align: right;
-    padding: 0 0.5em 0 0;
+    text-align: left;
+    padding: 0;
+    border: 0;
+  }
+  nav div a {
+    color: #fff;
+    font-size: 0.8em;
+  }
+  nav div li {
+    border-top: 1px solid #e8e8e8;
+    padding: 0 0 0 1em
+  }
+  nav div li a {
+    height: 50px;
+    padding-top: 18px;
   }
   nav.open div {
     display: block;
