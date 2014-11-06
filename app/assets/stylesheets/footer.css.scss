@@ -1,0 +1,94 @@
+footer h2 {
+	color: #9a9a9a;
+	font-size: 0.95em;
+	font-weight: normal;
+	text-transform: uppercase;
+	letter-spacing: 0.3em;
+	margin-top: 20px;
+}
+
+footer ul {
+	margin: 0 0 1.8em 0;
+	padding: 0;
+	font-size: 0.75em;
+	text-transform: uppercase;
+	margin-left: 1.75em;
+}
+
+footer a {
+	text-decoration: none;
+}
+
+p.soc a {
+  color: #9b9b9b;
+}
+
+footer svg {
+  fill: currentColor;
+	margin-right: 1.5em;
+}
+
+footer svg:first-of-type {
+	margin-left: 1em;
+}
+
+footer svg:last-of-type {
+	margin-right: 0;
+}
+
+footer {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+footer li a {
+    padding-top: 13px;
+    color: #c7c7c7;
+}
+
+@media screen and (min-width: 661px) { 
+  footer h2,
+  footer ul,
+  footer ul li,
+  footer ul li a {
+    float: left;
+  }
+  footer ul li {
+  	list-style: none;
+  	clear: left;
+  	font-size: 1.2em;
+  }
+  footer ul {
+    margin-top: 23px;
+    margin-bottom: 70px;
+  }
+  footer ul li:first-of-type a {
+  	padding-top: 0;
+  }
+  footer li a {
+    padding-top: 5px;
+  }
+  p.soc {
+  	color: #fff;
+    float: right;
+    margin-top: 2em;
+  }
+  p.soc svg {
+  	fill: currentColor;
+  	width: 30px;
+  	height: 30px;
+  }
+  footer svg:last-of-type {
+	margin-right: 1em;
+  }
+  footer h2 {
+ 	font-size: 1.2em;
+ 	margin-top: 25px;
+  }
+  footer a:hover {
+    color: #888;
+  }
+  footer a:hover svg {
+    fill: currentColor;
+  }
+}

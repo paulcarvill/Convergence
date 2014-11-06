@@ -1,4 +1,4 @@
-$navgrey: #eaece8;
+$navgrey: #eef0ed;
 
 html, body {
  
@@ -234,7 +234,7 @@ body {
   }
 
   p {
-  	padding: 1em 0;
+  	padding: 0.8em 0;
   	line-height: 1.8em;
   }
 
@@ -503,12 +503,7 @@ body:not(.pages-index) iframe {
 
 
 
-
 @media screen and (max-width: 660px) { 
-  body:not(.pages-index) {
-    padding-top: 44px;
-  }
-
   .blogrow div div {
     display: block;
   }
@@ -530,7 +525,7 @@ body:not(.pages-index) iframe {
 
 
 
-@media screen and (min-width: 616px) { 
+@media screen and (min-width: 616px) {
   .adjust .sticky-wrapper {
     margin-bottom: -116px;
   }
@@ -541,6 +536,9 @@ body:not(.pages-index) iframe {
 }
 
 @media screen and (max-width: 615px) { 
+  body:not(.pages-index) {
+    padding-top: 44px;
+  }
   /* adjust shift element as we no longer have the experimental interaction*/
   #splash-shift {
     display: none;
@@ -578,8 +576,8 @@ body:not(.pages-index) iframe {
 
   nav .logo,
   nav .logo img {
-    height: 44px;
-    width: 44px;
+    height: 48px;
+    width: 48px;
   }
   nav p {
     border: 0;
@@ -589,12 +587,7 @@ body:not(.pages-index) iframe {
   footer li,
   footer li a {
     display: block;
-    height: 44px;
     margin: 0;
-  }
-  nav li a,
-  footer li a {
-    padding-top: 12px;
   }
   nav div {
     display: none;
@@ -693,8 +686,7 @@ body:not(.pages-index) iframe {
     width: 100%;
   }
   .blogrow>div h1,
-  .blogrow>div p,
-  footer {
+  .blogrow>div p {
     padding-left: 8px;
     padding-right: 8px;
   }

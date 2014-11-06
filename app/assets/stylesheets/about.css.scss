@@ -41,7 +41,7 @@
 
 @media screen and (max-width: 320px) { 
 	#container .content {
-		padding: 8px 8px 0 8px;
+		padding: 8px 16px 0 16px;
 	}
 
 	#container .content div {
@@ -64,5 +64,9 @@
 
 	#container {
 		margin-left: 48px;
+	}
+
+	#container .content {
+		font-size: 0.75em;
 	}
 }

@@ -18,6 +18,13 @@
 </div>
 
 
+<script>
+$('form').submit(function(e){
+	e.preventDefault();
+	$('input', this).prop("disabled", true);
+	$('button', this).toggleClass('hover');
+})
+</script>
 
 
 <script>
