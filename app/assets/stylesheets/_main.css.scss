@@ -481,7 +481,7 @@ footer a {
 }
 
 #mailinglistrow {
-  background: #e8e8e8 url(/assets/dots.png) 50% 100% no-repeat;
+  background: #e8e8e8 url(asset-url('dots.png', 'image')) 50% 100% no-repeat;
 }
 
 #mailinglistrow input {
