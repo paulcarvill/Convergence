@@ -1,11 +1,12 @@
+<span class="blogplayer"></span>
 <!-- BLOG ROW -->
 <% @blogs.each do |blog| %>
 <div class="blogrow row <%= cycle('odd', 'even')%>">
 <div>
   <div class="txt">
     <p class="cat">
-      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20px"
-   height="20px" viewBox="0 0 7.68 7.68" enable-background="new 0 0 7.68 7.68" xml:space="preserve">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="36px"
+   height="36px" viewBox="0 0 7.68 7.68" enable-background="new 0 0 7.68 7.68" xml:space="preserve">
       <g id="Open_book_1_" enable-background="new    ">
         <path fill="#444444" d="M7.141,0.021L3.968,0.88C3.887,0.902,3.712,0.901,3.632,0.879L0.541,0.022
     C0.265-0.054-0.002,0.146-0.002,0.43v5.836c0,0.24,0.183,0.471,0.415,0.535l3.091,0.856c0.083,0.023,0.189,0.036,0.299,0.036
@@ -31,8 +32,7 @@
     <h3><%= blog.title %></h3>
     <p class="desc"><%= truncate(strip_tags(blog.body), length: 300) %> <a style="text-transform:uppercase" href="/blogs/<%= blog.id %>" />read more</a></p>
   </div>
-  <div class="img">
-    <%= image_tag "8.jpg" %>
+  <div class="img" style="background-image: url(<%= asset_path "8.jpg" %>)">
   </div>
  </div>
 </div>
