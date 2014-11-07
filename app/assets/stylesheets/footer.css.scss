@@ -29,14 +29,14 @@ p.soc a {
 
 footer svg {
   fill: currentColor;
-	margin-right: 1.5em;
+	margin-right: 1.4em;
 }
 
-footer svg:first-of-type {
+footer svg:nth-of-type(1) {
 	margin-left: 1em;
 }
 
-footer svg:last-of-type {
+footer svg:nth-of-type(6) {
 	margin-right: 0;
 }
 

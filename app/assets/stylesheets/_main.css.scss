@@ -1,5 +1,6 @@
 $navgrey: #eef0ed;
 $smallscreennav: #444;
+$maingrey: #e8e8e8;
 
 html, body {
  
@@ -14,7 +15,7 @@ body {
 }
 
 body:not(.pages-index) {
-  padding-top: 116px;
+  padding-top: 106px;
 }
 
 html, body, p, div, h1, h2, h3, nav, ul, li, a {
@@ -129,130 +130,139 @@ body {
     50%  {transform:scale(1.1,1.1)}
     100% {transform:scale(1,1)}
 }
-  nav {
-  	height: 106px;
-    width: 100%;
-  	background: none;
-  	text-align: left;
-  }
 
-  .pages-index nav {
-    border-color: transparent;
-  }
+nav {
+	height: 106px;
+  width: 100%;
+	background: none;
+	text-align: left;
+}
 
-  .pages-index nav a {
-    color: transparent;
-  }
+.pages-index nav {
+  border-color: transparent;
+}
 
-  .pages-index.adjust nav a {
-    color: #444;
-  }
+.pages-index nav a {
+  color: transparent;
+}
 
-  .pages-index nav p,
-  .pages-index nav div,
-  .pages-index nav div p {
-    border-color: transparent;
-  }
+.pages-index.adjust nav a {
+  color: #444;
+}
 
-  .pages-index.adjust nav p,
-  .pages-index.adjust nav div,
-  .pages-index.adjust nav div p {
-    border-color: #cacccb;
-  }
+.pages-index nav p,
+.pages-index nav div,
+.pages-index nav div p {
+  border-color: transparent;
+}
 
-  nav div {
-    height: 58px;
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
-    border-color: #cacccb;
-    padding-top: 22px;
-    margin-left: 96px;
-    padding-left: 30px;
-  }
+.pages-index.adjust nav p,
+.pages-index.adjust nav div,
+.pages-index.adjust nav div p {
+  border-color: #cacccb;
+}
 
-  nav .logo {
-    width: 96px;
-    height: 96px;
-    margin: 0;
-    display: block;
-    float: left;
-  }
+nav div {
+  height: 48px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-color: #cacccb;
+  padding-top: 17px;
+  margin-left: 96px;
+  padding-left: 30px;
+}
 
-  nav .logo img {
-    width: 96px;
-    height: 96px;
-  }
+nav .logo {
+  width: 96px;
+  height: 96px;
+  margin: 0;
+  float: left;
+  display: none;
+}
 
-  nav p {
-    margin-left: 96px;
-    height: 48px;
-    text-align: right;
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
-    border-color: #cacccb;
-  }
+nav.stuck .logo {
+  display: block;
+}
 
-  .icon {
-    display: none;
-  }
-  
-  .sticky-wrapper {
-    position: relative;
-    z-index: 5;
-    margin-bottom: 0;
-  }
-  .pages-index .player {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-  }
-  .stuck .player {
-    position: static;
-  }
+nav .logo img {
+  width: 96px;
+  height: 96px;
+}
 
-  body:not(.pages-index) nav,
-  .stuck {
-    position:fixed !important;
-    top:0;
-    width: 100%;
-    z-index: 5;
-    max-width: 1280px;
-    background-color: $navgrey;
-    transition: background-color 1.5s;
-    color: #444;
-    border-color: #aaa;
-  }
+nav p {
+  margin-left: 96px;
+  height: 48px;
+  text-align: right;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-color: #cacccb;
+}
 
-  .stuck a {
-    color: #444;
-    transition: color 1s;
-  }
+.icon {
+  display: none;
+}
 
-  .stuck p,
-  .stuck div {
-    border-color: #cacccb;
-    transition: border-color 1s;
-  }
+.icon img {
+  margin: 15px 0 0 12.5px
+}
 
-  p {
-  	padding: 0.8em 0;
-  	line-height: 1.8em;
-  }
+.sticky-wrapper {
+  position: relative;
+  z-index: 5;
+  margin-bottom: 0;
+}
+.pages-index .player {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.stuck .player {
+  position: static;
+}
 
-  nav li {
-  	list-style-type: none;
-  	display: inline;
-  	margin: 0 20px;
-  }
+body:not(.pages-index) nav,
+.stuck {
+  position:fixed !important;
+  top:0;
+  width: 100%;
+  z-index: 5;
+  max-width: 1280px;
+  background-color: $maingrey;
+  // transition: background-color 1.5s;
+  color: #444;
+  border-color: #aaa;
+}
 
-  nav li img {
-  	vertical-align: middle;
-  }
+.stuck a {
+  color: #444;
+  transition: color 1s;
+}
 
-  .events>div:hover {
-  	/*width: 30%;
-  	transition: width 0.7s;*/
-  }
+.stuck p,
+.stuck div {
+  border-color: #cacccb;
+  transition: border-color 1s;
+}
+
+p {
+	padding: 0.8em 0;
+	line-height: 1.8em;
+}
+
+nav li {
+	list-style-type: none;
+	display: inline;
+	margin: 0 20px;
+}
+
+nav li img {
+	vertical-align: middle;
+}
+
+.events>div:hover {
+	/*width: 30%;
+	transition: width 0.7s;*/
+}
 
 .events a,
 .events p,
@@ -450,7 +460,7 @@ footer.row {
   background-color: #444
 }
 
-body:not(.pages-index) #container .content div img,
+body:not(.pages-index) #container .content div:not(.share) img,
 body:not(.pages-index) iframe {
   width: 100% !important;
   height: auto !important;
@@ -522,6 +532,10 @@ body:not(.pages-index) iframe {
   .txt {
     padding: 20px 0;
   }
+  body:not(.pages-index) nav,
+  .stuck {
+    background-color: $navgrey;
+  }
 }
 
 
@@ -569,10 +583,9 @@ body:not(.pages-index) iframe {
   }
   nav span.icon {
     display: block;
-    height: 18px;
-    width: 23px;
+    height: 48px;
+    width: 48px;
     float: right;
-    margin: 14px 10px 0 0;
   }
 
   nav .logo,
@@ -614,6 +627,9 @@ body:not(.pages-index) iframe {
   nav.open div {
     display: block;
   }
+  nav.open .icon {
+    background: #444;
+  }
   /***********/
 
   .event-container {
@@ -629,7 +645,7 @@ body:not(.pages-index) iframe {
     width: auto;
   }
   #container .content {
-    padding-left: 1em;
+    padding: 8px 16px 0 16px;
   }
   #container .heading {
     margin-right: 0;

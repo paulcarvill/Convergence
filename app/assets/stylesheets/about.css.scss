@@ -3,11 +3,18 @@
 	margin-left: 96px;
 }
 
+.blogs-show #container {
+	margin-left: 0;
+}
+
 #container .heading {
 	position: relative;
 	margin-right: 96px;
 }
 
+.heading img {
+	vertical-align: bottom;
+}
 
 .events-show h1,
 .events-index h1,
@@ -15,21 +22,78 @@
 .blogs-index h1,
 .pages-about h1 {
 	font-size: 4em;
-	padding: 1em 1em 0 1em;
+	padding: 44px 1em 0 1em;
 	width: 65%;
 	line-height: 1.5em;
-	padding-bottom: 25px;
+	padding-bottom: 29px;
+}
+
+.blogs-show h1 {
+	padding-left: 0;
+}
+
+.blogs-show #container .heading {
+	margin-right: 0;
+	padding-left: 325px;
 }
 
 .events-show .content,
 .events-index .content,
-.blogs-show .content,
 .blogs-index .content,
 .pages-about .content {
 	position: relative;
-	padding-left: 100px;
-	padding-top: 25px
+	padding-bottom: 52px;
 }
+
+.blogs-index .content,
+.pages-about .content {
+	padding-left: 96px;
+}
+
+.blogs-show .content {
+	float: left;
+	margin-top: 32px;
+}
+
+.body {
+	float: right;
+}
+
+.body p:nth-of-type(1) {
+	padding: 0;
+}
+
+.share {
+	margin-right: 400px;
+	width: 325px !important;
+	padding: 0 32px;
+}
+
+.share span {
+	background-color: #9c9c9c;
+	color: #444;
+	padding: 3px;
+	margin: 1px;
+	display: inline-block;
+}
+
+.share span a {
+	text-decoration: none;
+}
+
+.share p:nth-of-type(1) {
+	font-size: 0.8em;
+}
+
+.share p:nth-of-type(2) {
+	margin-top: 1em;
+}
+
+.share p {
+	padding-top: 0.5em;
+	border-top: 1px solid #cbcbcb;
+}
+
 
 .events-show .content div,
 .events-index .content div,
@@ -39,17 +103,29 @@
 	width: 400px;
 }
 
-@media screen and (max-width: 320px) { 
-	#container .content {
-		padding: 8px 16px 0 16px;
+@media screen and (max-width: 725px) {
+	.body,
+	.blogs-show .content {
+		float: none;
 	}
-
-	#container .content div {
-		width: auto
+	.blogs-show #container .heading {
+		padding: 0;
+	}
+	.blogs-show #container {
+		padding-left: 32px;
 	}
 }
 
-@media screen and (max-width: 615px) { 
+@media screen and (max-width: 660px) {
+	#container .content {
+		font-size: 0.85em;
+	}
+	.blogs-show #container {
+		padding-left: 16px;
+	}
+}
+
+@media screen and (max-width: 615px) {
 	.events-show .content div,
 	.events-index .content div,
 	.blogs-show .content div,
@@ -59,13 +135,30 @@
 	}
 
 	.content {
-	padding-right: 1em
+		padding-right: 1em
 	}
 
-	#container {
+	.about-show #container {
 		margin-left: 48px;
 	}
 
+	#container {
+		margin-left: 0;
+	}
+
+	.blogs-show #container {
+		padding-left: 8px;
+	}
+
+	.blogs-show #container .content {
+		padding: 0;
+	}
+}
+
+@media screen and (max-width: 320px) { 
+	#container .content div {
+		width: auto
+	}
 	#container .content {
 		font-size: 0.75em;
 	}
