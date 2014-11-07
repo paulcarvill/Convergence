@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   def index
     @events = Event.where(featured: true)
     @moreEvents = Event.where(featured: false).limit(5)
-    @blogs = Blog.all().limit(2)
+    @blogs = Blog.all().limit(1)
 
     HTML_Truncator.self_closing_tags.delete "img"
     @blogs.each do |blog|

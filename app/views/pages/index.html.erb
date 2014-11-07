@@ -1,9 +1,15 @@
+
 <%= render "interactivepanel" %>
 
-<%= render "carouselscript" %>
 
-<% if !params['launch'] %>
-<%= render "eventsrow" %>
+<%= render "launch" %>
+
+<% if params['full'] %>
+<% render "carouselscript" %>
+<% end %>
+
+<% if params['full'] %>
+<% render "eventsrow" %>
 <% end %>
 
 <%= render "blogrow" %>

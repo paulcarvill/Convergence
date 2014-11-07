@@ -85,6 +85,43 @@ body {
   background-size: cover;
   z-index: -1
 }
+
+
+
+
+
+
+/****** LAUNCH PANEL ********/
+.splash.launch h1,
+.splash.launch h2,
+.splash.launch h3 {
+  color: #444;
+  font-weight: normal;
+  line-height: 1.5em;
+}
+
+.splash.launch h1 {
+  font-size: 2em;
+}
+.splash.launch h2 {
+  width: 60%;
+  font-size: 1em;
+  font-weight: bold;
+}
+.splash.launch h3 {
+  font-size: 1em;
+}
+.splash.launch svg {
+  width: 22px;
+  height: 28px;
+  margin-top: 50px;
+}
+/****** LAUNCH PANEL ********/
+
+
+
+
+
 .initialHide {
   opacity: 0;
 }
@@ -500,10 +537,6 @@ body:not(.pages-index) iframe {
 
   .event-inner p:last-of-type {
     position: static;
-  }
-
-  .blogrow .cat {
-    display: none;
   }
 
   .blogrow h3 {
