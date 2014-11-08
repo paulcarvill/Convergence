@@ -102,8 +102,16 @@ body:not(.pages-index) #splash-shift {
     height: 48px;
   }
 
+  .pages-index nav:not(.stuck) #conburger {
+    display: none;
+  }
+  
+  body:not(.blog-show) nav.stuck {
+    background-color: $navgrey;
+  }
+
   body:not(.pages-index) {
-	padding-top: 48px;
+    padding-top: 48px;
 	}
   
   nav .logo {

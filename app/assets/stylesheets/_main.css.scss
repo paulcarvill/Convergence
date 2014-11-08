@@ -122,6 +122,9 @@ body {
 .splash-inner h2 {
 }
 
+.content {
+  padding: 0 16px;
+}
 
 @-webkit-keyframes mymove {
     0%   {transform:scale(1,1)}
@@ -417,33 +420,6 @@ body:not(.pages-index) iframe {
   .txt {
     padding: 20px 0;
   }
-  body:not(.pages-index) nav,
-  .stuck {
-    background-color: $navgrey;
-  }
-}
-
-
-@media screen and (max-width: 615px) { 
-  // body:not(.pages-index) {
-  //   padding-top: 44px;
-  // }
-  // .splash {
-  //   height: 480px;
-  //   position: static;
-  // }
-  // .initialHide {
-  //   opacity: 1;
-  // }
-
-  // .event-container {
-  //   width: 50%;
-  // }
-
-  // .meta {
-  //   padding: 0 0.5em 0 0;
-  // }
-
 }
 
 

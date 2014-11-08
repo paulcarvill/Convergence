@@ -92,7 +92,8 @@ h3 {
 }
 
 @media screen and (max-width: 615px) {
-  .blogs-show h1 {
+  .blogs-show h1,
+  .pages-about h1 {
     font-size: 3em;
   }
 }
