@@ -21,12 +21,14 @@ var SM = {};
 SM.revealed = false;
 
 $(function(){
-	$('nav').click(function(){
+
+	var nav = $('nav');
+	$('#conburger').click(function(){
 	    if(SM.revealed) {
-	        $('nav').toggleClass('open');
+	        nav.toggleClass('open');
 	        SM.revealed = false;
 	    } else {
-	        $('nav').toggleClass('open');
+	        nav.toggleClass('open');
 	        SM.revealed = true;
 	    }
 	})

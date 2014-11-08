@@ -25,7 +25,7 @@ nav .logo {
   height: 96px;
   float: left;
   display: block;
-  background-color: #efefef;
+  background-color: $navgrey;
   text-align: center;
   padding-top: 17px;
 }
@@ -36,7 +36,7 @@ nav p {
   text-align: right;
   border-bottom-width: 1px;
   border-bottom-style: solid;
-  border-color: #cacccb;
+  border-color: $bordergrey;
 }
 
 nav div {
@@ -62,7 +62,10 @@ nav li {
 
 /**************** STICKY NAV ***************/
 
-.stuck {
+.stuck,
+body:not(.pages-index) nav {
+  /* the nav sticks to the top of every page
+  except index, where it starts at the bottom */
   position:fixed;
   margin-top: 4px;
   top: 0;
@@ -70,6 +73,24 @@ nav li {
   z-index: 5;
   max-width: 1280px;
   background-color: $maingrey;
+}
+
+body:not(.pages-index) {
+	padding-top: 96px;
+}
+
+body:not(.pages-index) nav {
+  background-color: rgba(232,232,232,0.75);
+}
+
+@media screen and (min-width: 616px) {
+  body:not(.pages-index) nav div {
+    background-color: transparent;
+  }
+}
+
+body:not(.pages-index) #splash-shift {
+  height: 4px;
 }
 
 /************* END STICKY NAV **************/
@@ -80,6 +101,10 @@ nav li {
   nav {
     height: 48px;
   }
+
+  body:not(.pages-index) {
+	padding-top: 48px;
+	}
   
   nav .logo {
     height: 48px;
@@ -115,7 +140,7 @@ nav li {
     display: block;
   }
 
-  nav.open .icon {
+  nav.open #conburger {
     background: $smallscreennav;
   }
   
@@ -149,90 +174,12 @@ nav li {
   	display: none;
   }
 
+  nav * {
+    -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+  }
+
 }
-  
-
-
-
-
-
-
-
-
-// nav li img {
-// 	vertical-align: middle;
-// }
-
-// .pages-index nav {
-//   border-color: transparent;
-// }
-
-// .pages-index nav a {
-//   color: transparent;
-// }
-
-// .pages-index.adjust nav a {
-//   color: #444;
-// }
-
-// .pages-index nav p,
-// .pages-index nav div,
-// .pages-index nav div p {
-//   border-color: transparent;
-// }
-
-// .pages-index.adjust nav p,
-// .pages-index.adjust nav div,
-// .pages-index.adjust nav div p {
-//   border-color: #cacccb;
-// }
-
-// nav.stuck .logo {
-//   display: block;
-// }
-
-// nav .logo img {
-//   width: 96px;
-//   height: 96px;
-// }
-
-
-
-// .sticky-wrapper {
-//   position: relative;
-//   z-index: 5;
-//   margin-bottom: 0;
-// }
-
-
-
-// .stuck a {
-//   color: #444;
-//   transition: color 1s;
-// }
-
-// .stuck p,
-// .stuck div {
-//   border-color: #cacccb;
-//   transition: border-color 1s;
-// }
-
-// p {
-// 	padding: 0.8em 0;
-// }
-
-// .events>div:hover {
-// 	/*width: 30%;
-// 	transition: width 0.7s;*/
-// }
-
-
-// @media screen and (min-width: 616px) {
-//   .adjust .sticky-wrapper {
-//     margin-bottom: -116px;
-//   }
-//   .pages-index nav {
-//     position: absolute;
-//     bottom: 0px;
-//   }
-// }

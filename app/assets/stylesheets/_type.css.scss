@@ -47,7 +47,11 @@ body, div, p, span, ul, li, h3, h4, h5, h6 {
 	font-family: "PrioriSanRegularMedium", Helvetica, arial, sans-serif;
 	font-size: 16px;
 	line-height: 1.5em;
+  color: $bodycopy;
 }
+
+
+/**************** HEADINGS *********************/
 
 h1, h2 {
 	font-family: "PrioriSanBoldBold", Helvetica, arial, sans-serif;
@@ -59,7 +63,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-	font-size: 2em;
+	font-size: 4em;
 }
 
 h2 {
@@ -82,8 +86,23 @@ h3 {
 	margin-bottom: 6px;
 }
 
+.blogs-show h1 {
+  font-size: 4.8em;
+  margin-top: 56px;
+}
+
+@media screen and (max-width: 615px) {
+  .blogs-show h1 {
+    font-size: 3em;
+  }
+}
+
+/****** END HEADINGS *************************/
+
+
 a {
   text-decoration: none;
+  color: currentColor;
 }
 
 a:hover {
