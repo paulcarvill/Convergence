@@ -4,7 +4,8 @@ footer h2 {
 	font-weight: normal;
 	text-transform: uppercase;
 	letter-spacing: 0.3em;
-	margin-top: 20px;
+	margin-top: 24px;
+  margin-bottom: 24px;
 }
 
 footer ul {
@@ -41,8 +42,12 @@ footer svg:nth-of-type(6) {
 }
 
 footer {
-    padding-left: 8px;
-    padding-right: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+footer li {
+  font-size: 12px;
 }
 
 footer li a {
@@ -58,6 +63,12 @@ footer li a {
   padding-right: 16px;
   clear: left;
   font-size: 0.75em;
+}
+
+@media screen and (max-width: 660px) { 
+  footer li {
+    margin-bottom: 24px;
+  }
 }
 
 @media screen and (min-width: 661px) { 

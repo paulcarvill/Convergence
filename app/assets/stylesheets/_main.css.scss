@@ -72,16 +72,6 @@ body {
   color: #444;
 }
 
-.splash.launch h1 {
-  width: 60%;
-}
-
-.splash.launch h2 {
-  width: 60%;
-}
-.splash.launch h3 {
-  width: 100%;
-}
 .splash.launch svg {
   width: 22px;
   height: 28px;
@@ -111,15 +101,6 @@ body {
 .pages-index h1,
 .pages-index h2 {
   color: #fff;
-}
-
-.splash-inner div h1,
-.splash-inner div h2 {
-  width: 50%;
-  margin: 0 auto;
-}
-
-.splash-inner h2 {
 }
 
 .content {
@@ -366,12 +347,6 @@ body:not(.pages-index) iframe {
 
 }
 
-@media screen and (max-width: 900px) { 
-  .splash.launch h1 {
-    width: 80%;
-  }
-}
-
 @media screen and (max-width: 660px) { 
   .blogrow {
     height: auto;
@@ -391,16 +366,6 @@ body:not(.pages-index) iframe {
     display: block;
     width: 100%;
     background: linear-gradient(90deg, #2aa9ea, #e90190);
-  }
-
-  .splash.launch h1,
-  .splash.launch h2,
-  .splash.launch h3 {
-    width: 100%;
-  }
-  .splash.launch div img {
-    width: 90px;
-    height: auto;
   }
 
   .blogrow div div {
@@ -436,9 +401,6 @@ body:not(.pages-index) iframe {
   .splash.launch h2,
   .splash.launch h3 {
     width: 100%;
-  }
-  .splash.launch h2,
-  .splash.launch h3 {
   }
   .splash.launch div img {
     width: 90px;

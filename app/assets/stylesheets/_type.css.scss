@@ -96,7 +96,24 @@ h3 {
   .pages-about h1 {
     font-size: 3em;
   }
+  .splash.launch h1 {
+    font-size: 2em;
+  }
+
+  .splash.launch h2,
+  .splash.launch h3 {
+    font-size: 1em;
+  }
 }
+
+@media screen and (max-width: 319px) {
+  .splash.launch h1,
+  .splash.launch h2,
+  .splash.launch h3 {
+    font-size: 1em;
+  }
+}
+
 
 /****** END HEADINGS *************************/
 
