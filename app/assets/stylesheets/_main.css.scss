@@ -200,6 +200,12 @@ footer a {
   float: left;
 }
 
+.blogrow .img {
+  background-image: asset-url("blog.jpg");
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
 #videorow {
   clear:left;
   float: left;
@@ -290,10 +296,44 @@ footer a {
 
 #mailinglistrow input {
   width: 33%;
-  height: 1em;
-  padding: 1.2em 0 1.1em 1em;
+  height: 54px;
+  padding: 8px 10px 0 5px;
   color: #666;
   border: 1px solid #e0e0e0;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  font-family: "PrioriSanRegularMedium";
+}
+
+.mailingform {
+  text-align: center;
+  margin-bottom: 4em;
+}
+
+.mailingform button svg {
+  margin-left: 6px;
+}
+
+#mailinglistrow .error {
+  border: 1px solid #e90090;
+}
+
+input:focus,
+button:focus {
+  outline: 0;
+}
+
+.perror {
+  background-color: #e90090;
+  color: #fff;
+  width: 45%;
+  margin: 0 auto;
+  display: none;
+  padding: 3px 0;
+}
+
+.tick {
+  display: none;
 }
 
 #mailinglistrow div:nth-of-type(1) {
@@ -483,7 +523,7 @@ body:not(.pages-index) iframe {
    #mailinglistrow div:nth-of-type(1) {
     margin: 0 auto;
     padding-top: 5em;
-    padding-bottom: 2em;
+    padding-bottom: 21px;
    }
   footer {
     height: auto;
