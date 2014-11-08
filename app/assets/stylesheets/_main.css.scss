@@ -2,13 +2,6 @@ $navgrey: #eef0ed;
 $smallscreennav: #444;
 $maingrey: #e8e8e8;
 
-html, body {
- 
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
-}
-
 body {
   background-color: #e8e8e8;
   position: relative;
@@ -96,23 +89,16 @@ body {
 .splash.launch h2,
 .splash.launch h3 {
   color: #444;
-  font-weight: normal;
-  line-height: 1.5em;
 }
 
 .splash.launch h1 {
   width: 60%;
-  font-size: 2em;
-  font-family: 'Oxygen', sans-serif;
-  letter-spacing: 13px;
 }
+
 .splash.launch h2 {
   width: 60%;
-  font-size: 1em;
-  font-weight: bold;
 }
 .splash.launch h3 {
-  font-size: 1em;
   width: 100%;
 }
 .splash.launch svg {
@@ -139,8 +125,6 @@ body {
   vertical-align: middle;
   text-align: center;
   color: #ededed;
-  font-size: 2em;
-  line-height: 2em;
 }
 
 .pages-index h1,
@@ -155,8 +139,6 @@ body {
 }
 
 .splash-inner h2 {
-  font-size: 1em;
-  line-height: 1.3em;
 }
 
 
@@ -287,7 +269,6 @@ body:not(.pages-index) nav,
 
 p {
 	padding: 0.8em 0;
-	line-height: 1.8em;
 }
 
 nav li {
@@ -369,18 +350,11 @@ footer a {
 
 .event-inner p {
   padding: 0;
-  line-height: 2.5em;
-}
-
-.event-inner p:nth-of-type(4) {
-  font-size: 2em;
-  line-height: 1.35em;
 }
 
 .event-inner p:last-of-type {
   position: absolute;
   bottom: 24px;
-  font-size: 0.9em;
   text-transform: uppercase;
 }
 
@@ -432,8 +406,6 @@ footer a {
 }
 
 .blogrow h3 {
-  font-size: 4em;
-  line-height: 1.5em;
   margin: 0.8em auto 0.5em auto;
   text-align: center;
 
@@ -481,7 +453,7 @@ footer a {
 }
 
 #mailinglistrow {
-  background: #e8e8e8 url(asset-url('dots.png', 'image')) 50% 100% no-repeat;
+  background: #e8e8e8 asset-url('dots.png') 50% 100% no-repeat;
 }
 
 #mailinglistrow input {
@@ -489,7 +461,6 @@ footer a {
   height: 1em;
   padding: 1.2em 0 1.1em 1em;
   color: #666;
-  font-size: 1.5em;
   border: 1px solid #e0e0e0;
 }
 
@@ -552,10 +523,6 @@ body:not(.pages-index) iframe {
     position: static;
   }
 
-  .blogrow h3 {
-    font-size: 2em;
-  }
-
 }
 
 @media screen and (max-width: 900px) { 
@@ -588,12 +555,7 @@ body:not(.pages-index) iframe {
   .splash.launch h1,
   .splash.launch h2,
   .splash.launch h3 {
-    font-size: 0.8em;
     width: 100%;
-  }
-  .splash.launch h2,
-  .splash.launch h3 {
-    font-size: 0.5em;
   }
   .splash.launch div img {
     width: 90px;
@@ -604,7 +566,6 @@ body:not(.pages-index) iframe {
     display: block;
   }
   .splash.launch h1 {
-    font-size: 1.2em;
   }
   .txt {
     width: 100%;
@@ -661,7 +622,6 @@ body:not(.pages-index) iframe {
   nav {
     padding: 0;
     height: auto;
-    font-size: 16px;
   }
   .pages-index nav {
     height: 48px;
@@ -702,7 +662,6 @@ body:not(.pages-index) iframe {
   }
   nav div a {
     color: #fff;
-    font-size: 0.8em;
   }
   nav div li {
     border-top: 1px solid #e8e8e8;
@@ -728,7 +687,6 @@ body:not(.pages-index) iframe {
     margin: 0;
   }
   #container h1 {
-    font-size: 2em;
     padding-left: 0.5em;
     width: auto;
   }
@@ -762,12 +720,10 @@ body:not(.pages-index) iframe {
   .splash.launch h1,
   .splash.launch h2,
   .splash.launch h3 {
-    font-size: 0.8em;
     width: 100%;
   }
   .splash.launch h2,
   .splash.launch h3 {
-    font-size: 0.5em;
   }
   .splash.launch div img {
     width: 90px;
@@ -782,14 +738,12 @@ body:not(.pages-index) iframe {
     vertical-align: middle;
     width: 100%;
     padding-top: 0;
-    font-size: 1em;
   }
   
   .splash-inner div h1,
   .splash-inner div h2 {
     width: 90%;
     margin: 0 auto;
-    font-size: 0.8em;
   }
   .event-container {
     width: 100%;
@@ -831,13 +785,11 @@ body:not(.pages-index) iframe {
   .blogrow .desc {
     position: relative;
     right: auto;
-    font-size: 0.8em;
     width: auto;
     margin: 0;
   }
   .blogrow h3 {
     margin: 0 8px;
-    font-size: 24px;
   }
   #container h1 {
     padding-bottom: 0;
