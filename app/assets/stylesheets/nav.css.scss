@@ -1,0 +1,238 @@
+.player {
+	display: block;
+	height: 4px;
+	background: linear-gradient(90deg, #2aa9ea, #e90190);
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 5;
+}
+
+nav {
+	height: 96px;
+ 	width: 100%;
+	background: none;
+	text-align: left;
+}
+
+#conburger {
+	display: none;
+}
+
+nav .logo {
+  width: 96px;
+  height: 96px;
+  float: left;
+  display: block;
+  background-color: #efefef;
+  text-align: center;
+  padding-top: 17px;
+}
+
+nav p {
+  margin-left: 96px;
+  height: 48px;
+  text-align: right;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-color: #cacccb;
+}
+
+nav div {
+  height: 48px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-color: #cacccb;
+  padding-top: 17px;
+  margin-left: 96px;
+  padding-left: 30px;
+  background-color: $maingrey;
+}
+
+nav li {
+	list-style-type: none;
+	display: inline;
+	margin: 0 20px;
+}
+
+#xxx {
+	display: none;
+}
+
+/**************** STICKY NAV ***************/
+
+.stuck {
+  position:fixed;
+  margin-top: 4px;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+  max-width: 1280px;
+  background-color: $maingrey;
+}
+
+/************* END STICKY NAV **************/
+
+
+
+@media screen and (max-width: 615px) {
+  nav {
+    height: 48px;
+  }
+  
+  nav .logo {
+    height: 48px;
+    width: 48px;
+    padding-top: 9px;
+  }
+
+  nav .logo img {
+    height: 31px;
+    width: 35px;
+  }
+  
+  #conburger {
+  	display: block;
+    height: 48px;
+    width: 48px;
+    float: right;
+    padding-top: 15px;
+    text-align: center;
+  }
+
+  nav div {
+    display: none;
+    background: $smallscreennav;
+    margin: 0;
+    height: auto;
+    // text-align: left;
+    padding: 0;
+    // border: 0;
+  }
+
+  nav.open div {
+    display: block;
+  }
+
+  nav.open .icon {
+    background: $smallscreennav;
+  }
+  
+  nav div li {
+    border-top: 1px solid $maingrey;
+    padding: 0 0 0 1em;
+    display: block;
+    margin: 0;
+  }
+
+  nav div li,
+  nav div li a {
+  	display: block;
+  }
+
+  nav div li a {
+    height: 50px;
+    padding-top: 18px;
+    color: #fff;
+  }
+
+  nav p {
+    border: 0;
+  }
+
+  .open #xxx {
+  	display: inline;
+  }
+
+  .open #menu {
+  	display: none;
+  }
+
+}
+  
+
+
+
+
+
+
+
+
+// nav li img {
+// 	vertical-align: middle;
+// }
+
+// .pages-index nav {
+//   border-color: transparent;
+// }
+
+// .pages-index nav a {
+//   color: transparent;
+// }
+
+// .pages-index.adjust nav a {
+//   color: #444;
+// }
+
+// .pages-index nav p,
+// .pages-index nav div,
+// .pages-index nav div p {
+//   border-color: transparent;
+// }
+
+// .pages-index.adjust nav p,
+// .pages-index.adjust nav div,
+// .pages-index.adjust nav div p {
+//   border-color: #cacccb;
+// }
+
+// nav.stuck .logo {
+//   display: block;
+// }
+
+// nav .logo img {
+//   width: 96px;
+//   height: 96px;
+// }
+
+
+
+// .sticky-wrapper {
+//   position: relative;
+//   z-index: 5;
+//   margin-bottom: 0;
+// }
+
+
+
+// .stuck a {
+//   color: #444;
+//   transition: color 1s;
+// }
+
+// .stuck p,
+// .stuck div {
+//   border-color: #cacccb;
+//   transition: border-color 1s;
+// }
+
+// p {
+// 	padding: 0.8em 0;
+// }
+
+// .events>div:hover {
+// 	/*width: 30%;
+// 	transition: width 0.7s;*/
+// }
+
+
+// @media screen and (min-width: 616px) {
+//   .adjust .sticky-wrapper {
+//     margin-bottom: -116px;
+//   }
+//   .pages-index nav {
+//     position: absolute;
+//     bottom: 0px;
+//   }
+// }
