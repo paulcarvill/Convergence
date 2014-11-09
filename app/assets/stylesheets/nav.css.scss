@@ -60,24 +60,6 @@ nav li {
 	display: none;
 }
 
-nav a {
-  position: relative;
-}
-
-nav a.current::before {
-  content: "/////////////////////";
-  position: absolute;
-  top: -29px;
-  left: -14px;
-  font-family: arial;
-  font-weight: bold;
-  font-size: 12px;
-
-  background: -webkit-linear-gradient(45deg, #2aa9ea, #e90190);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 /**************** STICKY NAV ***************/
 
 .stuck,
@@ -105,6 +87,25 @@ body:not(.pages-index, .pages-about) nav {
   body:not(.pages-index) nav div {
     background-color: transparent;
   }
+
+  nav a {
+    position: relative;
+  }
+
+  nav a.current::before {
+    content: "/////////////////////";
+    position: absolute;
+    top: -29px;
+    left: -14px;
+    font-family: arial;
+    font-weight: bold;
+    font-size: 12px;
+
+    background: -webkit-linear-gradient(45deg, #2aa9ea, #e90190);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
 }
 
 body:not(.pages-index) #splash-shift {
