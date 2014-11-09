@@ -19,11 +19,11 @@
 <% end %>
 
 <% if params['full'] %>
-<% render "carouselscript" %>
+<%= render "carouselscript" %>
 <% end %>
 
 <% if params['full'] %>
-<% render "eventsrow" %>
+<%= render "eventsrow" %>
 <% end %>
 
 <%= render "blogrow" %>
@@ -34,11 +34,7 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
-  var b = $('body');
   $('nav').waypoint('sticky', {
-    handler: function(dir) {
-        //stopDrawing = (dir == "down" ? true : false);
-    },
     offset: 4
   })
  });

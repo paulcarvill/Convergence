@@ -49,14 +49,6 @@
   vertical-align: top;
 }
 
-.buttoff {
-	padding: 1px;
-	background: linear-gradient(136deg, #e219e7, #1e7fe9);
-	display: inline-block;
-	margin-top: 1.5em;
-	width: 148px !important;
-	line-height: 1em;
-}
 button {
 	z-index: 999;
 	text-transform: uppercase;
@@ -64,6 +56,6 @@ button {
 	color: #fff;
 	width: 148px;
 	height: 50px;
-	background-size: 400% 400%;
+	background: asset-url('button.gif');
 	cursor: pointer;
 }

@@ -367,9 +367,19 @@ body:not(.pages-index) iframe {
   float: right;
 }
 
+#wrapper {
+  z-index: 1;
+  position: fixed;
+  left:0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+}
 
-
-
+.touch #wrapper {
+  z-index: -1;
+}
 
 
 
