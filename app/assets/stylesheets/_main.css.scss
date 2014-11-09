@@ -312,6 +312,12 @@ footer a {
   margin-bottom: 4em;
 }
 
+.mailingform form {
+  width: 60%;
+  margin: 0 auto;
+  position: relative;
+}
+
 .mailingform button svg {
   margin-left: 6px;
 }
@@ -328,10 +334,11 @@ button:focus {
 .perror {
   background-color: #e90090;
   color: #fff;
-  width: 45%;
-  margin: 0 auto;
+  width: 50%;
+  margin: 0 auto 0 25%;
   display: none;
   padding: 3px 0;
+  position: absolute;
 }
 
 .tick {
@@ -408,9 +415,21 @@ body:not(.pages-index) iframe {
     position: static;
   }
 
+  #mailinglistrow input {
+    width: 68%;
+  }
+
+  .perror {
+    width: 60%;
+    position: absolute;
+    font-size: 1em;
+    margin-top: 2px;
+  }
+
 }
 
 @media screen and (max-width: 660px) { 
+
   .blogrow {
     height: auto;
   }
@@ -545,12 +564,16 @@ body:not(.pages-index) iframe {
     height: 480px;
   }
   
+  .mailingform form {
+    width: 100%;
+  }
+
   #mailinglistrow input {
     width: 60%;
   }
 
   .perror {
-    width: 86%;
+    width: 100%;
   }
 
    #mailinglistrow div:nth-of-type(1) {
