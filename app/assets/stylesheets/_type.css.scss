@@ -50,6 +50,9 @@ body, div, p, span, ul, li, h3, h4, h5, h6 {
   color: $bodycopy;
 }
 
+p {
+  font-size: 18px;
+}
 
 /**************** HEADINGS *********************/
 
@@ -92,6 +95,7 @@ h3 {
 }
 
 @media screen and (max-width: 615px) {
+  .blogs-index h1,
   .blogs-show h1,
   .pages-about h1,
   .blogrow h1 {
@@ -104,6 +108,10 @@ h3 {
   .splash.launch h2,
   .splash.launch h3 {
     font-size: 1em;
+  }
+
+  p {
+    font-size: 1.5em;
   }
 }
 
