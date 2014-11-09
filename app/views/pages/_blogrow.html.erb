@@ -28,7 +28,7 @@
     </svg>
     </p>
     <p><%= blog.created_at.strftime("%d %^b") %> | @Ben_Watt</p>
-    <h3><%= blog.title %></h3>
+    <h1><%= blog.title %></h1>
     <p class="desc"><%= truncate(strip_tags(blog.body), length: 300) %> <a style="text-transform:uppercase" href="/blogs/<%= blog.id %>" />read more</a></p>
   </div>
   <div class="img">

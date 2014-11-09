@@ -8,7 +8,7 @@ class PagesController < ApplicationController
 
     HTML_Truncator.self_closing_tags.delete "img"
     @blogs.each do |blog|
-    	blog.body = HTML_Truncator.truncate(blog.body, 20)
+    	blog.body = HTML_Truncator.truncate(blog.body, 70)
     end
   end
 

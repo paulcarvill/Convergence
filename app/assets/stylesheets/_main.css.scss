@@ -98,11 +98,6 @@ body {
   color: #ededed;
 }
 
-.pages-index h1,
-.pages-index h2 {
-  color: #fff;
-}
-
 .content {
   padding: 0 16px;
 }
@@ -226,6 +221,7 @@ footer a {
 .blogrow div div {
   display: table-cell;
   vertical-align: middle;
+  padding: 0 70px;
 }
 
 .blogrow img {
@@ -252,7 +248,7 @@ footer a {
 .blogrow p {
   display: block;
   text-align: center;
-  margin: 0;
+  margin: 0 0 50px 0;
   padding: 0;
 }
 
@@ -274,9 +270,9 @@ footer a {
 }
 
 .blogrow .desc {
-  width: 60%;
+  width: 80%;
   text-align: left;
-  margin-top: 48px;
+  margin-top: 23px;
 }
 
 .blogrow.even .desc {
@@ -390,6 +386,11 @@ body:not(.pages-index) iframe {
 @media screen and (max-width: 660px) { 
   .blogrow {
     height: auto;
+  }
+
+  .blogrow div div {
+    padding: 32px;
+    font-size: 1em;
   }
 
   #mailinglistrow div:nth-of-type(1) {
