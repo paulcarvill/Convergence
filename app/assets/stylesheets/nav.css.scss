@@ -79,7 +79,7 @@ body:not(.pages-index) {
 	padding-top: 96px;
 }
 
-body:not(.pages-index) nav {
+body:not(.pages-index, .pages-about) nav {
   background-color: rgba(232,232,232,0.75);
 }
 
@@ -103,6 +103,10 @@ body:not(.pages-index) #splash-shift {
   }
 
   nav .logo {
+    background-color: $navgrey;
+  }
+
+  nav.stuck .logo {
     background-color: transparent;
   }
   
