@@ -37,7 +37,7 @@
     <% if params['full'] %>
 	  <li><a href="/locations">LOCATIONS</a></li>
     <% end %>
-	  <li><a href="/about">ABOUT</a></li>
-	  <li><a href="/blogs/1">BLOG</a></li>
+	  <li><a <% if controller?("pages") && action?("about") then %>class="current"<% end %> href="/about">ABOUT</a></li>
+	  <li><a <% if controller?("blogs") && action?("show") then %>class="current"<% end %> href="/blogs/1">BLOG</a></li>
   </div>
 </nav>
