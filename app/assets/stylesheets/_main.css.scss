@@ -66,6 +66,12 @@ body {
 
 
 /****** LAUNCH PANEL ********/
+
+.launch {
+  z-index: 2;
+  pointer-events: none;
+}
+
 .splash.launch h1,
 .splash.launch h2,
 .splash.launch h3 {
@@ -296,7 +302,7 @@ footer a {
   padding: 8px 10px 0 5px;
   color: #666;
   border: 1px solid #e0e0e0;
-  font-size: 1.5em;
+  font-size: 1.2em;
   text-transform: uppercase;
   font-family: "PrioriSanRegularMedium";
 }

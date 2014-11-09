@@ -1,17 +1,6 @@
 <!-- ********** MAIN INTERACTIVE PANEL ********** -->
 <!-- ********** ***************** ********** -->
 <!-- ********** ***************** ********** -->
-<script>
-  var cvgHeight = window.innerHeight;
-  var splashShift = document.querySelector("#splash-shift");
-  var h;
-  if (document.documentElement.clientWidth > 615) {
-    h =(cvgHeight-96) + 'px';
-  } else {
-    h =(cvgHeight-48) + 'px';
-  }
-  splashShift.style.height = h;
-</script>
 
 <% @events.each_with_index do |event, i| %>
   <div class="splash <% if i > 0 %>initialHide<% end %>" style="background-image: url(<%=eventImage(event)%>);">

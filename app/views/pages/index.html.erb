@@ -1,8 +1,22 @@
+<script>
+  var cvgHeight = window.innerHeight;
+  var splashShift = document.querySelector("#splash-shift");
+  var h;
+  if (document.documentElement.clientWidth > 615) {
+    h = cvgHeight + 'px';
+  } else {
+    h = cvgHeight + 'px';
+  }
+  splashShift.style.height = h;
+</script>
 
+<% if params['full'] %>
 <%= render "interactivepanel" %>
+<% end %>
 
-
+<% if !params['full'] %>
 <%= render "launch" %>
+<% end %>
 
 <% if params['full'] %>
 <% render "carouselscript" %>
@@ -16,20 +30,14 @@
 
 <%= render "videorow" %>
 
-<%# render "interactive" %>
+<%= render "interactive" %>
 
 <script type="text/javascript">
 $(document).ready(function() {
   var b = $('body');
   $('nav').waypoint('sticky', {
     handler: function(dir) {
-        b.toggleClass('adjust');
-        stopDrawing = (dir == "down" ? true : false);
-        if(dir =="down") {
-          $('canvas').first().css('display', 'none');
-        } else {
-      $('canvas').first().css('display', 'block');
-        }
+        //stopDrawing = (dir == "down" ? true : false);
     },
     offset: 4
   })
