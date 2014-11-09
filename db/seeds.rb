@@ -48,7 +48,15 @@ talk = Category.create!({
     name: "Talks"
 })
 
+paul = Author.create!({
+    id: 1,
+    name: "Paul Carvill"
+})
 
+suki = Author.create!({
+    id: 2,
+    name: "Suki Rai"
+})
 
 Blog.create!([
   {
