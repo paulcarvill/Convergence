@@ -348,7 +348,18 @@ body:not(.pages-index) iframe {
 }
 
 
+.pagination li {
+  display: inline;
+  list-style: none;
+}
 
+.disabled {
+  display: none;
+}
+
+.pagination li:nth-of-type(2) {
+  float: right;
+}
 
 
 
