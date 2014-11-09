@@ -12,7 +12,7 @@
 					<p><%= @blog.created_at.strftime("%B") %></p>
 				</div>
 				<p><%= @blog.created_at.strftime("%d %^b") %> | <%= @blog.author.name unless @blog.author.nil? %></p>
-				<%= @blog.body %>
+				<%= @blog.body.html_safe %>
 			</div>
 		</div>
 		<div class="share">
