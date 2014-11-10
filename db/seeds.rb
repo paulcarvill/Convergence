@@ -293,7 +293,7 @@ Nevertheless, Village Underground has tempted him across the Channel in November
     published: true
   },
   {
-    title: "BEN WATT ON LOOPS",
+    title: "Ben Watt on loops",
     body: "<em>In 1983 Ben Watt released his debut album North Marine Drive on indie label Cherry Red. Then he met Tracey Thorn and they formed folk-infused venture <a href=\"http://www.ebtg.com/\" target=\"_blank\">Everything But The Girl</a>. In the early nineties the band collaborated with Massive Attack and 1996's Walking Wounded melded with future-facing collaborators Howie B and Spring Heel Jack.  This diversion won Watt a nomination for producer of the year at Q Awards and started a loop into dance music. Thirty years later he's seemingly back where he started and has finally got round to recording his second solo album.</em>
 &nbsp;
 <strong>You recently won the <a href=\"http://benwatt.com/news/hendra-wins-aim-award-2014\" target=\"_blank\">difficult second album award</a>, did it <em>feel</em> difficult or were you just diverted for 30 years?</strong>
@@ -348,7 +348,7 @@ Everything But The Girl were playing big shows by the end of the nineties. It wa
 
 I was just immersed in at all at that point. People would hand me great tracks and I thought it would be great to help put them out. Then one of my own productions, Lone Cat, which had been made for Lazy Dog play only was bootlegged off one of only fifty white labels I’d made for friends, and suddenly a couple of thousand were kicking up a storm and I was getting calls from New York about it. I realised that was the moment to act. I got control back of the track and released it properly. That was the first release on Buzzin’ Fly in 2003.
 
-<img class=\"alignnone\" alt="" src=\"http://www.enface.gr/wp-content/uploads/ben-watt.jpg\" width=\"1024\" height=\"768\" />
+<img class=\"alignnone\" alt=\"\" src=\"http://www.enface.gr/wp-content/uploads/ben-watt.jpg\" width=\"1024\" height=\"768\" />
 
 <strong>The plateau of creativity you’ve said you reached in 2011 - was there a specific day or moment when you felt you had to return to writing and performing live?</strong>
 

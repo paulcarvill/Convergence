@@ -26,3 +26,13 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+
+TODO
+
+1. set up hosting
+2. email dan about hosting and fonts
+3. add blog hero image attribute
+4. add tag model (and page/filters)
+5. add author page filter
+6. optimize mobile dots
