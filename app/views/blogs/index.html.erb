@@ -13,7 +13,7 @@
 					<p><%= link_to '…read more', blog %></p>
 				<% end %>
 
-				<%= will_paginate @blogs, :page_links => false %>
+				<%= will_paginate @blogs, :previous_label => "←", :next_label => "→", :page_links => false %>
 			</div>
 		</div>
 		<%= render "blogs/share" %>
