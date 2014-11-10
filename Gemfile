@@ -42,7 +42,6 @@ end
 
 gem "ckeditor"
 gem 'nested_form_fields'
-gem "html_truncator", "~>0.2"
 gem "truncate_html"
 
 # Use ActiveModel has_secure_password
