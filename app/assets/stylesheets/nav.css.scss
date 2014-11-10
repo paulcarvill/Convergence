@@ -17,9 +17,6 @@ nav {
   z-index: 100;
 }
 
-.sticky-wrapper {
-}
-
 #conburger {
 	display: none;
 }
@@ -114,10 +111,14 @@ body:not(.pages-index, .pages-about) nav {
 
 }
 
-body.pages-index #splash-shift {
+.pages-index #splash-shift {
   position: relative;
   z-index: 6;
   pointer-events: none;
+}
+
+.touch #splash-shift {
+  position: absolute;
 }
 
 .sticky-wrapper {
@@ -138,6 +139,7 @@ body:not(.pages-index) #splash-shift {
 @media screen and (max-width: 615px) {
   nav {
     height: 48px;
+    /*background: $navgrey;*/
   }
 
   nav .logo {
@@ -240,6 +242,10 @@ body:not(.pages-index) #splash-shift {
    -webkit-user-select: none;
    -ms-user-select: none;
    user-select: none;
+  }
+
+  .sticky-wrapper {
+    width: 615px;
   }
 
 }

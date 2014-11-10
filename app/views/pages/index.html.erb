@@ -2,11 +2,9 @@
   var cvgHeight = window.innerHeight;
   var splashShift = document.querySelector("#splash-shift");
   var h;
-  if (document.documentElement.clientWidth > 615) {
+  //if (document.documentElement.clientWidth > 615) {
     h = cvgHeight + 'px';
-  } else {
-    h = cvgHeight + 'px';
-  }
+  //}
   splashShift.style.height = h;
 </script>
 
@@ -18,9 +16,9 @@
 <%= render "launch" %>
 <% end %>
 
-<% if params['full'] %>
+
 <%= render "carouselscript" %>
-<% end %>
+
 
 <% if params['full'] %>
 <%= render "eventsrow" %>
