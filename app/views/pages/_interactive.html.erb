@@ -86,6 +86,9 @@ var Radar = (function(){
 
     px,
     py;
+
+    var pxdist = 0.002;
+    var pydist = 0.002;
   
   /**
    * 
@@ -152,22 +155,28 @@ var Radar = (function(){
     ctx.updateNode = function( node ) {
 
       if(Modernizr.touch){
-        px+=0.02;
-        py+=0.02;
+        px+=pxdist;
+        py+=pydist;
 
-        if(px > world.width) {
-          px = 0;
+        if(px < 0 || px > world.width) {
+          pxdist = -pxdist;
         }
-        if(py > world.height) {
-          py = 0;
+        if(py < 0 || py > world.height) {
+          pydist = -pydist;
         }
       } else {
         px = ctx.mouse.x;
         py = ctx.mouse.y;
       }
-        if(node.distanceTo( px, py ) < dotlength ){
-          node.strength = node.distanceTo(ctx.mouse.x, ctx.mouse.y) * 0.003;
+      
+      if(Modernizr.touch) { 
+        if(node.distanceTo( world.center.x, world.center.y ) < 200 ){
+          doSprings = doSprings == false ? true : false;
         }
+      }
+      if(node.distanceTo( px, py ) < dotlength ){
+        node.strength = node.distanceTo(ctx.mouse.x, ctx.mouse.y) * 0.003;
+      }
 
       node.strength += ( node.strengthTarget - node.strength ) * 0.2;
       node.strength = Math.max( node.strength - 0.01, 0 );
