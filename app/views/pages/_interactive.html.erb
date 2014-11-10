@@ -82,7 +82,10 @@ var Radar = (function(){
 
     counter = 0,
 
-    dotlength = 100;
+    dotlength = 100,
+
+    px,
+    py;
   
   /**
    * 
@@ -91,6 +94,11 @@ var Radar = (function(){
     var ctx = Sketch.create();
     container = document.querySelector( '#wrapper' );
     container.appendChild( ctx.canvas );
+
+    if(Modernizr.touch){
+      ctx.mouse.x = 50;
+      ctx.mouse.y = 50;
+    }
 
     ctx.setup = function() {
       // Distance between nodes
@@ -106,6 +114,8 @@ var Radar = (function(){
       var x = 0;
       var y = 0;
       var len = NODES_X * NODES_Y;
+      px = 150;
+      py = 150;
 
       // Generate nodes
       for( y = 0; y < NODES_Y; y++ ) {
@@ -140,7 +150,22 @@ var Radar = (function(){
     }
 
     ctx.updateNode = function( node ) {
-        if(node.distanceTo( ctx.mouse.x, ctx.mouse.y ) < dotlength ){
+
+      if(Modernizr.touch){
+        px+=0.02;
+        py+=0.02;
+
+        if(px > world.width) {
+          px = 0;
+        }
+        if(py > world.height) {
+          py = 0;
+        }
+      } else {
+        px = ctx.mouse.x;
+        py = ctx.mouse.y;
+      }
+        if(node.distanceTo( px, py ) < dotlength ){
           node.strength = node.distanceTo(ctx.mouse.x, ctx.mouse.y) * 0.003;
         }
 
