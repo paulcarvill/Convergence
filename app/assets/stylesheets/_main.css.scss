@@ -444,36 +444,9 @@ body:not(.pages-index) iframe {
     font-size: 1em;
     margin-top: 2px;
   }
-
 }
 
-@media screen and (max-width: 660px) { 
-
-  .blogrow {
-    height: auto;
-  }
-
-  .blogrow div div {
-    padding: 32px;
-    font-size: 1em;
-  }
-
-  #mailinglistrow div:nth-of-type(1) {
-    padding-top: 3em;
-  }
-
-  .blogrow .img {
-    height: 475px;
-    background-size: cover;
-  }
-
-  .blogplayer {
-    height: 5px;
-    display: block;
-    width: 100%;
-    background: linear-gradient(90deg, #2aa9ea, #e90190);
-  }
-
+@media screen and (max-width: 900px) { 
   .blogrow div div {
     display: block;
   }
@@ -484,10 +457,27 @@ body:not(.pages-index) iframe {
     width: 100%;
     display: block;
   }
-  .blogrow.even .txt,
-  .blogrow.even .img {
-    left: auto;
+  .blogrow .img {
+    height: 475px;
+    background-size: cover;
   }
+  .blogrow {
+    height: auto;
+  }
+
+  .blogrow div div {
+    padding: 32px;
+    font-size: 1em;
+  }
+}
+
+
+@media screen and (max-width: 660px) { 
+
+  #mailinglistrow div:nth-of-type(1) {
+    padding-top: 3em;
+  }
+
   .txt {
     padding: 20px 0;
   }

@@ -12,7 +12,7 @@ footer ul {
 	margin: 0 0 1.8em 0;
 	padding: 0;
 	text-transform: uppercase;
-	margin-left: 24px;
+	margin-left: 160px;
 }
 
 footer a {
@@ -59,7 +59,16 @@ footer li a {
   clear: left;
 }
 
+@media screen and (max-width: 900px) { 
+  footer ul {
+    margin-left: 48px;
+  }
+}
+
 @media screen and (max-width: 660px) { 
+  footer ul {
+    margin-left: 24px;
+  }
   footer li {
     margin-bottom: 24px;
   }
