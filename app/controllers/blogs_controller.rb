@@ -4,7 +4,7 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.all.paginate :page => params[:page], :per_page => 3
+    @blogs = Blog.where("published = ?", true).order(published_at: :desc).paginate :page => params[:page], :per_page => 3
   end
 
   # GET /blogs/1

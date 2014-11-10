@@ -4,7 +4,7 @@ class CreateBlogs < ActiveRecord::Migration
       t.string :title
       t.text :body
       t.datetime :published_at
-
+      t.boolean :published, :default => false, :null => false
       t.references :category
       t.references :author
       

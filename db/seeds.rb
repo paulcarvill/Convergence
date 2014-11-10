@@ -58,6 +58,11 @@ suki = Author.create!({
     name: "Suki Rai"
 })
 
+dan = Author.create!({
+    id: 3,
+    name: "Dan Davies"
+})
+
 Blog.create!([
   {
     title: "How digital came together for Convergence",
@@ -89,14 +94,18 @@ Blog.create!([
 <h3><b>Lessons learnt from our digital audience</b></h3>
 <p>The data that we acquired will inform our decisions with the next iterations of the series. As a team for example, we now firmly believe that we need to hold another Convergence presents event in the next season rather than the following year. This is so as to keep the festival on people&#8217;s bookmarks and on their minds as audience has effectively stagnated since the event. The relatively equal gender split of our audience will continue to make us conscious of a female presence in the artists we include in this.</p>
 <p>Finally, it is worth underlining the fact that qualitative data only tells us part of the story. Whilst steps will be made to gather these ahead of the event next time a useful exercise would be to also gain some quantitive data in our 300 strong mailing list. Their consent on this mailing list was given at the point of sale, so hopefully enough information can be gleaned from this sample set of around 10% total audience. It would also be nice to put more of a human face on our digital audience.</p>',
-    category_id: 4
+    category_id: 4,
+    author_id: 3,
+    published: false
   },
   {
     title: "Fritz Helder to sing with Booka Shade for the first time",
     body: '<img width="900" height="598" src="http://www.convergence-london.com/wp-content/uploads/2014/04/Fritz_Helder_The_Image_Interview_50.jpg" class="attachment-post-thumbnail wp-post-image" alt="Fritz Helder" /><p>Booka Shade have announced that Fritz Helder, of Azari &amp; III fame, will be joining them live for the first time at this tonight.</p>
 <p>Fritz, who also recently re-scored ‘All That She Wants’ with Yolanda Be Cool, will be joining the Berlin electronic duo for their collaborative track ‘Love Drug’, taken from Booka Shade’s acclaimed LP, Eve.</p>
 <p>The Noise of Art gig, which takes place on tonight as part of Convergence is sold out. But some tickets still remain for the <a title="Booka Shade and Noise of Art curate: After show" href="http://www.convergence-london.com/ai1ec_event/booka-shade-after-show/?instance_id=" target="_blank">Booka Shade and Noise of Art curated after show</a>, later that night, with Tom Findlay of Groove Armada DJing, We Have Band playing live and much more.</p>',
-    category_id: 3
+    category_id: 3,
+    author_id: 3,
+    published: false
   },
   {
     title: "The point of Convergence",
@@ -117,7 +126,9 @@ Blog.create!([
 <p>Classical music audiences had been in annual steady decline since  1970, so when the classical cadre at the Southbank saw the 2200 kids raving to Ligetti something changed. Furthermore, from this point  forward they this embraced this approach of allowing events to spill-out from auditorium concert into the foyer and beyond. Pre-gig talks and post gig DJ-sets would soon be the norm. And finally electronic artists would be welcomed into the Southbank and their audiences accommodated.</p>
 <p>Of course “convergence” the word has multiple meanings but I like the idea that many disparate artists, musicians, talkers and raves are united through it. And despite it being a multi-venue, multi-valent, multi-coloured series Convergence is where we come together. In the middle of Andre’s triangle is also our convergence point. And that’s the point of Convergence.</p>
 <p><em>Originally published on<a href="http://drownedinsound.com/in_depth/4147670-convergence-a-new-series-of-electronic-music-events-in-the-post-dubstep-edm-dominated-era" target="_blank"> Drowned In Sound</a>.</em></p>',
-    category_id: 3
+    category_id: 3,
+    author_id: 3,
+    published: false
   },
   {
     title: "Hyper Realisation: An Interview With Ben Frost",
@@ -183,14 +194,18 @@ Blog.create!([
 <p>BF: Look, my involvement with that record is pretty minimal. Michael is very much in control of everything that goes on in his records, and I felt very privileged to be part of that. He&#8217;s completely unflinching and unapologetic in everything that he does, and there is an honesty, a brutal truth in his music, which I find infinitely more inspiring than anything else going on right now, and I think he makes music that&#8217;s pretty overwhelming, in the best possible way. That&#8217;s everything I want from music &#8211; just to be owned by music. Taken over.</p>
 <p><i>Ben Frost&#8217;s new album </i>A U R O R A<i> is out on 26th May via Mute.</i></p>
 <p><i>Frost plays at the Village Underground in London on 26th April, as part of Convergence Festival 2014. <a href="http://www.convergence-london.com/ai1ec_event/noise-of-art-ben-frost/?instance_id=" title="Ben Frost, Karen Gwyer">Click here for details and tickets</a></i></p>',
-    category_id: 3
+    category_id: 3,
+    author_id: 3,
+    published: false
   },
   {
     title: "Koreless Maida Vale session",
     body: '<img width="500" height="235" src="http://www.convergence-london.com/wp-content/uploads/2014/04/koreless.jpg" class="attachment-post-thumbnail wp-post-image" alt="koreless" /><p>Ahead of his <a href="http://www.convergence-london.com/ai1ec_event/jacques_greene-koreless/?instance_id=" title="Jacques Greene, Koreless and Vaghe Stelle">St John at Hackney</a> performance tomorrow, Koreless has put an incredible string quartet version of Sun recorded at Maida Vale last December.</p>
 <p><iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/144787353&amp;auto_play=false&amp;hide_related=false&amp;visual=true"></iframe></p>
 <p>It&#8217;s an uplifting spiritual performance and we expect no less in church tomorrow. Koreless will be appearing alongside label mates Vaghe Stelle and Jacques Greene, <a href="http://www.residentadvisor.net/event.aspx?572955" title="Resident Advisor eticket" target="_blank">last few remaining tickets here</a>. </p>',
-    category_id: 3
+    category_id: 3,
+    author_id: 3,
+    published: false
   },
  {
     title: "Luigi Russolo’s Legacy",
@@ -226,14 +241,18 @@ It is well known that John Cage would site Russolo as an early influence, that C
 <p>After Paris, Russolo moved to Spain, where he studied spiritualism and the occult until 1933, after which he settled in Italy and returned to painting. He died at the end of the war, just as Musicque Concréte was becoming an identifiable genre.</p>
 <p>“As creator of the first systematic poetics of noise and inventor of what has been considered the first mechanical sound synthesizer, Russolo looms large in the development of twentieth-century music.” (cover notes for “Luigi Russolo, Futurist”, University of California Press, by Luciano Chessa, lecturer in music at St John’s, Oxford, Colombia University and Harvard).</p>
 <p>Noise of Art&#8217;s celebrations of 100 years since Russolo&#8217;s first concert, featuring Booka Shade is now sold out, but a few tickets remain for the aftershow featuring Tom Findlay from Groove Armada, We Have Band, Severino and Justin Robertson and many more. <a title="Booka Shade and Noise of Art curate: After show" href="http://www.convergence-london.com/ai1ec_event/booka-shade-after-show/?instance_id=">More details here</a>.</p>',
-    category_id: 3
+    category_id: 3,
+    author_id: 3,
+    published: false
   },
   {
     title: "Anna von Hausswolff live video on KEXP",
     body: '<img width="854" height="469" src="http://www.convergence-london.com/wp-content/uploads/2014/04/Screen-shot-2014-04-16-at-4.27.53-PM.png" class="attachment-post-thumbnail wp-post-image" alt="Screen shot 2014-04-16 at 4.27.53 PM" /><p>Denovali&#8217;s party this Friday doesn&#8217;t just involve men prodding laptops. Anna von Hausswolff knows how to rock too as this full live performance illustrates. </p>
 <p><iframe src="//www.youtube.com/embed/t5zhoRBUSbE" height="720" width="1280" allowfullscreen="" frameborder="0"></iframe></p>
 <p>A few tickets for the evening until late showcase, with <a href="http://www.convergence-london.com/ai1ec_event/denovali/?instance_id=" title="Denovali" target="_blank">many more diverse acts, still remain</a>.</p>',
-    category_id: 3
+    category_id: 3,
+    author_id: 3,
+    published: false
   },
   {
     title: "Saffronkeira and Mario Massa join Denovali line-up",
@@ -242,8 +261,260 @@ It is well known that John Cage would site Russolo as an early influence, that C
 <p>Since then Caria and Massa met every weekend at Caria&#8217;s studio and ideas bounced back and forth between the two musicians. Massa improvised over Caria&#8217;s compositions, Caria added layers to Massa&#8217;s play, there was not the slightest disagreement about the sound and dynamics of their tracks. Just as we can only marvel at the complexity of Nature which emerged only from this simple principle of cause and effect, we can only be astonished at the result of this collaboration.</p>
 <p>Take a listen to the fruits of their union <a href="https://soundcloud.com/denovali/saffronkeira-mario-massa" target="_blank">here.</a></p>
 <p><iframe src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/101287332&amp;auto_play=false&amp;hide_related=false&amp;visual=true" height="450" width="100%" frameborder="no" scrolling="no"></iframe></p>',
-    category_id: 3
+    category_id: 3,
+    author_id: 3,
+    published: false
+  },
+  {
+    title: "The Afrobeat goes on for Tony Allen",
+    body: 'Tony Allen started making music with Fela Anikulapo-Kuti in the late 1960s and continued to be the rhythm powerhouse of Afrika 70 during the self proclaimed “Black President’s” most prolific period. Allen fused jazz drumming styles from Americans such as Art Blakey with African Highlife to create the backbone for Afrobeat. But Afrobeat continues to break the form rather than get stuck in a loop.
+“The approach is Afrobeat” says Allen, “it can be extended not just to the past but also applied to my whole life. It’s the ups and downs of music. It’s about evolution - we just keep moving on.”
+<img class="alignnone size-full wp-image-396" alt="03@Bernard Benant 4621 1 hd" src="http://vuzine.villageunderground.co.uk/wp-content/uploads/2014/10/03@Bernard-Benant-4621-1-hd.jpg" width="1100" height="732" />
+It comes as no surprise that his new solo album Film of Life isn’t a perfectly preserved retrospective but a future-gazing album of new material. It has the similar hypnotising polyrhythms but doesn’t sound stuck in an era or musical style.
+This doesn’t mean that his work is without teeth, his laconic vocal delivery often conveys a strong message. The opening track Moving On lays down the musical manifesto of what at one point he calls “Afrobeat Espresso” and at another point he calls “Afrobeat Express”. This is perhaps a reference to the supercharged Rocket Juice &amp; The Moon collaboration with Damon Albarn, Flea, Erykah Badu and Fatoumata Diawara and many others as part of Africa Express.
+His approach to collaboration has always been open and accepting and this remains the same even if Film of Life is billed as a solo project.
+“I\'m not like Fela who writes compositions with music direct,” says Allen “I\'m composing with my drumset. I\'m not going to assume that I can write for instruments that I never played with before. After the drums are there and I play it fluidly then I can write other bits like the bass, guitars horns and keyboards.”
+<iframe src="//www.youtube.com/embed/KtpDzxoOhe0" height="720" width="1280" allowfullscreen="" frameborder="0"></iframe>
+Allen is keen to encourage the best from musicians that he works with on his own projects, with appearances from Aduni Nefretiti, Kuku and Damon Albarn all setting the tone for the music. Allen talks about the song he created with his The Good, The Bad and The Queen collaborator.
+“I would never dictate anything to him, because when I\'ve invited Damon, I want Damon, you know? As long as he doesn\'t dictate to me what he wants when he\'s invited me. I know he will give me back something. I don\'t need to tell him what to do. It\'s like telepathy he can read me and I read him too.”
+<iframe src="//www.youtube.com/embed/8-hMkHkoFrU" height="720" width="1280" allowfullscreen="" frameborder="0"></iframe>
+Certain tracks on the album also have a political message to his African brothers and sisters, no more so than Boat Journey, which warns against the dangers of migration.
+“The song is about leaving your country because you have a bad situation but you can often face persecution elsewhere. Like me, I left Nigeria to come to Europe to change my situation because it was crazy back there. But I never lost my life. Even if the boat doesn’t capsize, they can face detention and if they’re lucky and they enter the country they don\'t give them jobs to do and no-one employs them because they don\'t have the correct papers. It\'s like playing the Lottery. I\'m just crying for the people that I see dying every time.”
+<iframe src="//www.youtube.com/embed/OeNCLU_Ho6M" height="720" width="1280" allowfullscreen="" frameborder="0"></iframe>
+After a brief spell in England, Allen finally settled in Paris in the early 1980s.
+“Well I think Paris is happening for music. I also chose France because here I can walk, legally. I want to be able to walk freely across the world. In England I was stuck, they wouldn’t give you the right papers. For me it meant joblessness if I\'d wanted to stay in England. And if I did make music there there\'s always the thought that there\'s an officer on your back every time to catch you if you were performing.”
+Nevertheless, Village Underground has tempted him across the Channel in November. This is the perfect chance to catch a man who refuses to stand still.
+<h3><em>Tony Allen comes to town on <a href="http://villageunderground.co.uk/events/tony-allen" target="_blank">20th November</a>.</em></h3>
+&nbsp;
+<iframe src="//www.youtube.com/embed/uH57frJigp4" height="720" width="1280" allowfullscreen="" frameborder="0"></iframe>',
+    category_id: 1,
+    author_id: 3,
+    published_at: DateTime.parse("12/11/2014 09:00"),
+    published: true
+  },
+  {
+    title: "BEN WATT ON LOOPS",
+    body: "<em>In 1983 Ben Watt released his debut album North Marine Drive on indie label Cherry Red. Then he met Tracey Thorn and they formed folk-infused venture <a href=\"http://www.ebtg.com/\" target=\"_blank\">Everything But The Girl</a>. In the early nineties the band collaborated with Massive Attack and 1996's Walking Wounded melded with future-facing collaborators Howie B and Spring Heel Jack.  This diversion won Watt a nomination for producer of the year at Q Awards and started a loop into dance music. Thirty years later he's seemingly back where he started and has finally got round to recording his second solo album.</em>
+&nbsp;
+<strong>You recently won the <a href=\"http://benwatt.com/news/hendra-wins-aim-award-2014\" target=\"_blank\">difficult second album award</a>, did it <em>feel</em> difficult or were you just diverted for 30 years?</strong>
+The album had been in the back of a mind on and off for years. I had an emerging career aged nineteen back in the early eighties. I had recorded with folk mavericks like Kevin Coyne and Robert Wyatt in spite of my relative youth. Then I met Tracey and took a fork in the road. I thought it would be for three months. It took 20 years. But someday I knew I would return to a solo record of some sort. In the end I wrote it out of a kind of compulsion because of certain triggers in my life, and I just tried to be natural, true to my earliest influences, relaxed, with good stories to tell. Yes, there were moments when I felt daunted by it all, but I guess I have always been a person who opens the lion’s mouth and sticks my stupid head in.
+
+<strong>In what way does the new album echo where you were at the beginning 30 years ago?</strong>
+
+The interface of folk and Brazilian and rock still fascinates me. I grew up discovering artists like Joao Gilberto, John Martyn, Nick Drake, Neil Young and they still leave a big imprint on me now. Back then no one was talking about Nick Drake. Unlike now. And my dad - a big band arranger and jazz composer - was always playing jazz in the house. I also listened to mid 70s Eno stuff like Before and After Science and Another Green World. I loved the ambient textures, the buzzing polysynths. We used that as background texture on Hendra.
+
+<iframe src=\"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/141161597&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true\" height=\"600\" width=\"100%\" frameborder=\"no\" scrolling=\"no\"></iframe>
+
+<strong>As you’ve completed your 20 year musical orbit around electronic music what is your relationship with it now?</strong>
+
+I was completely absorbed by it for a long time. But somehow I hit a plateau a couple of years ago. Things seemed to be either running out of control with EDM, or returning to where I was at the beginning of my DJing with people asking me to play all my early Lazy Dog deep house records again, or elsewhere I saw young bands and duos mining the jagged electronic pop seam Everything But The Girl worked at in the mid-nineties. It felt like a turning point. I had no desire to commercialise <a href=\"http://www.buzzinfly.com/\" target=\"_blank\">Buzzin’ Fly</a> nor did I want to spool back ten or fifteen years, so I hit the pause button, and realised what I really wanted to do was write again - words, songs. Another beginning perhaps, perhaps even an older one, but it felt like a fresh one.
+
+<strong>What’s your creative process?</strong>
+
+I never plan. I never second guess. I just wait for ideas to mass up and then I commit. Always out of a need. Sometimes I work on something and realise it is actually the middle of a good idea and it needs a start and end point. In the end you just hope to impress yourself in some way. And that gets harder.
+
+<strong>For Hendra did you work from your home studio or did songs come to you when you were elsewhere with a guitar?</strong>
+
+I wrote everything for that record on one guitar or at the piano. I did basic old school demos. Tried to make sure they worked as songs in the raw form first.
+
+<strong>Is there any electronic residue left behind?</strong>
+
+Yes, me and Ewan (<a href=\"http://ewanpearson.com/\" target=\"_blank\">Pearson</a>) spent a long time on the background electronic textures on the record. The opening of the album actually starts with a heavy ARP chord, but we also used found sounds, old polysynths, vintage Solina all over the album if you listen. Often it is there creating subliminal mood - fizzing and buzzing around the edges. Nathaniel has some serious motorik drum programming behind the real drums. Wait till you hear the extended edits Ewan has done of it that we are releasing next month!
+
+<iframe src=\"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/152596384&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true\" height=\"450\" width=\"100%\" frameborder=\"no\" scrolling=\"no\"></iframe>
+
+<strong>How did it feel taking centre stage again for the live performances?</strong>
+
+I have always loved being on a stage. It doesn’t phase me. The first comeback show - in a friend’s record store in Indianapolis after hours in April 2013 - was nervewracking but I soon fell back into it again.
+
+<strong>Solo albums can be singular pursuits but this album has some great contributions. How important to you is collaboration with good musicians?</strong>
+
+I turn to people when I need them. I knew I was writing in a very loose impressionistic - and at times melancholy - way on the record, and yet the lyrics were quite heavy, so I decided I needed a counterpoint in the music, a darker voice, some grit. And that is how I turned to Bernard Butler. He brings the edge, the distortion, the foil.
+
+<strong>How did the Ben Watt Trio come about? At what point did Bernard Butler and Martin Ditcham get involved?</strong>
+
+Bernard has been playing with me since I began this whole project. My first comeback shows last August in Clerkenwell were with Bernard alongside. So he is integral. I have known Martin for years. A brilliant percussionist and drummer. He played on the album and has been on Everything But The Girl stuff in the past. I like building atmospheres with few components. Two guitars and drums is intriguing to me. And different. We can rework a few of the songs in a new way. Stick to arrangements but also improvise.
+
+<iframe src=\"//www.youtube.com/embed/3Ok_QDPtgJo\" height=\"720\" width=\"1280\" allowfullscreen=\"\" frameborder=\"0\"></iframe>
+
+<strong>How big an impact did Amplified Heart have on your electronic trajectory?</strong>
+It was the first time me and Tracey started mixing our songs with breakbeats and samples. We began the album in 1993. The producer John Coxon was very instrumental in helping us along that road. I still love the original version of Missing that we did with him. But obviously Todd Terry’s remix and the work we did with Massive Attack at the same time showed how it could really translate to a wider audience. We stepped up through the gears in nineties with some confidence after that. Making Walking Wounded in 1995 was very exciting - a new dawn in many ways. We were already a band already ten years into their career. Not many bands get the chance to break through big with something new. Looking back, it was like like the Bee Gees or something.
+
+<strong>What motivated you to start DJing at Lazy Dog, was it wanting to share exciting dance music with people?</strong>
+
+Everything But The Girl were playing big shows by the end of the nineties. It was starting to feel too big. Also Tracey was feeling the urge to break away and start a family. In the end we decided to call it a day on a high point and I wanted to go back onto the underground and start something new and fresh. I bumped into Jay Hannan who worked at Blackmarket Records in Soho. We dreamed up the night. Deep house on a Sunday afternoon-thru-evening. No one was doing it back then. Sunday clubbing was in its infancy. It took eighteen months to build but when it took off it was one of the best five years of my life.
+
+<strong>Why did you want to start Buzzin’ Fly, was it an insatiable urge bring electronic music to an enthusiastic audience?</strong>
+
+I was just immersed in at all at that point. People would hand me great tracks and I thought it would be great to help put them out. Then one of my own productions, Lone Cat, which had been made for Lazy Dog play only was bootlegged off one of only fifty white labels I’d made for friends, and suddenly a couple of thousand were kicking up a storm and I was getting calls from New York about it. I realised that was the moment to act. I got control back of the track and released it properly. That was the first release on Buzzin’ Fly in 2003.
+
+<img class=\"alignnone\" alt="" src=\"http://www.enface.gr/wp-content/uploads/ben-watt.jpg\" width=\"1024\" height=\"768\" />
+
+<strong>The plateau of creativity you’ve said you reached in 2011 - was there a specific day or moment when you felt you had to return to writing and performing live?</strong>
+
+Not really. It creeps up on you. The late nights, the travelling, the disappointing DJ gigs - you start to resent them, rather than brush them aside. And the office hours were long too. In the end I felt my own self-expression was being stifled in some way. I needed a change.
+
+<strong>What irks you so much about EDM?</strong>
+
+The name is the worst thing. The American music industry was always rubbish at respecting its own underground electronic movements. You could argue America is the home of house, techno, early disco - and yet at a mainstream level - none of them were respected or understood or given grassroots support. In the end all of it was lumped together in a huge rebranding exercise when the big players and labels realised a firestorm was brewing as various things came together - the underground teen rave scene, organised corporate-sponsored festivals, superstar Djs, laptop producers, mash-ups - and saw the money that could be made out of its worst excesses.
+
+<strong>On the flipside, do you miss DJing regularly and creating electronic music? Do you find yourself drawn to other ways of using technology in your life or has it all gone very puritan?</strong>
+
+Puritan is a strange word to use; I know plenty of techno puritans if you want to put it like that. I am just a musician who responds to the things around me and tries to be always inspired not just playing by numbers. I don’t want to fake it. At the moment wood, steel, amplifiers, words are exciting to me. I don’t miss Djing at the moment but that’s not to say I won’t ever go back to it. Everything is a cycle.
+
+<strong>Do you feel like you have any unfinished business?</strong>
+
+Always. Everything you ever do is done to make up for perceived mistakes in the past.
+
+<strong>If you could live any year of the last 31 again, which one would it be?</strong>
+
+None. The next one is always the best.
+
+<em><h2>The Ben Watt Trio perform at Village Underground on <a href=\"http://villageunderground.co.uk/events/ben-watt-trio\" target=\"_blank\">10th November</a> tickets are <a href=\"http://villageunderground.seetickets.com/event/ben-watt-trio/village-underground-shoreditch-london/806394\" target=\"_blank\">available here</a>.</h2></em>",
+    category_id: 1,
+    author_id: 3,
+    published_at: DateTime.parse("12/11/2014 09:00"),
+    published: true
+  },
+
+
+  {
+    title: "Making human music for Ibibio Sound Machine",
+    body: '<h3 id="enowilliamsandthecrackedbackedtortoise">The Cracked Backed Tortoise</h3>
+It was in the studio, recording with her friends Max Grunard, Leon Brichard and Benji Bouton that Eno Williams started telling the tale of the Cracked Backed ​Tortoise. Although Eno was born in London, this ancient African story was told to her when she was growing up in Nigeria. Although different versions of this myth exists in other parts of Africa and even amongst some native American tribes, the Ibibio version is a bawdy retelling that involves a cunning tortoise who receives a beating after he cheats a king out of all of his money.
+
+The South Eastern Nigerian language is naturally lyrical and as Eno unravelled the tale, she slipped into her mother tongue and sang parts to add extra comedy emphasis. Her friends who are from different countries and couldn\'t understand the phrases, but identified with the story as it came to life through Eno and Ibibio Sound Machine was born.
+
+<a href="http://yeggmag.fr/transmusicales-les-femmes-debarquent-33/"><img class="alignnone size-full wp-image-242" alt="Yegg Magazine" src="http://vuzine.villageunderground.co.uk/wp-content/uploads/2014/09/Photos-Yegg-Ibibio-Sound-Machine-vignette-Celian-Ramis.jpg" width="1800" height="1200" /></a>
+<h3 id="breathinglifeintothebaby">Bringing up baby</h3>
+Ibibio Sound Machine quickly grew in size, taking extra brass and percussion from Tony Hayden, Scott Baylis and Anselmo Netto. It was also able to run before it walked thanks to the wisdom and wicked guitar licks of legendary Highlife guitarist Alfred Bannerman. But it was through touring that ISM really found its feet.
+
+"The studio was obviously the birthing of the project and taking it on the road is like bringing it forth to the audience," says Eno "So you\'ve conceived it, then you\'re breathing life into it by performing on stage."
+
+Eno is up in our  offices for a chat ahead of her gig below in a few months\' time. She talks quickly, bursting with nervous energy clearly flushed with pride at the way her project has been received.
+
+<a href="http://instagram.com/p/sSMFmKDRr-"><img class="alignnone size-full wp-image-243" alt="IbibioInTrain" src="http://vuzine.villageunderground.co.uk/wp-content/uploads/2014/09/IbibioInTrain.jpg" width="640" height="640" /></a>
+<h3 id="notanobviouschild">Not an obvious child</h3>
+"It\'s was great to have a receptive audience because everyone in the band loves the music and is passionate about it too. The music is about celebrating and bringing to life - the afro music and fusion of electronic sound all mixed together. It was a case of creating something new and unique. That\'s what you see in the live show."
+
+Eno has been in the studio all day and is still impeccably dressed, climbing up our VU\'s narrow spiral staircase to the tube carriages in a pair of stunning pair stilettos. Her black and white outfit is the perfect photo opportunity for the VUzine. On stage her clothing and physical performance overflows with exuberance.
+
+"I\'ve seen lots of shows, musicals and concerts and one thing that always takes me back is the visual," says Eno "What you see apart from just the music. There\'s so much more to putting on a show. I thought it would be nice to go a little over the top, of course not go crazy but give it a bit of a visual oomph if I may say so."
+
+<a href="http://yeggmag.fr/transmusicales-les-femmes-debarquent-33/"><img class="alignnone size-full wp-image-244" alt="Taken at Transmusicals by Celian Ramis" src="http://vuzine.villageunderground.co.uk/wp-content/uploads/2014/09/Photos-Yegg-Ibibio-Sound-Machine-I-Celian-Ramis.jpg" width="2400" height="1200" /></a>
+<h3 id="feelingfemalefela">Feeling female Fela</h3>
+The Afrobeat influence is undeniable with Eno often performing with tribal looking dots on her face. It would be too easy to name her female Fela Kuti.
+
+"Both my parents loved Fela when we were growing up but we as children weren\'t allowed to listen to him. My mum in particular thought he was quite controversial and a trouble maker and she didn\'t like the idea of us watching half naked girls gallivanting about the stage. It wasn\'t until I got much older that I actually started listening to his music and appreciated what he was talking about. Even though he was quite political, there was a lot of truth in his music. He was saying a lot of things that made sense. You can hear so many other influences apart from just Afrobeat though. You can hear Talking Heads from Leon\'s influence, you can hear jazz sound from Max\'s influence, the whole Highlife thing from Alfred\'s music and the Brazilian flair from Anselmo. My influence really is the merging of Western electronic music with African music."
+
+<a href="http://mediadiversified.org/2013/09/07/my-name-is-fela-anikulapo-kuti-black-president-or-chief-priest-of-shrine/fela-kuti-felt-forum-nyc-111986/"><img class="alignnone size-full wp-image-245" alt="Fela Kuti/ Felt Forum/ NYC 11/1986" src="http://vuzine.villageunderground.co.uk/wp-content/uploads/2014/09/fela-1.jpg" width="1600" height="1057" /></a>
+<h3 id="worldofmusicanddance">World of music and dance</h3>
+I first came across Ibibio Sound Machine at WOMAD festival and I was surprised how varied her dedicated audience was. Playing the red tent it was a world away from the leafy arboretum. I wonder what she thinks about being considered \'world music\'.
+
+"I would say it\'s like human music... I\'ve been really taken by the way the audience takes to the music. Sometimes I teach them a few lines and they sing along. It just goes to show how universal music is as long as the spiritual content is good and people can vibe with it, people just want to celebrate...and dance."
+
+<iframe src="//www.youtube.com/embed/UWaBISTKc7c" height="720" width="1280" allowfullscreen="" frameborder="0"></iframe>
+
+<em>Ibibio Sound Machine play Village Underground on <a href="http://villageunderground.co.uk/events/ibibio-sound-machine" target="_blank">27th November</a>. Tickets are <a href="http://villageunderground.seetickets.com/event/ibibio-sound-machine/village-underground/792148" target="_blank">£13.50 + bf from here</a>.
+</em>',
+    category_id: 1,
+    author_id: 3,
+    published_at: DateTime.parse("12/11/2014 09:00"),
+    published: true
+  },
+
+
+  {
+    title: "At the apex: Kiasmos' year of creation",
+    body: '<em>With a population just bigger than Brighton, Reykjavík is one of the smallest capital cities in the world, the central draw of Europe\'s most sparsely populated country. When an island such as Iceland is shaped so fiercely by earthquakes and eruptions, it’s easy for stereotypes to take hold, especially when there isn\'t a huge amount of people to defy them. But despite the country\'s impeccable cultural heritage, there’s a new wave of artists not content on relying on the achievements of Björk and Sigur Rós to define their nation’s musical output.</em>
+
+<em>Cue Kiasmos, two musicians seemingly standing on different tectonic plates. On one side is Ólafur Arnalds -  a <a title="BAFTA for Broadchurch" href="http://awards.bafta.org/award/2014/tvcraft/original-music" target="_blank">BAFTA-winning</a> multi-instrumentalist, composer and producer, whose work comprises post-classical strings and piano nudged gently along by refined drum beats. On the other plate is techno musician and vocalist Janus Rasmussen, one quarter of Icelandic band Bloodgroup who are specialists in catchy dance music earning them early comparisons to The Knife. Musically worlds apart - then there\'s the fact that Janus lives in the even more sparsely populated Faroe Islands and only voyages to Iceland to make music.</em>
+
+<em>With a new date announced at <a href="http://villageunderground.co.uk/events/kiasmos" target="_blank">on 29th November for Superstition</a>, we spoke to Ólafur and Janus about their first full-length eponymous album, made after setting aside 2014 for collaboration in <em>Reykjavík</em>.</em>
+
+<img style="border: 10px solid white;" title="Design by Adam J Heron (Erased Tapes)" alt="" src="http://www.residentadvisor.net/images/events/flyer/2014/11/uk-1129-607897-396259-front.jpg" width="358" height="507" /> Design by Adam J Heron (Erased Tapes)
+
+For an outsider it may seem that their early meeting might have caused friction but truth is often far from myth. It was a common interest that brought them together.
+
+“We met through music,” Ólafur says, “I was working as a sound technician back in the day, and Janus’s band, Bloodgroup, was playing at a venue I worked at, and I ended up going on tour with them as their live engineer. On those trips we found this common interest for electronic music which, at least, I hadn’t really explored before. We were just both interested and wanted to start experimenting.”
+
+Their meetings started as weekend hangouts, experimenting with sounds and samples, but the project soon became more serious. Filled with energy of a new musical relationship, early material focused on a shared love for minimal techno. Kiasmos were keen on keeping up the musical energy that makes audiences dance.
+
+When it came to putting the debut album together, their music became more considered. On the phone from the Faroe Islands Janus considers the current body of work.
+
+“I didn’t know it was going to be this ambient, but I guess that was nice, it’s kind of new for me - I’ve always made dance music but in a way we’re meeting in the middle.”
+
+Also on the conference call, Ólafur agrees: “This is more clubby than I usually do but more ambient than Janus usually does.”
+
+Ólafur and Janus explain that with Kiasmos, they wanted to see if they could use piano and strings to create textured electronic music. By using live music rather than just synthesised approximations, this gives the album much more depth.
+
+“We’ve almost only made music that is electronic together so for us it was kind of interesting to see if we could fit strings into it especially the piano,” says Ólafur, “because there’s not a lot of electronic music that uses it - to a good effect at least.”
+
+Janus cuts in, “Well, there’s some club music which uses some more disco piano and stuff, but we wanted to hear you know, this texture of the really soft and gentle piano playing against the hard kick drum. It’s kind of like painting a picture, it’s just colours, and you get a different colour from an electric piano and a real piano. And it\'s the same for strings- some of the strings on the album are actually programmed, they’re still made in the computer- but some are recorded... Sometimes you want something very much alive, and sometimes you want it very much the opposite, but everything needs to be humanised. It can sound like a computer and still be cool.”
+
+Asked if they thought it was as straight forward as analogue sounding better than digital, the answer is a resounding “no":
+
+“Although we definitely lean a lot more towards analogue," Ólafur explains, "because even if you’re talking about old synths or old drum machines, they’re still analogue.”
+
+What is it about the old machines that appeal, is it the fact they still have the ability to surprise their users? The fact that random is still an option?
+
+“I don’t like soft synths because they are too reliable” Janus explains, “they have no faults, and no surprises, they just do exactly what you tell them to do, but with our collection of analogue synths, you often get these crazy surprises and errors, which are mistakes but that’s how you discover something and that’s how you bring a real character to what you\’re doing.”
+
+Ólafur adds: “But it also depends, I mean again, sometimes I love soft synths, if I want to do something completely reliable.”
+
+<iframe src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/147055755&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true" height="450" width="100%" frameborder="no" scrolling="no"></iframe>
+
+By combining both Ólafur’s talent for classical arrangements and Janus’ familiarity with synth and electro composition, Kiasmos doesn’t have to choose. The album still feels very considered, the textures and sound make up a rich end product that manages to balance each ideal- classically arranged, sublime in sound, but altogether ambient and modern at the same time. What was it like to have that space to complete the album, once and for all?
+
+“It was really great because it was the first time,” says Ólafur. “Usually we’ve had a session one evening, and then not another one until like three months later- so for us, this was actually the first time we’ve sat down and been like ‘woah, we could do this in one and a half months’ or something like that. And really think about what we want to do.”
+
+Janus adds: “Yeah you can actually develop ideas and you have the space to take this somewhere- every time we’d just be doing one [session] for one song, every time we start, we’re starting from scratch, and it’s been two months since we did the last one, so we have completely different mind set, completely different ideas, so we would have to tune in to each other all over again each time- but if we have the space to really just sit down and work on it then we - an idea can slowly develop and become something much bigger.”
+
+The concept of meeting in the middle is at the core of what Kiasmos achieves. Named after a mis-spelling of Chiasmus, a literary technique whereby two clauses are related to each other by reversing them in order to make a larger idea (“Ask not what your country can do for you, ask what you can do for your country”), Kiasmos revels in the uncertainty of turning something on its head and taking it out of its comfort zone.
+
+<iframe src="https://www.flickr.com/photos/villageunderground/10363820624/in/set-72157636722188285/player/" height="800" width="1200" allowfullscreen="" frameborder="0"></iframe>
+
+The overall sound Ólafur and Janus produce is one enriched with both experience and uncertainty and the very idea of playing outside familiar territory. It’s also a pattern seen in how they create their music- working from Ólafur’s studio in Reykjavík, but without the need to bring in the stereotypical Icelandic tropes of environment = inspiration. So what did inform the album they set a year aside to create?
+
+“I think very much because - when you are just making music from experimenting, it’s very much affected by the tools you have” says Ólafur, “and then you’re very much experimenting with an instrument- you see the synthesiser and you say ‘hey I wonder what happens if we turn this on’- so the environment that you’re working in is dictating a lot of the sound you’re creating.”
+
+As for the stereotypical notions towards landscape and tropes of the Arctic Circle that seem to always pop up with any mention of a new Icelandic artist, apart from reduced daylight hours, Ólafur does not see it shaping Kiasmos’ work in a major way:
+
+“It’s usually pretty dark in there- at least for me, environment doesn’t have such a direct influence.”
+
+So they don’t write to a backdrop of melting glaciers or alpine tundra winds?
+
+“This is more of an image that artists create” Janus says “- not necessarily how they work- but because it’s such a strong image, people have started to automatically put that on all the other artists as well, whether they like it or not.
+
+“Most Icelandic artists today, are consciously trying to avoid this image, because it’s become such a cliche here.”
+
+<iframe src="//www.youtube.com/embed/P_iO30bDEIw" height="720" width="1280" allowfullscreen="" frameborder="0"></iframe>
+
+A much more environmental affect is working within the close family unit of the <a href="http://www.erasedtapes.com/" target="_blank">Erased Tapes</a> record label.
+
+“It’s offered me this opportunity to grow as an artist”, says Ólafur. “It invites collaboration- and it doesn’t have to be a serious musical collaboration, but just talking about ideas. You know, having these friends who are in similar places as you and having similar ideas- just talking to them. Me and Nils [<a title="Living Breathing Sound" href="http://vuzine.villageunderground.co.uk/living-breathing-sound/">Frahm</a>] became best friends eventually- and every time we see each other we inspire each other so much and we get so many more ideas we wouldn’t have without each other - so this is a label with very useful friendships.”
+
+Ólafur says that Kiasmos certainly plays more shows abroad than in Iceland:
+
+“There’s a limited amount of shows you can do in a city of 1,000 people. But I think we’re a part of the scene [in Reykjavík], and we’ve noticed our songs are getting played by some of the other DJs here, and the dance music radio show featured us on the top of their list a few months ago. And that’s great to feel like a part of a local scene, which is what at least I never really felt with my own solo project. But I think Kisamos could be and I hoped it would be.”
+
+<img alt="" src="http://www.muzykaislandzka.pl/web/wp-content/uploads/2014/08/kiasmos-cover.jpg" width="960" height="576" /> Kiasmos\' eponymous album is out on 27th October on Erased Tapes
+
+Taking a project out of the secure environment of a studio and trying to replicate it for a live show brings another dimension to the performance. It adds new perceptions- and it’s something Kiasmos have been mindful of from the beginning. Janus explains that they decided to stick to the vibe of the album, and ensconce the audience in what Kiasmos achieves: “We’re trying to extend the idea of the album for the live shows.”
+
+“We want to keep it electronic”, Ólafur adds, “which means we don’t have a drummer or something very visual happening on the stage, it will be mostly working with loops and basically a couple of laptops and some buttons, which is not often a very exciting thing to watch- we have to compensate on that by concentrating quite a lot on the visual [AV] element- I think that’s our main concentration of the live show- to create that atmosphere around the music so people can feel like they’re standing inside of a music video.
+
+“A live show should be a moment that you experience, and it only happens there, and it doesn’t happen again, and it doesn’t happen in the same way- that it’s something that is only going to happen once, ever. You know: the same mistakes, the same characteristics, the same venue, the same atmosphere, the same people. And what we want to do with the live show is reinforce that- to help people get lost in that moment. And forget about everything else."
+
+<em><strong>Kiasmos will headline a special Superstition show in collaboration with Last.fm and Erased Tapes on 29th November 2014, supported by label mates Rival Consoles and Dauwd. <a title="Kiasmos x Superstition" href="http://villageunderground.seetickets.com/event/kiasmos-erased-tapes-x-superstition/village-underground/819190">Tickets available now</a>.</strong></em>',
+    category_id: 1,
+    author_id: 3,
+    published_at: DateTime.parse("12/11/2014 09:00"),
+    published: true
   }
+
+
+
 ])
 
 Venue.create!([
