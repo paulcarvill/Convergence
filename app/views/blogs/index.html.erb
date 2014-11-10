@@ -7,9 +7,9 @@
 
 				<% @blogs.each do |blog| %>
 					<h1><%= link_to blog.title, blog %></h1>
-					<p><%= blog.created_at.strftime("%d %^b") %> | <%= blog.author.name unless blog.author.nil? %></p>
+					<p><%= blog.created_at.strftime("%d %^b") %> | <%= blog.author.name.upcase unless blog.author.nil? %></p>
 					<img src="<%= asset_path "blog.jpg" %>" />
-					<%= truncate_html(blog.body, length: 500) %>
+					<p><%= truncate_html(blog.body, length: 500) %></p>
 					<p><%= link_to '…read more', blog %></p>
 				<% end %>
 

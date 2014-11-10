@@ -142,7 +142,12 @@ body:not(.pages-index) #splash-shift {
 
   nav .logo {
     background-color: #e7e8e7;
-    border-bottom: 1px solid £
+    border-bottom: none;
+  }
+
+  body:not(.pages-index) nav,
+  nav .logo {
+    background-color: $navgrey;
   }
 
   nav.stuck .logo {

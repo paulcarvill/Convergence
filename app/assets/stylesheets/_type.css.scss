@@ -51,7 +51,8 @@ body, div, p, span, ul, li, h3, h4, h5, h6 {
 }
 
 p,
-footer ul {
+footer ul,
+.blog {
   font-size: 24px;
 }
 
@@ -67,7 +68,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-	font-size: 4.85em;
+	font-size: 78px;
 }
 
 h2 {
@@ -109,10 +110,6 @@ h3 {
   .splash.launch h2,
   .splash.launch h3 {
     font-size: 1em;
-  }
-
-  p {
-    font-size: 1.5em;
   }
 }
 
