@@ -12,7 +12,7 @@
 nav {
 	height: 96px;
  	width: 100%;
-	background: none;
+	background: $maingrey;
 	text-align: left;
   z-index: 100;
 }
@@ -29,9 +29,10 @@ nav .logo {
   height: 96px;
   float: left;
   display: block;
-  background-color: $navgrey;
+  background-color: #e7e8e7;
   text-align: center;
   padding-top: 17px;
+  border-bottom: 1px solid #d9dbd9;
 }
 
 nav p {
@@ -47,7 +48,7 @@ nav div {
   height: 48px;
   border-bottom-width: 1px;
   border-bottom-style: solid;
-  border-color: #cacccb;
+  border-color: $borderg;
   padding-top: 17px;
   margin-left: 96px;
   padding-left: 30px;
@@ -140,7 +141,8 @@ body:not(.pages-index) #splash-shift {
   }
 
   nav .logo {
-    background-color: $navgrey;
+    background-color: #e7e8e7;
+    border-bottom: 1px solid £
   }
 
   nav.stuck .logo {

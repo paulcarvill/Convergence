@@ -131,10 +131,6 @@ var Radar = (function(){
 
     ctx.draw = function() {
 
-      if (counter) {
-        counter-=1;
-      }
-
       // Render nodes
       for( var i = 0, len = nodes.length; i < len; i++ ) {
         var node = nodes[i];
@@ -144,11 +140,9 @@ var Radar = (function(){
     }
 
     ctx.updateNode = function( node ) {
-      if (counter || !doSprings) {
         if(node.distanceTo( ctx.mouse.x, ctx.mouse.y ) < dotlength ){
           node.strength = node.distanceTo(ctx.mouse.x, ctx.mouse.y) * 0.003;
         }
-      }
 
       node.strength += ( node.strengthTarget - node.strength ) * 0.2;
       node.strength = Math.max( node.strength - 0.01, 0 );
@@ -173,17 +167,9 @@ var Radar = (function(){
 
           //console.log(radians);
 
-          neighbor.offsetX += Math.sin( radians - Math.PI/2 );
-          neighbor.offsetY += Math.cos( radians - Math.PI/2 );
+          neighbor.offsetX += Math.sin( radians - Math.PI );
+          neighbor.offsetY += Math.cos( radians - Math.PI );
         }
-      }
-    }
-
-    function dist (dist) {
-      if (dist < 220) {
-        return '0.1'
-      } else {
-        return '0.7'
       }
     }
 
@@ -207,7 +193,7 @@ var Radar = (function(){
       ctx.arc( node.paintedX, node.paintedY, node.size, 0, Math.PI * 2, true );
 
       /* COLOUR BASED ON PROXIMITY TO MOUSE */
-      ctx.fillStyle = 'hsla('+ ( ((node.distanceTo( ctx.mouse.x, ctx.mouse.y ) / (world.width) ) * 94)+213) +', 100%, 50%, '+dist(distance)+')';
+      ctx.fillStyle = 'hsla('+ ( ((node.distanceTo( ctx.mouse.x, ctx.mouse.y ) / (world.width) ) * 94)+213) +', 100%, 50%, 0.6)';
       ctx.fill();
 
       /* Draw a line from the dot's origin to where it is now */

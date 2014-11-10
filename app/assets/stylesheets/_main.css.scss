@@ -296,6 +296,11 @@ footer a {
   background: #e8e8e8 asset-url('dots.png') 50% 100% no-repeat;
 }
 
+#mailinglistrow p,
+.afterfooter p {
+  font-size: 16px;
+}
+
 #mailinglistrow input {
   width: 33%;
   height: 54px;

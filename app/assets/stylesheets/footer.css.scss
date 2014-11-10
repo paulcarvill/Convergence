@@ -11,7 +11,6 @@ footer h2 {
 footer ul {
 	margin: 0 0 1.8em 0;
 	padding: 0;
-	font-size: 0.75em;
 	text-transform: uppercase;
 	margin-left: 1.75em;
 }
@@ -42,12 +41,8 @@ footer svg:nth-of-type(6) {
 }
 
 footer {
-    padding-left: 16px;
-    padding-right: 16px;
-}
-
-footer li {
-  font-size: 12px;
+    padding-left: 32px;
+    padding-right: 32px;
 }
 
 footer li a {
@@ -62,7 +57,6 @@ footer li a {
   text-align: right;
   padding-right: 16px;
   clear: left;
-  font-size: 0.75em;
 }
 
 @media screen and (max-width: 660px) { 
@@ -84,7 +78,7 @@ footer li a {
   footer ul li {
   	list-style: none;
   	clear: left;
-  	font-size: 1.2em;
+  	
   }
   footer ul {
     margin-top: 23px;
@@ -100,6 +94,7 @@ footer li a {
   	color: #fff;
     float: right;
     margin-top: 2em;
+    padding-right: 32px;
   }
   p.soc svg {
   	fill: currentColor;
