@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   def index
     @events = Event.where(featured: true)
     @moreEvents = Event.where(featured: false).limit(5)
-    @blogs = Blog.all().limit(1)
+    @blogs = Blog.where("published = ?", true).order(published_at: :desc).limit(1)
   end
 
   def about
