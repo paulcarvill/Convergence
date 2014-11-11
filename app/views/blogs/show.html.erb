@@ -1,4 +1,12 @@
 <%= pagetitle @blog.title %>
+
+<% content_for :meta do %>
+<meta property="og:url" content="<%= request.url %>" /> 
+<meta property="og:title" content="<%= @blog.title %>" />
+<meta property="og:description" content="<%= truncate_html(@blog.body, length: 500) %>" /> 
+<meta property="og:image" content="<%= asset_path 'logo.png' %>" /> 
+<% end %>
+
 <div id="container">
     <img src="<%= @blog.hero unless @blog.hero_file_name.nil? %>" />
 	<div class="content">
@@ -37,4 +45,32 @@
 
 <% content_for :js do %>
 <script type="text/javascript" async src="//platform.twitter.com/widgets.js"></script>
+<script>
+	window.fbAsyncInit = function() {
+		FB.init({
+		  appId      : '1497478090528421',
+		  xfbml      : true,
+		  version    : 'v2.1'
+		});
+
+		$(function(){
+			$("#cvgfb").click(function(e){
+				e.preventDefault();
+				FB.ui({
+				  method: 'share',
+				  href: '<%= request.url %>'
+				});
+			})
+		})
+	};
+
+	(function(d, s, id){
+	 var js, fjs = d.getElementsByTagName(s)[0];
+	 if (d.getElementById(id)) {return;}
+	 js = d.createElement(s); js.id = id;
+	 js.src = "//connect.facebook.net/en_US/sdk.js";
+	 fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+
+</script>
 <% end %>
