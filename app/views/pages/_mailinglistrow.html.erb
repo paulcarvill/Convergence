@@ -1,7 +1,4 @@
-
-	<!-- MAILING LIST ROW -->
-	<div id="mailinglistrow" class="row">
-
+<div id="mailinglistrow" class="row">
 	<div>
 		<p style="display: block; text-align: center; padding: 0">
 			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="34px"
@@ -13,7 +10,7 @@
 		C7.68,1.78,7.672,1.763,7.671,1.74z M7.08,1.684c0.001,0,0.001,0,0.002,0L3.84,4.269L0.61,1.694
 		c0.074-0.014,0.164-0.011,0.23-0.011H7.08z M7.08,6.003H0.84c-0.132,0-0.36-0.228-0.36-0.359V2.205l3.203,2.562
 		C3.728,4.807,3.784,4.826,3.84,4.826c0.056,0,0.112-0.02,0.157-0.059L7.2,2.205v3.439C7.2,5.775,7.212,6.003,7.08,6.003z"/>
-</g></svg>
+			</g></svg>
 		</p>
 		<p style="display: block; text-align: center; padding: 0; text-transform: uppercase">Subscribe to announcements. Not spam.</p>
 	</div>
@@ -42,61 +39,4 @@
 	      <p class="perror">Oops, please check your email address!</p>
 	  </form>
 	</div>
-	</div>
-	<!-- END MAILING LIST ROW -->
-
-
-<script>
-function cvgMailchimp(resp){
-	if (resp.result === 'success') {
-		$('button svg.tick').show();
-		$('button svg.arrow').hide();
-		window.setTimeout(function(){
-			$('button svg.tick').hide();
-			$('button svg.arrow').show();
-			$('input').val("");
-		}, 2000);
-	} else {
-		$('.perror').show();
-		$('button svg.arrow').show();
-		window.setTimeout(function(){
-			$('.perror').hide();
-		}, 3000);
-	}
-}
-
-$('form').submit(function(){
-	$('button svg.arrow').hide();
-});
-
-$('form').ajaxChimp({
-	callback: cvgMailchimp
-}
-);
-
-</script>
-
-
-<script>
-// SC.initialize({
-// client_id: "5a2227c9d733df3454049cbb9dda1c1a"
-// });
-
-// SC.get("/tracks/174550060", function(track){
-
-//   var waveform = new Waveform({
-//     container: document.getElementById("example2"),
-//     innerColor: "transparent",
-//     outerColor: "#f1f1f1"
-//   });
-
-//   waveform.dataFromSoundCloudTrack(track);
-
-//   var streamOptions = waveform.optionsForSyncedStream();
-//   SC.stream(track.uri, streamOptions, function(stream){
-//     window.exampleStream = stream;
-//     window.exampleStream.play();
-//   });
-
-// });
-</script>
+</div>

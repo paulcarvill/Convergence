@@ -1,13 +1,3 @@
-<script>
-  var cvgHeight = window.innerHeight;
-  var splashShift = document.querySelector("#splash-shift");
-  var h;
-  //if (document.documentElement.clientWidth > 615) {
-    h = cvgHeight + 'px';
-  //}
-  splashShift.style.height = h;
-</script>
-
 <% if params['full'] %>
 <%= render "interactivepanel" %>
 <% end %>
@@ -16,9 +6,7 @@
 <%= render "launch" %>
 <% end %>
 
-
 <%= render "carouselscript" %>
-
 
 <% if params['full'] %>
 <%= render "eventsrow" %>
@@ -28,33 +16,94 @@
 
 <%= render "videorow" %>
 
-<%= render "interactive" %>
-
 <%= render "pages/mailinglistrow" %>
 
+<% content_for :js do %>
+<%= render "interactive" %>
+
 <script type="text/javascript">
+
+/* HANDLER FOR MAILING LIST FORM SUBMIT */
+function cvgMailchimp(resp){
+  if (resp.result === 'success') {
+    $('button svg.tick').show();
+    $('button svg.arrow').hide();
+    window.setTimeout(function(){
+      $('button svg.tick').hide();
+      $('button svg.arrow').show();
+      $('input').val("");
+    }, 2000);
+  } else {
+    $('.perror').show();
+    $('button svg.arrow').show();
+    window.setTimeout(function(){
+      $('.perror').hide();
+    }, 3000);
+  }
+}
+
 $(document).ready(function() {
+
+  /* SET HEIGHT OF SHIFT PANEL */
+  var cvgHeight = window.innerHeight;
+  var splashShift = document.querySelector("#splash-shift");
+  var h;
+  h = cvgHeight + 'px';
+  splashShift.style.height = h;
+
+  /* SET HEIGHT OF ALL SPLASH IMAGE PANELS */
+  var splashes = document.querySelectorAll(".splash");
+  for(var i = 0; i < splashes.length; i++){
+    splashes[i].style.height = cvgHeight + 'px';
+  }
+
+  /* BASIC CAROUSEL */
+  function rotateEvents() {
+    splashes[current].style.opacity = 0;
+    current++;
+    if (current > numSplashes) {
+      current = 0;
+    }
+    splashes[current].style.opacity = 1;
+  }
+
+  if (document.documentElement.clientWidth > 615) {   
+    var current = 0;
+    var numSplashes = splashes.length-1;
+    window.setInterval(rotateEvents, 5000);
+  }
+
+  /* STICKY NAV */
   $('nav').waypoint('sticky', {
     offset: 4
-  })
- });
-</script>
+  });
 
-<script>
-    WebFontConfig = {
-      google: {
-        families: ['Oxygen'],
-        text: 'CONVERGENCE!'
-      }
-    };
+  /* AJAXIFY MAILING LIST FORM */
+  $('form').submit(function(){
+    $('button svg.arrow').hide();
+  });
 
-    (function() {
-      var wf = document.createElement('script');
-      wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-                '://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js';
-      wf.type = 'text/javascript';
-      wf.async = 'true';
-      var s = document.getElementsByTagName('script')[0];
-      s.parentNode.insertBefore(wf, s);
-    })();
+  $('form').ajaxChimp({
+    callback: cvgMailchimp
+  });
+});
+
+/* LOAD LOGOTYPE WEBFONT ASYNC */
+WebFontConfig = {
+  google: {
+    families: ['Oxygen'],
+    text: 'CONVERGENCE!'
+  }
+};
+
+(function() {
+  var wf = document.createElement('script');
+  wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+            '://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js';
+  wf.type = 'text/javascript';
+  wf.async = 'true';
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(wf, s);
+})();
 </script>
+<% end %>
