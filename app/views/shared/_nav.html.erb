@@ -38,9 +38,9 @@
 	  <li><a href="/locations">LOCATIONS</a></li>
     <% end %>
 	  <li><a <% if controller?("pages") && action?("about") then %>class="current"<% end %> href="/about">ABOUT</a></li>
-	  <li><a <% if controller?("blogs") && action?("index", "show") then %>class="current"<% end %> href="/blogs/">BLOG</a></li>
-    <li><a href="#">EVENTS (coming soon)</a></li>
-    <li><a href="#">LOCATIONS (coming soon)</a></li>
+	  <li><a <% if controller?("blogs") && action?("index", "show") then %>class="current"<% end %> href="/news">NEWS</a></li>
+    <li><a class="disabled" href="">EVENTS</a></li>
+    <li><a class="disabled" href="">LOCATIONS</a></li>
   </ul>
   </div>
 </nav>

@@ -24,6 +24,11 @@ nav a {
    text-decoration: none;
 }
 
+a.disabled {
+  pointer-events: none;
+  text-decoration: line-through;
+}
+
 html {
 	overflow-y: scroll;
 }

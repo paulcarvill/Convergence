@@ -8,8 +8,8 @@ module ApplicationHelper
     	action.include?(params[:action])
   	end
 
-  	def pagetitle()
-  		return "woop"
-  	end
+  	def pagetitle(page_title)
+	  content_for :title, page_title.to_s
+	end
 
 end
