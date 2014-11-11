@@ -35,3 +35,19 @@
 	</div>
 </div>
 
+<div class="row">
+	<div class="col-lg-6">
+		<%= casein_file_field f, f.object, "blog", :hero , { :casein_label => "Hero image (one image only)"}%>
+	</div>
+	<div class="col-lg-6">
+		<label class="control-label" for="blog_hero">Currently loaded image:</label>
+		<%= if @blog.hero? then image_tag(@blog.hero, width: '300') else content_tag(:span, "No image yet") end %>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-lg-6">
+		<%= casein_check_box f, f.object, :published, { :casein_label => "Published on site?"}%>
+	</div>
+</div>
+

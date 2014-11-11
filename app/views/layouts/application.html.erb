@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js">
 <head>
-  <title>Convergence</title>
+  <title>Convergence 2015 <%= pagetitle() %></title>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <%= javascript_include_tag 'application' %>
@@ -13,5 +13,6 @@
 	<%= yield %>
 	<%= render "pages/footer" %>
 	<%= yield :js %>
+	<%= render "shared/ga" %>
 </body>
 </html>

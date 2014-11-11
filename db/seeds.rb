@@ -290,7 +290,8 @@ Nevertheless, Village Underground has tempted him across the Channel in November
     category_id: 1,
     author_id: 3,
     published_at: DateTime.parse("12/11/2014 09:00"),
-    published: true
+    published: true,
+    hero: File.open(Rails.root.join("db/seeds","1.jpg")),
   },
   {
     title: "Ben Watt on loops",
@@ -558,10 +559,6 @@ Event.create!([
     price: 10,
     featured: true,
     img1: File.open(Rails.root.join("db/seeds","1.jpg")),
-    ticket_one_name: "Songkick",
-    ticket_one_url: "http://www.songkick.com/vu/1",
-    ticket_two_name: "See",
-    ticket_two_url: "http://www.see.com/vu/1",
     category_id: 1
   },
   {
@@ -573,8 +570,6 @@ Event.create!([
     price: 12,
     featured: true,
     img1: File.open(Rails.root.join("db/seeds","2.jpg")),
-    ticket_one_name: "See",
-    ticket_one_url: "http://www.songkick.com/vu/1",
     category_id: 2
   },
   {
@@ -585,8 +580,6 @@ Event.create!([
     all_day: false,
     price: 15,
     img1: File.open(Rails.root.join("db/seeds","3.jpg")),
-    ticket_one_name: "Ticketmaster",
-    ticket_one_url: "http://www.ticketmaster.com/vu/2",
     sold_out: true
   },
   {
@@ -597,8 +590,6 @@ Event.create!([
     all_day: true,
     price: 25,
     img1: File.open(Rails.root.join("db/seeds","4.jpg")),
-    ticket_one_name: "Baebican",
-    ticket_one_url: "http://www.barbican.com/vu/1"
   },
   {
     name: "Talk",
@@ -608,8 +599,6 @@ Event.create!([
     all_day: false,
     price: 8,
     img1: File.open(Rails.root.join("db/seeds","5.jpg")),
-    ticket_one_name: "Songkick",
-    ticket_one_url: "http://www.songkick.com/vu/5"
   },
   {
     name: "Exhibition",
@@ -619,8 +608,6 @@ Event.create!([
     all_day: false,
     price: 14,
     img1: File.open(Rails.root.join("db/seeds","6.jpg")),
-    ticket_one_name: "Songkick",
-    ticket_one_url: "http://www.songkick.com/vu/3"
   },
   {
     name: "New band showcase",
@@ -630,8 +617,6 @@ Event.create!([
     all_day: false,
     price: 14,
     img1: File.open(Rails.root.join("db/seeds","7.jpg")),
-    ticket_one_name: "Songkick",
-    ticket_one_url: "http://www.songkick.com/vu/3"
   },
   {
     name: "Denovali",
@@ -644,8 +629,6 @@ Event.create!([
     price: 28,
     featured: false,
     img1: File.open(Rails.root.join("db/seeds","1.jpg")),
-    ticket_one_name: "Songkick",
-    ticket_one_url: "http://aggregator.time.ly/ticket_redirect/eyJsIjoiaHR0cDpcL1wvZGVub3ZhbGkuY29tXC9zd2luZ2Zlc3RcL2xvbmRvblwvIiwiZSI6InMiLCJ2IjoiMS4xMC45LXN0YW5kYXJkIiwiaSI6ImQiLCJjIjoiIiwibyI6Imh0dHA6XC9cL3d3dy5jb252ZXJnZW5jZS1sb25kb24uY29tIn0=",
     category_id: 1
   },
   {
@@ -659,8 +642,6 @@ Event.create!([
     price: 28,
     featured: false,
     img1: File.open(Rails.root.join("db/seeds","1.jpg")),
-    ticket_one_name: "Songkick",
-    ticket_one_url: "http://aggregator.time.ly/ticket_redirect/eyJsIjoiaHR0cDpcL1wvZGVub3ZhbGkuY29tXC9zd2luZ2Zlc3RcL2xvbmRvblwvIiwiZSI6InMiLCJ2IjoiMS4xMC45LXN0YW5kYXJkIiwiaSI6ImQiLCJjIjoiIiwibyI6Imh0dHA6XC9cL3d3dy5jb252ZXJnZW5jZS1sb25kb24uY29tIn0=",
     category_id: 6
   },
   {
@@ -687,8 +668,6 @@ Event.create!([
     price: 0,
     featured: false,
     img1: File.open(Rails.root.join("db/seeds","1.jpg")),
-    ticket_one_name: "Songkick",
-    ticket_one_url: "http://aggregator.time.ly/ticket_redirect/eyJsIjoiaHR0cDpcL1wvZGVub3ZhbGkuY29tXC9zd2luZ2Zlc3RcL2xvbmRvblwvIiwiZSI6InMiLCJ2IjoiMS4xMC45LXN0YW5kYXJkIiwiaSI6ImQiLCJjIjoiIiwibyI6Imh0dHA6XC9cL3d3dy5jb252ZXJnZW5jZS1sb25kb24uY29tIn0=",
     category_id: 6
   }
 

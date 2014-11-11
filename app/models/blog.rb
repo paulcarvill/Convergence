@@ -3,6 +3,9 @@ class Blog < ActiveRecord::Base
 	belongs_to :category
 	belongs_to :author
 	
+	has_attached_file :hero
+	validates_attachment_content_type :hero, :content_type => ["image/jpeg", "image/jpg", "image/gif", "image/png"]
+
 	before_save :dupe_date
 
 	def dupe_date

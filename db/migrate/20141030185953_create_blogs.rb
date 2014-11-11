@@ -7,7 +7,9 @@ class CreateBlogs < ActiveRecord::Migration
       t.boolean :published, :default => false, :null => false
       t.references :category
       t.references :author
-      
+      t.attachment :hero
+      t.text :hero_meta
+
       t.timestamps
     end
   end

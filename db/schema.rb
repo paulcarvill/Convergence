@@ -23,9 +23,14 @@ ActiveRecord::Schema.define(version: 20141109094108) do
     t.string   "title"
     t.text     "body"
     t.datetime "published_at"
-    t.boolean  "published",    default: false, null: false
+    t.boolean  "published",         default: false, null: false
     t.integer  "category_id"
     t.integer  "author_id"
+    t.string   "hero_file_name"
+    t.string   "hero_content_type"
+    t.integer  "hero_file_size"
+    t.datetime "hero_updated_at"
+    t.text     "hero_meta"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -85,16 +90,6 @@ ActiveRecord::Schema.define(version: 20141109094108) do
     t.boolean  "featured",          default: false, null: false
     t.string   "promoter"
     t.boolean  "sold_out",          default: false, null: false
-    t.string   "ticket_one_name"
-    t.string   "ticket_one_url"
-    t.string   "ticket_two_name"
-    t.string   "ticket_two_url"
-    t.string   "ticket_three_name"
-    t.string   "ticket_three_url"
-    t.string   "ticket_four_name"
-    t.string   "ticket_four_url"
-    t.string   "ticket_five_name"
-    t.string   "ticket_five_url"
     t.string   "img1_file_name"
     t.string   "img1_content_type"
     t.integer  "img1_file_size"
