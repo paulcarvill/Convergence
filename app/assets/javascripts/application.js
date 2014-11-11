@@ -11,11 +11,7 @@
 // about supported directives.
 //
 //= require jquery
-//= require ckeditor/init
-//= require nested_form_fields
 //= require_tree .
-//= stub toxiclibs.min
-//= stub processing
 
 var SM = {};
 SM.revealed = false;
