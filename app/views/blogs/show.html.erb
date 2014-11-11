@@ -17,7 +17,7 @@
 					<p><%= @blog.created_at.strftime("%d") %></p>
 					<p><%= @blog.created_at.strftime("%B") %></p>
 				</div>
-				<p><%= @blog.created_at.strftime("%d %^b") %> | <%= @blog.author.name.upcase unless @blog.author.nil? %></p>
+				<p class="author"><%= @blog.created_at.strftime("%d %^b") %> | <%= @blog.author.name.upcase unless @blog.author.nil? %></p>
 				<%= @blog.body.html_safe %>
 			</div>
 		</div>

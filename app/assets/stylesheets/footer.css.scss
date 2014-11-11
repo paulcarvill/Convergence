@@ -32,8 +32,12 @@ footer svg {
 	margin-right: 8pxem;
 }
 
+footer a:nth-of-type(1) svg {
+  margin-left: 16px;
+}
+
 footer svg:nth-of-type(1) {
-	margin-left: 16px;
+	margin-left: 32px;
 }
 
 footer svg:nth-of-type(6) {
@@ -60,19 +64,19 @@ footer li a {
   color: #444;
   text-transform: uppercase;
   text-align: right;
-  padding-right: 16px;
+  padding: 13px 16px 10px 0;
   clear: left;
 }
 
 @media screen and (max-width: 900px) { 
   footer ul {
-    margin-left: 48px;
+    margin-left: 32px;
   }
 }
 
 @media screen and (max-width: 660px) { 
   footer ul {
-    margin-left: 24px;
+    margin-left: 16px;
   }
   footer li {
     margin-bottom: 24px;
@@ -112,7 +116,7 @@ footer li a {
   	color: #fff;
     float: right;
     margin-top: 2em;
-    padding-right: 32px;
+    padding-right: 64px;
   }
   p.soc svg {
   	fill: currentColor;
