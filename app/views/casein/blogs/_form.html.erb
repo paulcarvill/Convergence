@@ -11,6 +11,12 @@
 </div>
 
 <div class="row">
+	<div class="col-lg-12">
+		<%= casein_datetime_select f, f.object, :published_at %>
+	</div>
+</div>
+
+<div class="row">
 	<div class="col-lg-6">
 		<%= casein_select f, f.object, :category_id, Category.order(:name).collect {|c| [c.name.titlecase, c.id]},
 			{:include_blank => '-- None --', :casein_label => "Choose a category"} %>
