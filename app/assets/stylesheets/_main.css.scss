@@ -60,9 +60,18 @@ body {
   z-index: -1
 }
 
+.no-js .splash {
+  position: static;
+}
 
+.no-js #videorow,
+.no-js #wrapper {
+  display: none;
+}
 
-
+.no-js .pages-index #splash-shift {
+  pointer-events: auto;
+}
 
 
 /****** LAUNCH PANEL ********/
