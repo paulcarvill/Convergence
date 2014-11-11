@@ -11,7 +11,11 @@
 // about supported directives.
 //
 //= require jquery
-//= require_tree .
+//= require _waypoints.min
+//= require ajaxchimp
+//= require modernizr
+//= require moment.min
+//= require waypoints-sticky.min
 
 var SM = {};
 SM.revealed = false;
