@@ -3,7 +3,7 @@
 <% content_for :meta do %>
 <meta property="og:url" content="<%= request.url %>" /> 
 <meta property="og:title" content="<%= @blog.title %>" />
-<meta property="og:description" content="<%= truncate_html(@blog.body, length: 500) %>" /> 
+<meta property="og:description" content="<%= truncate_html(strip_tags(@blog.body.html_safe), length: 500) %>" /> 
 <meta property="og:image" content="http://<%= request.host %><%= asset_path 'logo.png' %>" /> 
 <% end %>
 
