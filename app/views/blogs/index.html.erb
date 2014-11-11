@@ -1,5 +1,12 @@
 <% pagetitle "News" %>
 
+<% content_for :meta do %>
+<meta property="og:url" content="<%= request.url %>" /> 
+<meta property="og:title" content="Convergence" />
+<meta property="og:description" content="Music + Art + Technology" /> 
+<meta property="og:image" content="<%= request.url %><%= asset_path 'logo.png' %>" /> 
+<% end %>
+
 <div id="container">
 	<div class="content">
 		<div class="body">

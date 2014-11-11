@@ -4,7 +4,7 @@
 <meta property="og:url" content="<%= request.url %>" /> 
 <meta property="og:title" content="<%= @blog.title %>" />
 <meta property="og:description" content="<%= truncate_html(@blog.body, length: 500) %>" /> 
-<meta property="og:image" content="<%= asset_path 'logo.png' %>" /> 
+<meta property="og:image" content="<%= request.url %><%= asset_path 'logo.png' %>" /> 
 <% end %>
 
 <div id="container">
