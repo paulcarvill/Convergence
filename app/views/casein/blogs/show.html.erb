@@ -2,7 +2,7 @@
 
 <h2>View blog</h2>
 
-<%= form_for @blog, :url => casein_blog_path(@blog) do |f| %>
+<%= form_for @blog, :url => casein_blog_path(@blog), :html => {:multipart => true} do |f| %>
 
 	<%= render :partial => 'casein/blogs/form', :locals => { :f => f } %>
 	
