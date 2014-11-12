@@ -14,4 +14,5 @@ CKEDITOR.editorConfig = function( config ) {
 	config.filebrowserImageUploadUrl = "/ckeditor/pictures";
 	config.filebrowserUploadUrl = "/ckeditor/attachment_files";
 	config.height = '600px';
+    config.allowedContent = true;
 };
