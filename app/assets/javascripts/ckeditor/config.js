@@ -4,7 +4,7 @@ CKEDITOR.editorConfig = function( config ) {
 	  ['Bold','Italic', 'Underline'],
 	  ['NumberedList','BulletedList'],
 	  [ 'Link','Unlink' ],
-	  ['Source']
+	  ['Source'],
 	];
 	config.filebrowserBrowseUrl = "/ckeditor/attachment_files";
 	config.filebrowserFlashBrowseUrl = "/ckeditor/attachment_files";
@@ -13,6 +13,4 @@ CKEDITOR.editorConfig = function( config ) {
 	config.filebrowserImageBrowseUrl = "/ckeditor/pictures";
 	config.filebrowserImageUploadUrl = "/ckeditor/pictures";
 	config.filebrowserUploadUrl = "/ckeditor/attachment_files";
-	config.height = '600px';
-    config.allowedContent = true;
 };
