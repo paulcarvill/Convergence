@@ -1,0 +1,33 @@
+<% pagetitle "News by #{@author.name}" %>
+
+<% content_for :meta do %>
+<meta property="og:url" content="<%= request.url %>" /> 
+<meta property="og:title" content="Convergence" />
+<meta property="og:description" content="Music + Art + Technology" /> 
+<meta property="og:image" content="http://<%= request.host %><%= asset_path 'logo.png' %>" />
+<meta property="og:type" content="website" />
+<% end %>
+
+<div id="container">
+	<div class="content">
+		<div class="body">
+			<div class="blog">
+
+				<% @blogs.each do |blog| %>
+					<h1><%= link_to blog.title, blog %></h1>
+					<p class="author"><%= blog.created_at.strftime("%d %^b") %> | <%= blog.author.name.upcase unless blog.author.nil? %></p>
+					<img src="<%= blog.hero unless blog.hero_file_name.nil? %>" />
+					<p><%= truncate_html(blog.body, length: 500) %></p>
+					<p><%= link_to '…read more', blog %></p>
+				<% end %>
+
+				<%= will_paginate @blogs, :previous_label => "←", :next_label => "→", :page_links => false %>
+			</div>
+		</div>
+		<%= render "blogs/share" %>
+
+		<div class="body">
+			
+		</div>
+	</div>
+</div>
