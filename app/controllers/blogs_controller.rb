@@ -2,14 +2,14 @@ class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
   caches_page :show, :index
 
-  # GET /blogs
-  # GET /blogs.json
   def index
-    @blogs = Blog.where("published = ?", true).order(published_at: :desc).paginate :page => params[:page], :per_page => 3
+    if params[:tag].present? 
+      @blogs = Blog.where("published = ?", true).tagged_with(params[:tag]).paginate :page => params[:page], :per_page => 3
+    else 
+      @blogs = Blog.where("published = ?", true).order(published_at: :desc).paginate :page => params[:page], :per_page => 3
+    end
   end
 
-  # GET /blogs/1
-  # GET /blogs/1.json
   def show
   end
 

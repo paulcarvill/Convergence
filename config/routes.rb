@@ -2,11 +2,19 @@ Rails.application.routes.draw do
 
   mount Ckeditor::Engine => '/ckeditor'
   
-  resources :blogs,  :path => 'news'
+  resources :blogs,  :path => 'news' do
+  	collection do
+  		get :tag
+  	end
+  end
 
   resources :categories
 
   resources :pages
+
+  get 'news/tagged' => 'blogs#tagged', :as => 'tagged'
+
+  resources :authors, only: :show
 
 	#Casein routes
 	namespace :casein do

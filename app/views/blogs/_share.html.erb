@@ -33,9 +33,9 @@
 
 				<h4>TOPICS</h4>
 				<% if @blog %>
-				<% @blog.tags.each do |tag| %>
-					<span><a href="#"><%= tag %></a></span>
-				<% end %>
-				<% end %>
+  						<% @blog.tags.each do |tag| %>
+  							<span><%= link_to tag.name, blogs_url(:tag => tag.name) %></span>
+						<% end %>
+					<% end %>
 			</div>
 		</div>
