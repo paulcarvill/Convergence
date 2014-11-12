@@ -26,7 +26,7 @@
       </g>
     </svg>
     </p>
-    <p><%= blog.created_at.strftime("%d %^b") %> | <%= blog.author.name.upcase unless blog.author.nil? %></p>
+    <p class="author"><%= blog.created_at.strftime("%d %^b") %> | <%= blog.author.name.upcase unless blog.author.nil? %></p>
     <h1><%= blog.title %></h1>
     <p class="desc"><%= truncate_html(strip_tags(blog.body.html_safe), length: 300) %> <a style="text-transform:uppercase" href="/blogs/<%= blog.id %>" />read more</a></p>
   </div>
