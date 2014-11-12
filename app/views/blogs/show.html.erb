@@ -6,6 +6,13 @@
 <meta property="og:description" content="<%= truncate_html(strip_tags(@blog.body.html_safe), length: 500) %>" /> 
 <meta property="og:image" content="http://<%= request.host %><%= asset_path 'logo.png' %>" />
 <meta property="og:type" content="website" />
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@villunderlondon">
+<meta name="twitter:creator" content="@paulcarvill">
+<meta name="twitter:title" content="<%= @blog.title %>">
+<meta name="twitter:description" content="<%= truncate_html(strip_tags(@blog.body.html_safe), length: 200) %>">
+<meta name="twitter:image:src" content="<%= @blog.hero unless @blog.hero_file_name.nil? %>">
 <% end %>
 
 <div id="container">
