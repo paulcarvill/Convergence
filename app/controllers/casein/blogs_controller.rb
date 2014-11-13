@@ -14,7 +14,7 @@ module Casein
   
     def show
       @casein_page_title = 'View blog'
-      @blog = Blog.find params[:id]
+      @blog = Blog.friendly.find_by_slug! params[:id]
     end
   
     def new
@@ -37,7 +37,7 @@ module Casein
     def update
       @casein_page_title = 'Update blog'
       
-      @blog = Blog.find params[:id]
+      @blog = Blog.friendly.find_by_slug! params[:id]
     
       if @blog.update_attributes blog_params
         flash[:notice] = 'Blog has been updated'
@@ -49,7 +49,7 @@ module Casein
     end
  
     def destroy
-      @blog = Blog.find params[:id]
+      @blog = Blog.friendly.find_by_slug! params[:id]
 
       @blog.destroy
       flash[:notice] = 'Blog has been deleted'
