@@ -16,7 +16,10 @@
 <% end %>
 
 <div id="container">
-    <img src="<%= @blog.hero unless @blog.hero_file_name.nil? %>" />
+    <% unless @blog.hero_file_name.nil? %>
+    	<img src="<%= @blog.hero(:small) %>" srcset="<%= @blog.hero(:small) %> %> 640w, <%= @blog.hero(:large) %> 1280w" alt="Responsive Image Example" />
+    <% end %>
+
 	<div class="content">
 		<div class="body">
 			<div class="blog">

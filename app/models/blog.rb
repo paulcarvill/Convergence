@@ -6,7 +6,8 @@ class Blog < ActiveRecord::Base
 	belongs_to :category
 	belongs_to :author
 	
-	has_attached_file :hero
+	has_attached_file :hero, :styles => { :small => "640x", :large => "1280x" }
+
 	validates_attachment_content_type :hero, :content_type => ["image/jpeg", "image/jpg", "image/gif", "image/png"]
 
 	before_save :dupe_date
