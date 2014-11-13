@@ -14,6 +14,7 @@
 //= require _waypoints.min
 //= require ajaxchimp
 //= require modernizr
+//= require picturefill.min
 //= require moment.min
 //= require waypoints-sticky.min
 

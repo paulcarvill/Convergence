@@ -30,8 +30,8 @@
     <h1><%= blog.title %></h1>
     <p class="desc"><%= truncate_html(strip_tags(blog.body.html_safe), length: 300) %> <a style="text-transform:uppercase" href="/blogs/<%= blog.slug %>" />read more</a></p>
   </div>
-  <div class="img">
-  </div>
+  <style>.blogrow .img {background-image: url(<%= blog.hero(:small) %>);}@media screen and (min-width: 641px) { .blogrow .img {background-image: url(<%= blog.hero(:large) %>;}}</style>
+  <div class="img"></div>
  </div>
 </div>
 <% end %>
