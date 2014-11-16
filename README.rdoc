@@ -1,38 +1,12 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+To run this site locally, clone it then,
 
-Things you may want to cover:
+* rake db:migrate
+* rake db:seed
+* rake casein:users:create_admin email=you@yourdomain.com
+* rails s
 
-* Ruby version
+The site and design are both Copyright (c) 2014 Suki Rai and Paul Carvill. None of the design or code is yet released under any license for reproduction, distribution or the creation of derivative works. Hoever you may view and fork the repository.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
-
-
-TODO
-
-1. set up hosting
-2. email dan about hosting and fonts
-3. add blog hero image attribute
-4. add tag model (and page/filters)
-5. add author page filter
-6. optimize mobile dots
+We hope to release the code as fully open source under an MIT license. I just need to check with the Convergence people that they're ok with us doing that :)
