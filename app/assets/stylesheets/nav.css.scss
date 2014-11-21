@@ -140,7 +140,7 @@ body:not(.pages-index) #splash-shift {
 @media screen and (max-width: 615px) {
   nav {
     height: 48px;
-    /*background: $navgrey;*/
+    background: none;
   }
 
   nav .logo {
