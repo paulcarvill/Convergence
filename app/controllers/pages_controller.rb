@@ -12,4 +12,9 @@ class PagesController < ApplicationController
   def about
   	@about = Page.find(1)
   end
+
+  def styleguide
+    @styleguide = Page.find(2)
+  end
+
 end

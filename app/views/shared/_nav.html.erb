@@ -31,16 +31,10 @@
   <a class="logo" href="/"><img src="<%= asset_path "logo.png" %>" width="70" height="62" /></a>
   <p><!-- audio player info goes here --></p>
   <div>
-	  <% if params['full'] %>
-    <li><a href="/events">EVENTS</a></li>
-    <% end %>
-    <% if params['full'] %>
-	  <li><a href="/locations">LOCATIONS</a></li>
-    <% end %>
 	  <li><a <% if controller?("pages") && action?("about") then %>class="current"<% end %> href="/about">ABOUT</a></li>
 	  <li><a <% if controller?("blogs") && action?("index", "show") then %>class="current"<% end %> href="/news">NEWS</a></li>
-    <li><a class="disabled" href="">EVENTS</a></li>
-    <li><a class="disabled" href="">LOCATIONS</a></li>
+    <li><a <% if controller?("events") && action?("index", "show") then %>class="current"<% end %> href="/events">EVENTS</a></li>
+    <li><a <% if controller?("venues") && action?("index") then %>class="current"<% end %> href="/locations">LOCATIONS</a></li>
   </ul>
   </div>
 </nav>

@@ -1,24 +1,78 @@
-<% pagetitle "Events" %>
+<% pagetitle "events" %>
+
+<% content_for :meta do %>
+<meta property="og:url" content="<%= request.url %>" /> 
+<meta property="og:title" content="Convergence" />
+<meta property="og:description" content="Music + Art + Technology" /> 
+<meta property="og:image" content="http://<%= request.host %><%= asset_path 'logo.png' %>" />
+<meta property="og:type" content="website" />
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@villunderlondon">
+<meta name="twitter:title" content="Convergence news">
+<meta name="twitter:description" content="Music + Art + Technology">
+<% end %>
 
 <div id="container">
-      
-  <% @events.each do |event| %>
-  <div class="heading">
-    <h1><%= link_to event.name, event %></h1>
-  </div>
-
   <div class="content">
-    <img src="<%= asset_path "" %>"/>
-    <div>
-      <p><%= event.venue.name %></p>
-      <p><%= event.start_at.strftime("%H:%M %^h %d") %> - <%= event.end_at.strftime("%H:%M %^h %d") %></p>
-      <% if event.all_day %><p>ALL DAY</p><% end %>
-      <% if event.description %><p><%= event.description.html_safe %></p><% end %>
-      <p>£<%= event.price %></p>
-      <%= render "pages/button" %>
+    <div class="body">
+      <div class="blog">
+
+        <% @events.each do |event| %>
+        <div class="datesquare">
+          <p><%= event.start_at.strftime("%d") %></p>
+          <p><%= event.end_at.strftime("%B") %></p>
+        </div>
+        <h1><%= link_to event.name, event %></h1>
+        <p class="address"><%= event.venue.name %></p>
+        <p class="address"><%= event.start_at.strftime("%H:%M") %> - <%= event.end_at.strftime("%H:%M") %></p>
+        <% if event.all_day %><p>ALL DAY</p><% end %>
+        <a href="/news/<%= event %>"><img src="<%= event.img1(:small) unless event.img1_file_name.nil? %>" /></a>
+        <% if event.description %>
+          <p><%= truncate_html(event.description, length: 250) %></p>
+          <p><%= link_to '…read more', event %></p>
+          <% end %>
+        <p>£<%= event.price %></p>
+        <% end %>
+        <%= will_paginate @events, :previous_label => "←", :next_label => "→", :page_links => false %>
+      </div>
+    </div>
+    <%= render "blogs/share" %>
+
+    <div class="body">
+      
     </div>
   </div>
-
-  <% end %>
-  
 </div>
+
+<% content_for :js do %>
+<script type="text/javascript" async src="//platform.twitter.com/widgets.js"></script>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1497478090528421',
+      xfbml      : true,
+      version    : 'v2.1'
+    });
+
+    $(function(){
+      $("#cvgfb").click(function(e){
+        e.preventDefault();
+        FB.ui({
+          method: 'share',
+          href: '<%= request.url %>'
+        });
+      })
+    })
+  };
+
+  (function(d, s, id){
+   var js, fjs = d.getElementsByTagName(s)[0];
+   if (d.getElementById(id)) {return;}
+   js = d.createElement(s); js.id = id;
+   js.src = "//connect.facebook.net/en_US/sdk.js";
+   fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+</script>
+<% end %>

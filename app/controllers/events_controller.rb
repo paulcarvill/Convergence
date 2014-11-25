@@ -4,18 +4,23 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
+    if params[:tag].present? 
+      @events = Event.all().tagged_with(params[:tag]).paginate :page => params[:page], :per_page => 10
+    else 
+      @events = Event.all().order(start_at: :desc).paginate :page => params[:page], :per_page => 10
+    end
   end
 
   # GET /events/1
   # GET /events/1.json
   def show
+
   end
   
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_event
-      @event = Event.find(params[:id])
+      @event = Event.friendly.find_by_slug!(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

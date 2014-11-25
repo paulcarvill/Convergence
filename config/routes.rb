@@ -8,11 +8,18 @@ Rails.application.routes.draw do
   	end
   end
 
+  resources :events do
+    collection do
+      get :tag
+    end
+  end
+
   resources :categories
 
   resources :pages
 
   get 'news/tagged' => 'blogs#tagged', :as => 'tagged'
+  get 'locations' => 'venues#index'
 
   resources :authors, only: :show
 

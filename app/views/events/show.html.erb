@@ -1,24 +1,99 @@
 <% pagetitle @event.name %>
 
+<% content_for :meta do %>
+<meta property="og:url" content="<%= request.url %>" /> 
+<meta property="og:title" content="<%= @event.name %>" />
+<meta property="og:description" content="<%= truncate_html(strip_tags(@event.description.html_safe), length: 500) unless @event.description.nil? %>" /> 
+<meta property="og:image" content="http://<%= request.host %><%= asset_path 'logo.png' %>" />
+<meta property="og:type" content="website" />
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@villunderlondon">
+<meta name="twitter:creator" content="@villunderlondon">
+<meta name="twitter:title" content="<%= @event.name %>">
+<meta name="twitter:description" content="<%= truncate_html(strip_tags(@event.description.html_safe), length: 200) unless @event.description.nil? %>">
+<meta name="twitter:image:src" content="<%= @event.img1 unless @event.img1_file_name.nil? %>">
+<% end %>
+
 <div id="container">
-      
-  <div class="heading">
-    <h1><%= link_to @event.name, @event %></h1>
-  </div>
+    <% unless @event.img1_file_name.nil? %>
+      <img src="<%= @event.img1(:small) %>" srcset="<%= @event.img1(:small) %> %> 640w, <%= @event.img1(:large) %> 1280w" alt="Responsive Image Example" />
+    <% end %>
 
   <div class="content">
-    <img src="#"/>
-    <div>
-      <p><%= @event.name %></p>
-      <p><%= @event.venue.name %></p>
-      <p><%= @event.start_at.strftime("%H:%m") %>–<%= @event.end_at.strftime("%H:%m") %></p>
-      <% if @event.all_day %><p>all-day event</p><% end %>
-      <% if @event.description %><p><%= @event.description.html_safe %></p><% end %>
-      <p>£<%= @event.price %></p>
-      <% @event.tickets.each do |ticket| %>
-        <button class="buy" style="margin-top: 1.5em; z-index: 999; text-transform: uppercase; border: 0; color: #fff; width: 148px; height: 50px; background: url(<%= asset_path "button.gif" %>)">Buy tickets</button>
-      <% end %>
+    <div class="body">
+      <div class="blog">
+        <h1><%= @event.name %></h1>
+        <div class="datesquare">
+          <p><%= @event.start_at.strftime("%d") %></p>
+          <p><%= @event.end_at.strftime("%B") %></p>
+        </div>
+        <p class="address"><svg x="0px" y="0px" width="30px"
+   height="30px" style="vertical-align: top" viewBox="0 0 7.68 7.68" enable-background="new 0 0 7.68 7.68" xml:space="preserve"><g id="Clock_copy_2_1_" enable-background="new    ">
+  <path fill="#444444" d="M3.84,1.67c-1.196,0-2.17,0.974-2.17,2.17s0.974,2.17,2.17,2.17s2.17-0.974,2.17-2.17S5.036,1.67,3.84,1.67
+    z M3.84,5.51c-0.921,0-1.67-0.749-1.67-1.67s0.749-1.67,1.67-1.67s1.67,0.749,1.67,1.67S4.761,5.51,3.84,5.51z M4.08,3.743V3.12
+    c0-0.132-0.107-0.24-0.24-0.24c-0.132,0-0.24,0.107-0.24,0.24v0.72c0,0.07,0.032,0.13,0.08,0.174
+    c0.003,0.004,0.002,0.009,0.005,0.013l0.468,0.469c0.094,0.094,0.246,0.094,0.34,0c0.093-0.094,0.093-0.246,0-0.34L4.08,3.743z"/>
+</g></svg><%=@event.start_at.strftime("%H:%M") %> - <%=@event.end_at.strftime("%H:%M") %></p>
+        <p class="address"><%=@event.venue.name %></p>
+        <p><%=@event.venue.details %></p>
+
+        <p><%= render "pages/button", :event => @event %></p>
+
+        <%= @event.description.html_safe unless @event.description.nil? %>
+
+      </div>
+    </div>
+    <%= render "blogs/share" %>
+
+    <div class="body">
+      <div class="blog">
+        <div class="cvg-disqus">
+          <div id="disqus_thread">
+          </div>
+            <script type="text/javascript">
+                var disqus_shortname = 'convergencelondon';
+                /* * * DON'T EDIT BELOW THIS LINE * * */
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+        </div>
+      </div>
     </div>
   </div>
-
 </div>
+
+<% content_for :js do %>
+<script type="text/javascript" async src="//platform.twitter.com/widgets.js"></script>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1497478090528421',
+      xfbml      : true,
+      version    : 'v2.1'
+    });
+
+    $(function(){
+      $("#cvgfb").click(function(e){
+        e.preventDefault();
+        FB.ui({
+          method: 'share',
+          href: '<%= request.url %>'
+        });
+      })
+    })
+  };
+
+  (function(d, s, id){
+   var js, fjs = d.getElementsByTagName(s)[0];
+   if (d.getElementById(id)) {return;}
+   js = d.createElement(s); js.id = id;
+   js.src = "//connect.facebook.net/en_US/sdk.js";
+   fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+</script>
+<% end %>

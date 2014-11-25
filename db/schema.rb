@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141112191650) do
+ActiveRecord::Schema.define(version: 20141125202349) do
 
   create_table "authors", force: true do |t|
     t.string   "name"
@@ -84,7 +84,6 @@ ActiveRecord::Schema.define(version: 20141112191650) do
 
   create_table "embeds", force: true do |t|
     t.text     "source"
-    t.integer  "page_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -109,7 +108,10 @@ ActiveRecord::Schema.define(version: 20141112191650) do
     t.integer  "venue_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
+
+  add_index "events", ["slug"], name: "index_events_on_slug", unique: true
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
@@ -158,15 +160,6 @@ ActiveRecord::Schema.define(version: 20141112191650) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "uuus", force: true do |t|
-    t.string   "name"
-    t.string   "slug"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "uuus", ["slug"], name: "index_uuus_on_slug", unique: true
 
   create_table "venues", force: true do |t|
     t.string   "name"

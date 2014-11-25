@@ -1,6 +1,9 @@
 class Event < ActiveRecord::Base
-  
-  has_attached_file :img1
+  acts_as_taggable
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+
+  has_attached_file :img1, :styles => { :small => "640x", :large => "1280x" }
   
   belongs_to :category
 

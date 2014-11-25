@@ -3,6 +3,11 @@ body {
   position: relative;
 }
 
+
+html, body {
+  height: 100%;
+}
+
 html, body, p, div, h1, h2, h3, h4, h5, h6, nav, ul, li, a, section, article, span {
 	margin: 0;
 	padding: 0;
@@ -33,10 +38,9 @@ html {
 	overflow-y: scroll;
 }
 
-body {
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
+.body,
+.sharing {
+  padding: 0 16px;
 }
 
 .row {
@@ -118,10 +122,6 @@ body {
   color: #ededed;
 }
 
-.content {
-  padding: 0 16px;
-}
-
 @-webkit-keyframes mymove {
     0%   {transform:scale(1,1)}
     50%  {transform:scale(1.1,1.1)}
@@ -159,6 +159,17 @@ footer a {
   background: linear-gradient(rgba(21, 151, 226, 0.6), rgba(231, 0, 146, 0.6));
   opacity: 1;
   transition: opacity 1s;
+}
+
+#venue-location {
+  z-index: 1;
+  position: relative;
+  top: -32px;
+}
+
+#venue-location a:hover {
+  transition: -webkit-filter 1s;
+  -webkit-filter: brightness(75%)
 }
 
 .hide1 {
@@ -377,9 +388,14 @@ body:not(.pages-index) iframe {
   width: 100% !important;
 }
 
+.pagination {
+  margin-bottom: 128px;
+}
+
 .pagination li {
   display: inline;
   list-style: none;
+  font-size: 64px;
 }
 
 .pagination li.disabled {
@@ -443,6 +459,11 @@ footer a img {
     width: 100%;
     height: 100%;
 }
+
+@media screen and (max-width: 1279px) { 
+ 
+}
+
 
 @media screen and (max-width: 1024px) { 
   
