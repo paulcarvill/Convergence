@@ -110,6 +110,11 @@ html {
 .initialHide {
   opacity: 0;
 }
+
+.touch .initialHide {
+  opacity: 1;
+}
+
 .splash-inner {
   display: table;
   height: 100%;
