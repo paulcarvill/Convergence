@@ -14,7 +14,7 @@ class PagesController < ApplicationController
   end
 
   def styleguide
-    @styleguide = Page.find(2)
+    
   end
 
 end

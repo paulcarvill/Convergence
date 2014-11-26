@@ -19,29 +19,31 @@
       <div class="blog">
 
         <% @events.each do |event| %>
-        <div class="datesquare">
-          <p><%= event.start_at.strftime("%d") %></p>
-          <p><%= event.end_at.strftime("%B") %></p>
-        </div>
-        <h1><%= link_to event.name, event %></h1>
-        <p class="address"><%= event.venue.name %></p>
-        <p class="address"><%= event.start_at.strftime("%H:%M") %> - <%= event.end_at.strftime("%H:%M") %></p>
-        <% if event.all_day %><p>ALL DAY</p><% end %>
-        <a href="/news/<%= event %>"><img src="<%= event.img1(:small) unless event.img1_file_name.nil? %>" /></a>
-        <% if event.description %>
-          <p><%= truncate_html(event.description, length: 250) %></p>
-          <p><%= link_to '…read more', event %></p>
-          <% end %>
-        <p>£<%= event.price %></p>
+          <div style="position:relative">
+            <h1><%= link_to event.name, event %></h1>
+            <div class="datesquare">
+              <p><%= event.start_at.strftime("%d") %></p>
+              <p><%= event.end_at.strftime("%B") %></p>
+            </div>
+            <p class="address"><%= event.venue.name %></p>
+            <p class="address"><%= event.start_at.strftime("%H:%M") %> - <%= event.end_at.strftime("%H:%M") %></p>
+            <% if event.all_day %><p>ALL DAY</p><% end %>
+            <a href="/news/<%= event %>"><img src="<%= event.img1(:small) unless event.img1_file_name.nil? %>" /></a>
+            <% if event.description %>
+              <p><%= truncate_html(event.description, length: 250) %></p>
+              <p><%= link_to '…read more', event %></p>
+              <% end %>
+            <p>£<%= event.price %></p>
+          </div>
         <% end %>
-        <%= will_paginate @events, :previous_label => "←", :next_label => "→", :page_links => false %>
-      </div>
-    </div>
-    <%= render "blogs/share" %>
 
-    <div class="body">
-      
+      <%= will_paginate @events, :previous_label => "←", :next_label => "→", :page_links => false %>
     </div>
+  </div>
+  <%= render "blogs/share" %>
+
+  <div class="body">
+      
   </div>
 </div>
 
