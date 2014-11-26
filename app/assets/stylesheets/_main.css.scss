@@ -210,6 +210,14 @@ footer a {
   padding: 0;
 }
 
+.event-inner p svg {
+  margin-left: -7px
+}
+
+.event-inner p:nth-of-type(n+2) svg {
+  margin-left: -10px
+}
+
 .event-inner p:last-of-type {
   position: absolute;
   bottom: 24px;

@@ -1,11 +1,3 @@
-<% unless @event.nil? %>
-	<% if @event.tickets %>
-		<% @event.tickets.each do |ticket| %>
-			<span><form action="<%= ticket.url %>"><button class="buy">Buy <%= ticket.name %> tickets</button></form></span>
-		<% end %>
-	<% end %>
-<% end %>
-
 <% unless event.nil? %>
 	<% if event.tickets %>
 		<% event.tickets.each do |ticket| %>

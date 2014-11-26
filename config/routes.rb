@@ -18,7 +18,6 @@ Rails.application.routes.draw do
 
   resources :pages
 
-  get 'news/tagged' => 'blogs#tagged', :as => 'tagged'
   get 'locations' => 'venues#index'
 
   resources :authors, only: :show
