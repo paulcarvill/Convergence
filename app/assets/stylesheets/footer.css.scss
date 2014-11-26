@@ -121,15 +121,17 @@ footer li a {
   	color: #fff;
     float: right;
     margin-top: 20px;
-    padding-right: 40px;
   }
   p.soc svg {
   	fill: currentColor;
   	width: 30px;
   	height: 30px;
   }
-  footer svg:last-of-type {
+  footer svg {
 	 margin-right: 1em;
+  }
+  footer a:last-of-type svg {
+   margin-right: 0;
   }
   footer h2 {
  	font-size: 1.2em;

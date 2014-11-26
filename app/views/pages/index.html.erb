@@ -1,18 +1,12 @@
 <% pagetitle "music + art + technology" %>
 
-<% if params['full'] %>
 <%= render "interactivepanel" %>
-<% end %>
 
-<% if !params['full'] %>
 <%= render "launch" %>
-<% end %>
 
 <%= render "carouselscript" %>
 
-<% if params['full'] %>
 <%= render "eventsrow" %>
-<% end %>
 
 <%= render "blogrow" %>
 
