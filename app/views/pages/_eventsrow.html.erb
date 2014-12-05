@@ -33,9 +33,6 @@
             <%= event.start_at.strftime('%d %^b') %>
           </p>
           <p><%= event.name %></p>
-          <% if event.details %>
-            <p><%= event.details %></p>
-          <% end %>
           <p><%= link_to "Buy tickets", event %></p>
         </div>
 
