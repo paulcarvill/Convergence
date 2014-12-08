@@ -111,10 +111,6 @@ html {
   opacity: 0;
 }
 
-.touch .initialHide {
-  opacity: 1;
-}
-
 .splash-inner {
   display: table;
   height: 100%;
@@ -439,16 +435,15 @@ body:not(.pages-index) iframe {
 }
 
 .touch .splash {
-  position: static;
-  top: auto;
-  left: auto;
-  bottom: auto;
-  right: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
 }
 
 .touch #wrapper {
-  z-index: -1;
-  position: absolute;
   left:0;
   right: 0;
   top: 0;
@@ -456,6 +451,18 @@ body:not(.pages-index) iframe {
   pointer-events: none;
 }
 
+.highbuy {
+  display: block;
+  position: absolute;
+  bottom: 148px;
+  left: 50%;
+  margin-left: -74px;
+}
+
+.touch #wrapper a.highbuy {
+  pointer-events: auto;
+  bottom: 18px;
+}
 
 footer a img {
   margin-left:16px;

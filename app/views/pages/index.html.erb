@@ -60,7 +60,7 @@ $(document).ready(function() {
     var form = $('a.buy', splashes[current]);
     if(form) {
       var x = form.clone()
-      x.css('display', 'block').css('position', 'absolute').css('bottom', '148px').css('left', '50%').css('margin-left', '-74px');
+      x.addClass("highbuy");
       x.appendTo($('#wrapper'));
     }
   }
@@ -78,10 +78,10 @@ $(document).ready(function() {
     addBuyButton();
   }
 
-  if (document.documentElement.clientWidth > 615) {   
+  
     var numSplashes = splashes.length-1;
     window.setInterval(rotateEvents, 5000);
-  }
+  
 
   /* STICKY NAV */
   $('nav').waypoint('sticky', {
