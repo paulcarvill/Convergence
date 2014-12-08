@@ -434,20 +434,7 @@ body:not(.pages-index) iframe {
   z-index: 1;
 }
 
-.touch .splash {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-}
-
 .touch #wrapper {
-  left:0;
-  right: 0;
-  top: 0;
-  bottom: 10%;
   pointer-events: none;
 }
 
@@ -457,11 +444,6 @@ body:not(.pages-index) iframe {
   bottom: 148px;
   left: 50%;
   margin-left: -74px;
-}
-
-.touch #wrapper a.highbuy {
-  pointer-events: auto;
-  bottom: 18px;
 }
 
 footer a img {
@@ -573,8 +555,12 @@ footer a img {
 
 
 
-
-
+@media screen and (max-width: 615px) { 
+ a.highbuy {
+    pointer-events: auto;
+    bottom: 50px;
+  }
+}
 
 
 

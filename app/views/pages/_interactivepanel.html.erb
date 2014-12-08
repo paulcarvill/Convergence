@@ -2,7 +2,7 @@
 <div class="splash <% if i > 0 %>initialHide<% end %>" style="background-image: url(<%=eventImage(event)%>);">
 	<div class="splash-inner">
 		<div>
-			<h1 style="line-height: 1.5em"><%= event.name %></h1>
+			<h1><%= event.name %></h1>
 			<h2><%= event.details %></h2>
 			<% if event.tickets %>
 			<span style="display: none;"><a href="/events/<%= event.slug %>" class="buy">Buy tickets</a></span>
