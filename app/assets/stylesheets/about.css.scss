@@ -49,13 +49,16 @@
   vertical-align: top;
 }
 
-button {
+a.buy {
 	z-index: 999;
 	text-transform: uppercase;
 	border: 0;
 	color: #fff;
 	width: 148px;
 	height: 50px;
+	padding-top: 17px;
 	background: asset-url('button.gif');
 	cursor: pointer;
+	display: block;
+	text-align: center;
 }
