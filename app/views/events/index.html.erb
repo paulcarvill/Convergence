@@ -22,18 +22,18 @@
           <div style="position:relative">
             <h1><%= link_to event.name, event %></h1>
             <div class="datesquare">
-              <p><%= event.start_at.strftime("%d") %></p>
-              <p><%= event.end_at.strftime("%B") %></p>
+              <p><%= event.start_at.strftime("%d") unless event.start_at.nil? %></p>
+              <p><%= event.end_at.strftime("%B") unless event.end_at.nil? %></p>
             </div>
-            <p class="address"><%= event.venue.name %></p>
-            <p class="address"><%= event.start_at.strftime("%H:%M") %> - <%= event.end_at.strftime("%H:%M") %></p>
+            <p class="address"><%= event.venue.name unless event.venue.nil? %></p>
+            <p class="address"><%= event.start_at.strftime("%H:%M") unless event.start_at.nil? %> - <%= event.end_at.strftime("%H:%M") unless event.end_at.nil? %></p>
             <% if event.all_day %><p>ALL DAY</p><% end %>
             <a href="/news/<%= event %>"><img src="<%= event.img1(:small) unless event.img1_file_name.nil? %>" /></a>
             <% if event.description %>
               <p><%= truncate_html(event.description, length: 250) %></p>
               <p><%= link_to '…read more', event %></p>
               <% end %>
-            <p>£<%= event.price %></p>
+            <p>£<%= event.price unless event.price.nil? %></p>
           </div>
         <% end %>
 
