@@ -9,7 +9,7 @@
       <div class="event-inner">
             <p class="hide1">
               <svg enable-background="new 0 0 24 24" height="30px" id="Layer_1" style="padding-right: 5px;" version="1.1" viewBox="0 0 24 24" width="24px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path stroke="#fff" fill="transparent" stroke-width="2" d="M11.513,12.38c-2.117,0-3.835-1.729-3.835-3.862c0-2.135,1.718-3.863,3.835-3.863s3.835,1.729,3.835,3.863  C15.348,10.65,13.63,12.38,11.513,12.38 M11.513,0C6.825,0,3.025,3.827,3.025,8.549c0,4.46,3.844,10.213,6.411,13.014  c0.959,1.045,2.076,2.454,2.076,2.454s1.2-1.417,2.229-2.493C16.306,18.84,20,13.451,20,8.549C20,3.827,16.2,0,11.513,0"/></svg>
-              <%= event.venue.name %>
+              <%= event.venue.name unless event.venue.nil? %>
             </p>
             <p class="hide2">
               <svg x="0px" y="0px" widht="24px" height="30px" width="30px" style="vertical-align: top; padding-right: 5px;" viewBox="0 0 7.68 7.68" xml:space="preserve"><g id="Clock_copy_2_1_" enable-background="new    ">
@@ -18,7 +18,7 @@
       c0-0.132-0.107-0.24-0.24-0.24c-0.132,0-0.24,0.107-0.24,0.24v0.72c0,0.07,0.032,0.13,0.08,0.174
       c0.003,0.004,0.002,0.009,0.005,0.013l0.468,0.469c0.094,0.094,0.246,0.094,0.34,0c0.093-0.094,0.093-0.246,0-0.34L4.08,3.743z"/>
   </g></svg>
-              <%= event.start_at.strftime('%H:%M') %>
+              <%= event.start_at.strftime('%H:%M') unless event.start_at.nil? %>
             </p>
             <p>
               <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="30px" width="30px" style="vertical-align: top; padding-right: 5px;" viewBox="0 0 7.68 7.68" enable-background="new 0 0 7.68 7.68" xml:space="preserve">
@@ -31,9 +31,9 @@
        M3.6,4.8h0.48V4.32H3.6V4.8z M4.32,4.8H4.8V4.32H4.32V4.8z"/>
                 </g>
               </svg>
-              <%= event.start_at.strftime('%d %^b') %>
+              <%= event.start_at.strftime('%d %^b') unless event.start_at.nil? %>
             </p>
-            <p><%= event.name %></p>
+            <p><%= event.name unless event.name.nil? %></p>
             <p>Buy tickets</p>
           </div>
 
