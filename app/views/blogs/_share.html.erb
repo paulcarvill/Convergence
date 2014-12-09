@@ -2,9 +2,11 @@
 	<div class="blog">
 		<% if @event %>
 			<div id="venue-location">
+				<% unless @event.venue.nil? %>
           		<a href="http://maps.google.com?q=<%= @event.venue.location %>" target="_blank"><img src="https://maps.googleapis.com/maps/api/staticmap?center=<%= @event.venue.location %>&zoom=16&size=394x308&maptype=roadmap
 &markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318
 &markers=color:red%7Clabel:C%7C40.718217,-73.998284&key=AIzaSyAQi0JKj_N-SNXMYHTzjlRS0jcP-Se5oyY&style=saturation:-100|gamma:0.23&markers=color:blue%7C<%=@event.venue.location%>" /></a>
+				<% end %>
         	</div>
         	<% end %>
 
