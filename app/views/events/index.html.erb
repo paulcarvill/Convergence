@@ -28,7 +28,7 @@
             <p class="address"><%= event.venue.name unless event.venue.nil? %></p>
             <p class="address"><%= event.start_at.strftime("%H:%M") unless event.start_at.nil? %> - <%= event.end_at.strftime("%H:%M") unless event.end_at.nil? %></p>
             <% if event.all_day %><p>ALL DAY</p><% end %>
-            <a href="/news/<%= event %>"><img src="<%= event.img1(:small) unless event.img1_file_name.nil? %>" /></a>
+            <a href="/news/<%= event %>"><%= image_tag(event.img1(:small)) unless event.img1_file_name.nil? %></a>
             <% if event.description %>
               <p><%= truncate_html(event.description, length: 250) %></p>
               <p><%= link_to '…read more', event %></p>
