@@ -122,6 +122,12 @@ p:nth-of-type(1) {
 	margin-top: 44px;
 }
 
+#map-canvas p:nth-of-type(1) {
+	margin-top: 0;
+	margin-bottom: 0;
+	line-height: 1em;
+}
+
 p.address {
 	margin-bottom: 0
 }
