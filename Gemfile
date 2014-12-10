@@ -9,6 +9,7 @@ group :development do
 	gem 'sqlite3'
 	gem "brakeman" # security testing
 	gem 'wraith'
+	gem 'mysql2'
 end
 
 # Use SCSS for stylesheets

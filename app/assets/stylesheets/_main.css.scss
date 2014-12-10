@@ -474,7 +474,6 @@ footer a img {
  
 }
 
-
 @media screen and (max-width: 1024px) { 
   
   .event-container {
@@ -563,10 +562,15 @@ footer a img {
 }
 
 
+@media screen and (max-width: 550px) { 
+  .event-container {
+    width: 50%;
+    display: table;
+  }
+}
 
 
-
-@media screen and (max-width: 320px) { 
+@media screen and (max-width: 364px) { 
   .splash.launch h1,
   .splash.launch h2,
   .splash.launch h3 {

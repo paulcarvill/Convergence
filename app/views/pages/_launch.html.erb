@@ -1,4 +1,4 @@
-<div class="splash launch">
+<div class="splash launch<% if @events.length > 0 then%> initialHide<% end %>">
   <div class="splash-inner">
     <div>
         <img src="<%= asset_path "logo.png" %>" width="147" height="127" />
