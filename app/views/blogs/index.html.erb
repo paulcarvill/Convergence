@@ -20,7 +20,7 @@
 
 				<% @blogs.each do |blog| %>
 					<h1><%= link_to blog.title, blog %></h1>
-					<p class="author"><%= blog.created_at.strftime("%d %^b") %> | <%= link_to blog.author.name.upcase, blog.author unless blog.author.nil? %></p>
+					<p class="author"><%= blog.published_at.strftime("%d %^b") %> | <%= link_to blog.author.name.upcase, blog.author unless blog.author.nil? %></p>
 					<a href="/news/<%= blog.slug %>"><img src="<%= blog.hero(:small) unless blog.hero_file_name.nil? %>" /></a>
 					<p><%= truncate_html(blog.body, length: 500) %></p>
 					<p><%= link_to '…read more', blog %></p>

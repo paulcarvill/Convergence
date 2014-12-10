@@ -14,7 +14,7 @@ class Blog < ActiveRecord::Base
 
 	def dupe_date
 		if !self.published_at
-			self.published_at = self.created_at
+			self.published_at = DateTime.now
 		end
 	end
 
