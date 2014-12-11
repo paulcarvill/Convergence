@@ -16,8 +16,10 @@
 <% end %>
 
 <div id="container">
-    <% unless @event.img1_file_name.nil? %>
-      <img src="<%= @event.img1(:small) %>" srcset="<%= @event.img1(:small) %> %> 640w, <%= @event.img1(:large) %> 1280w" alt="Responsive Image Example" />
+    <% if @event.shortimg1_file_name %>
+      <img src="<%= @event.shortimg1(:small) %>" srcset="<%= @event.shortimg1(:small) %> %> 640w, <%= @event.shortimg1(:large) %> 1280w" />
+    <% elsif @event.img1_file_name %>
+      <img src="<%= @event.img1(:small) %>" srcset="<%= @event.img1(:small) %> %> 640w, <%= @event.img1(:large) %> 1280w" />
     <% end %>
 
   <div class="content">

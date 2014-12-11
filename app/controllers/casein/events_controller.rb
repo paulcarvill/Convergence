@@ -69,6 +69,7 @@ module Casein
           :featured,
           :all_day,
           :img1,
+          :shortimg1,
           :category_id,
           :tag_list,
           tickets_attributes: [:id, :name, :url, :_destroy]

@@ -69,6 +69,16 @@
 
 <div class="row">
 	<div class="col-lg-6">
+		<%= casein_file_field f, f.object, "event", :shortimg1 , { :casein_label => "Short event image (one image only)"}%>
+	</div>
+	<div class="col-lg-6">
+		<label class="control-label" for="event_shortimg1">Currently loaded image:</label>
+		<%= if @event.shortimg1? then image_tag(@event.shortimg1, width: '300') else content_tag(:span, "No image yet") end %>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-lg-6">
 		<%= casein_text_field f, f.object, :tag_list %>
 	</div>
 </div>

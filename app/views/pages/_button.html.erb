@@ -1,7 +1,8 @@
 <% unless event.nil? %>
 	<% if event.tickets %>
-		<% event.tickets.each do |ticket| %>
-			<p><a href="<%= ticket.url %>" class="buy"><%= ticket.name %> tickets</a></p>
+		<p><% event.tickets.each do |ticket| %>
+			<a href="<%= ticket.url %>" class="buy">&rsaquo; <%= ticket.name %> tickets</a><br />
 		<% end %>
+		</p>
 	<% end %>
 <% end %>
