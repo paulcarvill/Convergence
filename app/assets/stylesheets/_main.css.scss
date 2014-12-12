@@ -208,8 +208,7 @@ footer a {
   position: absolute;
   bottom: 0;
   width: 20%;
-  padding: 0 30px;
-  height: 292px;  
+  padding: 0 30px; 
 }
 
 .event-inner p {
@@ -227,8 +226,6 @@ footer a {
 }
 
 .event-inner p:last-of-type {
-  position: absolute;
-  bottom: 24px;
   text-transform: uppercase;
 }
 
@@ -491,10 +488,6 @@ footer a img {
     vertical-align: bottom;
     padding-bottom: 30px;
     word-break: break-word;
-  }
-
-  .event-inner p:last-of-type {
-    position: static;
   }
 
   #mailinglistrow input {
