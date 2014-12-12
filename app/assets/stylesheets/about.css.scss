@@ -52,6 +52,22 @@ a.buy {
 	z-index: 999;
 	text-transform: uppercase;
 	border: 0;
+	color: #fff;
+	width: 148px;
+	height: 50px;
+	padding-top: 20px;
+	background: url(/assets/button-60e54dff4c69e5ee6ebf124b32c6f32f.gif);
+	cursor: pointer;
+	display: block;
+	text-align: center;
+	font-size: 16px;
+	line-height: 16px;
+}
+
+a.buyrainbow {
+	z-index: 999;
+	text-transform: uppercase;
+	border: 0;
 	background: -webkit-linear-gradient(0deg, #2aa9ea, #e90190);
 	-webkit-background-clip: text;
   	-webkit-text-fill-color: transparent;
