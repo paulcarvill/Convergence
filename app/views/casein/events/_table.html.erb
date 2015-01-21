@@ -19,7 +19,7 @@
 
 		<tr>
 			<td><%= casein_table_cell_link event.name, casein_event_path(event) %></td>
-			<td><% if event.venue %><%= casein_table_cell_link event.venue.name, casein_event_path(event) %><% end %></td>
+			<td><% if event.venue %><%= casein_table_cell_link event.venue.name.html_safe, casein_event_path(event) %><% end %></td>
 			<td><%= casein_table_cell_link event.start_at.strftime("%H:%M %^h %d"), casein_event_path(event) %></td>
 			<td><%= casein_table_cell_link event.end_at.strftime("%H:%M %^h %d"), casein_event_path(event) %></td>
 			<td><%= casein_table_cell_link event.price, casein_event_path(event) %></td>

@@ -12,7 +12,7 @@
 	
 	<% venues.each do |venue| %>
 		<tr>
-			<td><%= casein_table_cell_link venue.name, casein_venue_path(venue) %></td>
+			<td><%= casein_table_cell_link venue.name.html_safe, casein_venue_path(venue) %></td>
 			<td><%= casein_table_cell_link venue.location, casein_venue_path(venue) %></td>
 			<td><%= casein_table_cell_link venue.details, casein_venue_path(venue) %></td>
 			<td class="delete">

@@ -25,7 +25,7 @@
               <p><%= event.start_at.strftime("%d") unless event.start_at.nil? %></p>
               <p><%= event.end_at.strftime("%B") unless event.end_at.nil? %></p>
             </div>
-            <p class="address"><%= event.venue.name unless event.venue.nil? %></p>
+            <p class="address"><%= event.venue.name.html_safe unless event.venue.nil? %></p>
             <p class="address"><%= event.start_at.strftime("%H:%M") unless event.start_at.nil? %> - <%= event.end_at.strftime("%H:%M") unless event.end_at.nil? %></p>
             <% if event.all_day %><p>ALL DAY</p><% end %>
             <a href="/events/<%= event.slug %>"><%= image_tag(event.img1(:small)) unless event.img1_file_name.nil? %></a>

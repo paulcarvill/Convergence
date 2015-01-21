@@ -45,7 +45,7 @@
         var marker = new google.maps.Marker({
           position: myLatlng,
           map: map,
-          title:"<%= venue.name %>",
+          title:"<%= venue.name.html_safe %>",
         });
         bounds.extend(marker.position);
         
