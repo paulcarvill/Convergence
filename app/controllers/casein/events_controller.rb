@@ -72,7 +72,8 @@ module Casein
           :shortimg1,
           :category_id,
           :tag_list,
-          tickets_attributes: [:id, :name, :url, :_destroy]
+          :publish_at,
+          tickets_attributes: [:id, :name, :url, :_destroy],
         )
       end
 

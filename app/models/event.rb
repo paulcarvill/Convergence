@@ -23,4 +23,5 @@ class Event < ActiveRecord::Base
       return false
     end
 
+  scope :published, -> { where("publish_at <= now()") }
 end

@@ -3,8 +3,8 @@ class PagesController < ApplicationController
   caches_page :index, :about
 
   def index
-    @events = Event.where(featured: true)
-    @moreEvents = Event.where(featured: false).limit(5)
+    @events = Event.published.where(featured: true)
+    @moreEvents = Event.published.where(featured: false).limit(5)
     @blogs = Blog.where("published = ?", true).order(published_at: :desc).limit(1)
     @embeds = Embed.all();
   end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141125202349) do
+ActiveRecord::Schema.define(version: 20150121123750) do
 
   create_table "authors", force: true do |t|
     t.string   "name"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20141125202349) do
     t.string   "slug"
   end
 
-  add_index "blogs", ["slug"], name: "index_blogs_on_slug", unique: true
+  add_index "blogs", ["slug"], name: "index_blogs_on_slug", unique: true, using: :btree
 
   create_table "casein_admin_users", force: true do |t|
     t.string   "login",                           null: false
@@ -79,8 +79,8 @@ ActiveRecord::Schema.define(version: 20141125202349) do
     t.datetime "updated_at"
   end
 
-  add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable"
-  add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type"
+  add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable", using: :btree
+  add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
 
   create_table "embeds", force: true do |t|
     t.text     "source"
@@ -94,11 +94,11 @@ ActiveRecord::Schema.define(version: 20141125202349) do
     t.text     "description"
     t.datetime "start_at"
     t.datetime "end_at"
-    t.boolean  "all_day",           default: false, null: false
+    t.boolean  "all_day",                default: false, null: false
     t.integer  "price"
-    t.boolean  "featured",          default: false, null: false
+    t.boolean  "featured",               default: false, null: false
     t.string   "promoter"
-    t.boolean  "sold_out",          default: false, null: false
+    t.boolean  "sold_out",               default: false, null: false
     t.string   "img1_file_name"
     t.string   "img1_content_type"
     t.integer  "img1_file_size"
@@ -109,9 +109,15 @@ ActiveRecord::Schema.define(version: 20141125202349) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slug"
+    t.string   "shortimg1_file_name"
+    t.string   "shortimg1_content_type"
+    t.integer  "shortimg1_file_size"
+    t.datetime "shortimg1_updated_at"
+    t.text     "shortimg1_meta"
+    t.datetime "publish_at"
   end
 
-  add_index "events", ["slug"], name: "index_events_on_slug", unique: true
+  add_index "events", ["slug"], name: "index_events_on_slug", unique: true, using: :btree
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
@@ -121,10 +127,10 @@ ActiveRecord::Schema.define(version: 20141125202349) do
     t.datetime "created_at"
   end
 
-  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
-  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
-  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
-  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true, using: :btree
+  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
+  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
+  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
   create_table "pages", force: true do |t|
     t.string   "title"
@@ -143,15 +149,15 @@ ActiveRecord::Schema.define(version: 20141125202349) do
     t.datetime "created_at"
   end
 
-  add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true
-  add_index "taggings", ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context"
+  add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true, using: :btree
+  add_index "taggings", ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context", using: :btree
 
   create_table "tags", force: true do |t|
     t.string  "name"
     t.integer "taggings_count", default: 0
   end
 
-  add_index "tags", ["name"], name: "index_tags_on_name", unique: true
+  add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
 
   create_table "tickets", force: true do |t|
     t.integer  "event_id"
