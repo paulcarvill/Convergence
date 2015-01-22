@@ -5,11 +5,11 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     if params[:tag].present? 
-      @events = Event.published.tagged_with(params[:tag]).paginate :page => params[:page], :per_page => 10
+      @events = Event.published.tagged_with(params[:tag]).paginate :page => params[:page], :per_page => 50
     elsif params[:venue].present? 
-      @events = Event.published.where("venue_id = ?", params[:venue]).paginate :page => params[:page], :per_page => 10
+      @events = Event.published.where("venue_id = ?", params[:venue]).paginate :page => params[:page], :per_page => 50
     else 
-      @events = Event.published.order(start_at: :asc).paginate :page => params[:page], :per_page => 10
+      @events = Event.published.order(start_at: :asc).paginate :page => params[:page], :per_page => 50
     end
   end
 
