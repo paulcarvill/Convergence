@@ -15,16 +15,14 @@ footer ul {
 	margin-left: 160px;
 }
 
+footer p,
+footer p a {
+  color: #b3b3b3;
+  font-size: 14px;
+}
+
 footer a {
 	text-decoration: none;
-}
-
-p.soc {
-  margin-bottom: 1em;
-}
-
-p.soc a {
-  color: #9b9b9b;
 }
 
 footer svg {
@@ -32,21 +30,16 @@ footer svg {
 	margin-right: 8pxem;
 }
 
-footer a:nth-of-type(1) svg {
+footer p.soc a:nth-of-type(1) svg {
   margin-left: 16px;
 }
 
 footer svg:nth-of-type(1) {
-	margin-left: 24px;
+	margin-left: 10px;
 }
 
 footer svg:nth-of-type(6) {
 	margin-right: 0;
-}
-
-footer {
-    padding-left: 32px;
-    padding-right: 32px;
 }
 
 footer li {
@@ -84,14 +77,20 @@ footer li a {
   footer a:last-of-type svg {
     margin-right: 0;
   }
-  footer {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
   p.soc svg {
     fill: currentColor;
     width: 30px;
     height: 30px;
+  }
+
+  p.soc {
+    float: none;
+    margin: 18px 0 8px 10px;
+  }
+
+  p.sites {
+    float: none;
+    margin: 16px 0 24px 30px;
   }
 }
 
@@ -118,14 +117,22 @@ footer li a {
     padding-top: 5px;
   }
   p.soc {
-  	color: #fff;
-    float: right;
-    margin-top: 20px;
+    float: left;
+    margin: 18px 0 8px 10px;
   }
   p.soc svg {
   	fill: currentColor;
   	width: 30px;
   	height: 30px;
+  }
+  p.sites {
+    float: right;
+    margin: 24px 24px 0 0;
+  }
+
+  footer p.soc,
+  footer p.soc a {
+    color: #e7e8e7;
   }
   footer svg {
 	 margin-right: 1em;
@@ -137,10 +144,10 @@ footer li a {
  	font-size: 1.2em;
  	margin-top: 25px;
   }
-  footer a:hover {
+  footer p.soc a:hover {
     color: #888;
   }
-  footer a:hover svg {
+  footer p.soc a:hover svg {
     fill: currentColor;
   }
 }
