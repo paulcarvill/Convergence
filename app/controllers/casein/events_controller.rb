@@ -27,6 +27,8 @@ module Casein
     
       if @event.save
         flash[:notice] = 'Event created'
+        expire_page  '/events'
+        expire_page '/index.html'
         redirect_to casein_events_path
       else
         flash.now[:warning] = 'There were problems when trying to create a new event'
@@ -41,6 +43,10 @@ module Casein
     
       if @event.update_attributes event_params
         flash[:notice] = 'Event has been updated'
+        expire_page  '/events'
+        expire_page  "/events/#{params[:id]}"
+        expire_page '/index.html'
+
         redirect_to casein_events_path
       else
         flash.now[:warning] = 'There were problems when trying to update this event'

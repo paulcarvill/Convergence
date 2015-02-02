@@ -46,14 +46,13 @@ html {
 .row {
   background: #e8e8e8;
   float: left;
-  z-index: 1;
   width: 100%;
   position: relative;
   z-index: 3;
 }
 
 .splash {
-	position: fixed;
+	position: absolute;
 	top: 0;
 	left: 0;
 	right: 0;
@@ -423,8 +422,7 @@ body:not(.pages-index) iframe {
 }
 
 #wrapper {
-  z-index: 1;
-  position: fixed;
+  position: absolute;
   left:0;
   right: 0;
   top: 0;

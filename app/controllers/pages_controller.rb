@@ -1,5 +1,4 @@
 class PagesController < ApplicationController
-  before_action :set_page, only: [:show, :edit, :update, :destroy]
   caches_page :index, :about
 
   def index

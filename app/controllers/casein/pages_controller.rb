@@ -41,6 +41,7 @@ module Casein
     
       if @page.update_attributes page_params
         flash[:notice] = 'Page has been updated'
+        expire_page  '/about.html'
         redirect_to casein_pages_path
       else
         flash.now[:warning] = 'There were problems when trying to update this page'

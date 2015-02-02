@@ -27,6 +27,7 @@ module Casein
     
       if @venue.save
         flash[:notice] = 'Venue created'
+        expire_page  '/locations'
         redirect_to casein_venues_path
       else
         flash.now[:warning] = 'There were problems when trying to create a new venue'
@@ -41,6 +42,7 @@ module Casein
     
       if @venue.update_attributes venue_params
         flash[:notice] = 'Venue has been updated'
+        expire_page  '/locations'
         redirect_to casein_venues_path
       else
         flash.now[:warning] = 'There were problems when trying to update this venue'

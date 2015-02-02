@@ -27,6 +27,7 @@ module Casein
     
       if @embed.save
         flash[:notice] = 'Embed created'
+        expire_page '/index.html'
         redirect_to casein_embeds_path
       else
         flash.now[:warning] = 'There were problems when trying to create a new embed'
@@ -41,6 +42,7 @@ module Casein
     
       if @embed.update_attributes embed_params
         flash[:notice] = 'Embed has been updated'
+        expire_page '/index.html'
         redirect_to casein_embeds_path
       else
         flash.now[:warning] = 'There were problems when trying to update this embed'

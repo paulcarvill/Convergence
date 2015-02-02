@@ -28,6 +28,8 @@ module Casein
       if @blog.save
         flash[:notice] = 'Blog created'
         redirect_to casein_blogs_path
+        expire_page  '/news'
+        expire_page '/index.html'
       else
         flash.now[:warning] = 'There were problems when trying to create a new blog'
         render :action => :new
@@ -41,6 +43,9 @@ module Casein
     
       if @blog.update_attributes blog_params
         flash[:notice] = 'Blog has been updated'
+        expire_page  '/news'
+        expire_page  "/news/#{params[:id]}"
+        expire_page '/index.html'
         redirect_to casein_blogs_path
       else
         flash.now[:warning] = 'There were problems when trying to update this blog'
