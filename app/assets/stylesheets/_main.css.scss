@@ -164,6 +164,18 @@ footer a {
   transition: opacity 1s;
 }
 
+.venues-index #wrapper {
+  display: none;
+}
+
+.venues-index .inside-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
 #venue-location {
   z-index: 1;
   position: relative;
@@ -422,6 +434,11 @@ body:not(.pages-index) iframe {
 }
 
 #wrapper {
+  display: none;
+}
+
+.pages-index #wrapper {
+  display: block;
   position: absolute;
   left:0;
   right: 0;
