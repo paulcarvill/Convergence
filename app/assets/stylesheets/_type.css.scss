@@ -82,6 +82,12 @@ h1 {
 	font-size: 78px;
 }
 
+@media screen and (max-width: 364px) { 
+  h1 {
+    font-size: 58px;
+  }
+}
+
 h2 {
 	font-size: 2em;
 }
