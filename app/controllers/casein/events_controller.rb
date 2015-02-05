@@ -58,6 +58,9 @@ module Casein
       @event = Event.friendly.find_by_slug! params[:id]
 
       @event.destroy
+      expire_page  '/events'
+      expire_page '/index.html'
+      expire_page  "/events/#{params[:id]}"
       flash[:notice] = 'Event has been deleted'
       redirect_to casein_events_path
     end

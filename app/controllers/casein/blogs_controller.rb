@@ -57,6 +57,9 @@ module Casein
       @blog = Blog.friendly.find_by_slug! params[:id]
 
       @blog.destroy
+      expire_page  '/news'
+      expire_page  "/news/#{params[:id]}"
+      expire_page '/index.html'
       flash[:notice] = 'Blog has been deleted'
       redirect_to casein_blogs_path
     end
