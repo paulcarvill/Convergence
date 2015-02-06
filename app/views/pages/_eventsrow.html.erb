@@ -1,43 +1,25 @@
-<div class="events row">
-  <% @moreEvents.each_with_index do |event, i| %>
+<div class="events row" style="width: 1085px; margin: 15px 98px 0 97px;">
+  <% @moreEvents.each_slice(4) do |row| %>
+
+ 
+    <div style="float: left;">
+ 
+   <% row.each_with_index do |event, i| %>
     <a href="/events/<%= event.slug %>" />
     <div class="event-container" style="z-index: <%= (i*-1)+5%>; background-image: url(<%= event.img1(:small) %>);">
       <div class="event-overlay">
-          
       </div>
-
-      <div class="event-inner">
-            <p class="hide1">
-              <svg enable-background="new 0 0 24 24" height="30px" id="Layer_1" style="padding-right: 5px;" version="1.1" viewBox="0 0 24 24" width="24px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path stroke="#fff" fill="transparent" stroke-width="2" d="M11.513,12.38c-2.117,0-3.835-1.729-3.835-3.862c0-2.135,1.718-3.863,3.835-3.863s3.835,1.729,3.835,3.863  C15.348,10.65,13.63,12.38,11.513,12.38 M11.513,0C6.825,0,3.025,3.827,3.025,8.549c0,4.46,3.844,10.213,6.411,13.014  c0.959,1.045,2.076,2.454,2.076,2.454s1.2-1.417,2.229-2.493C16.306,18.84,20,13.451,20,8.549C20,3.827,16.2,0,11.513,0"/></svg>
-              <%= event.venue.name.html_safe unless event.venue.nil? %>
-            </p>
-            <p class="hide2">
-              <svg x="0px" y="0px" widht="24px" height="30px" width="30px" style="vertical-align: top; padding-right: 5px;" viewBox="0 0 7.68 7.68" xml:space="preserve"><g id="Clock_copy_2_1_" enable-background="new    ">
-    <path fill="#fff" d="M3.84,1.67c-1.196,0-2.17,0.974-2.17,2.17s0.974,2.17,2.17,2.17s2.17-0.974,2.17-2.17S5.036,1.67,3.84,1.67
-      z M3.84,5.51c-0.921,0-1.67-0.749-1.67-1.67s0.749-1.67,1.67-1.67s1.67,0.749,1.67,1.67S4.761,5.51,3.84,5.51z M4.08,3.743V3.12
-      c0-0.132-0.107-0.24-0.24-0.24c-0.132,0-0.24,0.107-0.24,0.24v0.72c0,0.07,0.032,0.13,0.08,0.174
-      c0.003,0.004,0.002,0.009,0.005,0.013l0.468,0.469c0.094,0.094,0.246,0.094,0.34,0c0.093-0.094,0.093-0.246,0-0.34L4.08,3.743z"/>
-  </g></svg>
-              <%= event.start_at.strftime('%H:%M') unless event.start_at.nil? %>
-            </p>
-            <p>
-              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="30px" width="30px" style="vertical-align: top; padding-right: 5px;" viewBox="0 0 7.68 7.68" enable-background="new 0 0 7.68 7.68" xml:space="preserve">
-                <g id="Rectangle_15_copy_3_1_" enable-background="new    ">
-                  <path fill="#fff" d="M5.28,2.4H4.798V2.162c0-0.132-0.107-0.24-0.239-0.24c-0.133,0-0.24,0.108-0.24,0.24V2.4h-0.96V2.162
-      c0-0.132-0.107-0.24-0.24-0.24s-0.24,0.108-0.24,0.24V2.4H2.4c-0.265,0-0.48,0.215-0.48,0.48v2.4c0,0.265,0.215,0.479,0.48,0.479
-      h2.88c0.265,0,0.479-0.215,0.479-0.479v-2.4C5.76,2.615,5.545,2.4,5.28,2.4z M5.28,5.28H2.4v-2.4h0.713
-      c0.002,0,0.003,0.002,0.005,0.002S3.121,2.88,3.123,2.88h1.431c0.002,0,0.003,0.002,0.005,0.002S4.562,2.88,4.563,2.88H5.28V5.28z
-       M2.88,4.08h0.48V3.6H2.88V4.08z M3.6,4.08h0.48V3.6H3.6V4.08z M4.32,4.08H4.8V3.6H4.32V4.08z M2.88,4.8h0.48V4.32H2.88V4.8z
-       M3.6,4.8h0.48V4.32H3.6V4.8z M4.32,4.8H4.8V4.32H4.32V4.8z"/>
-                </g>
-              </svg>
-              <%= event.start_at.strftime('%d %^b') unless event.start_at.nil? %>
-            </p>
-            <p><%= event.name unless event.name.nil? %></p>
-            <p>&rsaquo; Buy tickets</p>
-          </div>
-
     </div>
+    
+
+    <div class="event-inner">
+            <p style="margin-left: 15px; margin-right: 15px; margin-top: 0px; font-size: 16px; color: #f200ff"><b><%= event.start_at.strftime('%d %^b') unless event.start_at.nil? %></b></p>
+            <p style="margin-left: 15px; margin-right: 0; font-size: 32px; line-height: 36px;"><b><%= event.name unless event.name.nil? %></b></p>
+          </div>
     </a>
+    <% end %>
+      </div>
+  
   <% end %>
 </div>
+

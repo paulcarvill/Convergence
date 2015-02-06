@@ -143,18 +143,27 @@ footer a {
   color: #fff;
 }
 
-.event-container {
-  width:20%;
+.events>div>a {
   float: left;
-  height: 500px;
+}
+
+.events>div>a:nth-of-type(n*4+4) .event-container {
+  margin-right: 0;
+}
+
+.event-container {
+  height: 250px;
+  width: 250px;
+  margin-right: 15px;
   background: #333;
   background-size: cover;
   background-position: 50% 50%;
+  float: left;
 }
 
 .event-overlay {
   position: relative;
-  height: 500px;
+  height: 250px;
   opacity: 0;
 }
 
@@ -214,15 +223,25 @@ footer a {
 
 .event-inner {
   color: #fff;
-  position: absolute;
-  bottom: 0;
-  width: 20%;
-  padding: 0 30px; 
+  clear: left;
+  min-height: 235px;
+  width: 250px;
+  color: $bodycopy;
+  padding-top: 10px;
+}
+
+.event-inner a,
+.event-inner p {
+  color: #444;
+  text-decoration: none;
+}
+
+.events>div>a:hover {
+  text-decoration: none;
 }
 
 .event-inner p {
   padding: 0;
-  margin-top: 0 !important;
   margin-bottom: 0 !important;
 }
 
@@ -235,7 +254,6 @@ footer a {
 }
 
 .event-inner p:last-of-type {
-  text-transform: uppercase;
   font-size: 18px;
 }
 
@@ -488,13 +506,11 @@ footer a img {
 @media screen and (max-width: 1024px) { 
   
   .event-container {
-    width: 33%;
     display: table;
   }
   
   .event-inner {
-    position: static;
-    height: 500px;
+    height: 250px;
     width: 100%;
     display: table-cell;
     vertical-align: bottom;
@@ -568,7 +584,6 @@ footer a img {
 
 @media screen and (max-width: 550px) { 
   .event-container {
-    width: 50%;
     display: table;
   }
 }
@@ -601,9 +616,7 @@ footer a img {
     margin: 0 auto;
   }
   .event-container {
-    width: 100%;
     position: relative;
-    height: 350px;
   }
   .event-inner {
     top: 58px;
