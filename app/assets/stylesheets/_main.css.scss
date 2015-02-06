@@ -147,7 +147,7 @@ footer a {
   float: left;
 }
 
-.events>div>a:nth-of-type(n*4+4) .event-container {
+.events>div>a:nth-of-type(n+4) .event-container {
   margin-right: 0;
 }
 
@@ -499,8 +499,41 @@ footer a img {
     height: 100%;
 }
 
+ .events {
+  width: 1045px;
+  margin: 15px 117px 0 118px;
+}
+
+.event>div {
+  width: 100%;
+}
+
+.events p.time {
+    margin-left: 0; margin-right: 0; margin-top: 0px; font-size: 16px; color: #f200ff
+  }
+
+  .events p.name {
+    margin-left: 0; margin-right: 0; font-size: 32px; line-height: 36px;
+  }
+  
 @media screen and (max-width: 1279px) { 
- 
+ .events {
+    width: 100%;
+    margin: 15px 0 0 0;
+  }
+
+  .events>div {
+    width: 1045px;
+    margin: 0 auto;
+  }
+
+  .events p.time {
+    margin-left: 0; margin-right: 0; margin-top: 0px; font-size: 16px; color: #f200ff
+  }
+
+  .events p.name {
+    margin-left: 0; margin-right: 0; font-size: 32px; line-height: 36px;
+  }
 }
 
 @media screen and (max-width: 1024px) { 
@@ -509,14 +542,6 @@ footer a img {
     display: table;
   }
   
-  .event-inner {
-    height: 250px;
-    width: 100%;
-    display: table-cell;
-    vertical-align: bottom;
-    padding-bottom: 30px;
-    word-break: break-word;
-  }
 
   #mailinglistrow input {
     width: 68%;
@@ -528,9 +553,54 @@ footer a img {
     font-size: 1em;
     margin-top: 2px;
   }
+
+  .events {
+    width: 100%;
+    margin: 15px 0 0 0;
+  }
+
+  .events>div {
+    width: 795px;
+    margin: 0 auto;
+  }
+
+  .events>div>a:nth-of-type(n+3) .event-container {
+    margin-right: 0;
+  }
+
+  .events>div>a:nth-of-type(n+4) .event-container {
+    margin-right: 15px;
+  }
+
+  .events p.time {
+    margin-left: 0; margin-right: 0; margin-top: 0px; font-size: 16px; color: #f200ff
+  }
+
+  .events p.name {
+    margin-left: 0; margin-right: 0; font-size: 32px; line-height: 36px;
+  }
 }
 
 @media screen and (max-width: 900px) { 
+
+  .events {
+    width: 100%;
+    margin: 15px 0 0 0;
+  }
+
+  .events>div {
+    width: 795px;
+    margin: 0 auto;
+  }
+
+  .events p.time {
+    margin-left: 0; margin-right: 0; margin-top: 0px; font-size: 16px; color: #f200ff
+  }
+
+  .events p.name {
+    margin-left: 0; margin-right: 0; font-size: 32px; line-height: 36px;
+  }
+
   .blogrow div div {
     display: block;
   }
@@ -555,8 +625,39 @@ footer a img {
   }
 }
 
+@media screen and (min-width: 825px) and (max-width: 900px) { 
+.events>div {
+    width: 780px;
+    margin: 0 auto;
+  }
+  .events>div>a:nth-of-type(3n) .event-container {
+    margin-right: 0;
+  }
+  .events>div>a:nth-of-type(n+4) .event-container {
+    margin-right: 15px;
+  }
+}
+
+@media screen and (max-width: 825px) { 
+  .events>div {
+    width: 530px;
+    margin: 0 auto;
+  }
+
+  .events>div>a:nth-of-type(n+2) .event-container {
+    margin-right: 0;
+  }
+  .events>div>a:nth-of-type(n+3) .event-container {
+    margin-right: 15px;
+  }
+}
+
 
 @media screen and (max-width: 660px) { 
+
+  .events>div {
+    width: 100%;
+  }
 
   #mailinglistrow div:nth-of-type(1) {
     padding-top: 3em;
@@ -569,6 +670,46 @@ footer a img {
   footer a img {
     margin-top: 4px;
     vertical-align: top;
+  }
+
+  .events {
+    width: 100%;
+    margin: 15px 0 0 0;
+  }
+
+  .event>div {
+    float: left;
+    width: 100%;
+  }
+
+  .events>div>a {
+    width: 100%;
+  }
+
+  .event-container {
+    margin: 0 5% 0 5%; 
+    width: 90%;
+    height: 190px;
+  }
+
+  .event-inner {
+    min-height: 50px;
+    width: 90%;
+    margin: 0 5% 0 5%;
+    padding-bottom: 30px;
+    word-break: break-word;
+  }
+
+  .event-overlay {
+    height: 190px;
+  }
+
+  .events p.time {
+    margin-left: 0; margin-right: 0; margin-top: 0px; font-size: 16px; color: #f200ff
+  }
+
+  .events p.name {
+    margin-left: 0; margin-right: 0; font-size: 32px; line-height: 36px;
   }
 }
 
@@ -583,13 +724,26 @@ footer a img {
 
 
 @media screen and (max-width: 550px) { 
+
   .event-container {
-    display: table;
+    height: 160px;
   }
+
+  .event-overlay {
+    height: 160px;
+  }
+
 }
 
 
 @media screen and (max-width: 364px) { 
+
+  .event-container {
+    margin: 0 5% 0 5%; 
+    width: 90%;
+    height: 130px;
+  }
+
   .splash.launch h1,
   .splash.launch h2,
   .splash.launch h3 {
@@ -617,10 +771,6 @@ footer a img {
   }
   .event-container {
     position: relative;
-  }
-  .event-inner {
-    top: 58px;
-    width: 100%;
   }
   .hide1,
   .hide2 {

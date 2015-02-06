@@ -1,5 +1,5 @@
 <% @events.each_with_index do |event, i| %>
-<div class="splash <% if i > 0 %>initialHide<% end %>" style="background-image: url(<%=eventImage(event)%>);">
+<div class="splash initialHide" style="background-image: url(<%=eventImage(event)%>);">
 	<div class="splash-inner">
 		<div>
 			<h1><%= event.name %></h1>
