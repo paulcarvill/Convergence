@@ -167,10 +167,9 @@ footer a {
   opacity: 0;
 }
 
-.event-container:hover .event-overlay {
+.events>div>a:hover .event-overlay {
   background: linear-gradient(rgba(21, 151, 226, 0.6), rgba(231, 0, 146, 0.6));
   opacity: 1;
-  transition: opacity 1s;
 }
 
 .venues-index #wrapper {
@@ -208,19 +207,6 @@ footer a {
   top: 10px;
 }
 
-.event-container:hover .hide2 {
-  opacity: 1;
-  transition: opacity 3s;
-  top: 0;
-  transition: opacity 1s, top 0.5s;
-}
-
-.event-container:hover .hide1 {
-  opacity: 1;
-  top: 0;
-  transition: opacity 1.5s, top 0.75s;
-}
-
 .event-inner {
   color: #fff;
   clear: left;
@@ -245,14 +231,6 @@ footer a {
   margin-bottom: 0 !important;
 }
 
-.event-inner p svg {
-  margin-left: -7px
-}
-
-.event-inner p:nth-of-type(n+2) svg {
-  margin-left: -10px
-}
-
 .event-inner p:last-of-type {
   font-size: 18px;
 }
@@ -273,6 +251,8 @@ footer a {
 }
 
 #videorow {
+  width: 1045px;
+  margin: 0 117px 30px 118px;
   clear:left;
   float: left;
 }
@@ -357,13 +337,18 @@ footer a {
 }
 
 #mailinglistrow {
-  background: #e8e8e8 asset-url('dots.png') 50% 100% no-repeat;
+  background: #f1f1f1 asset-url('dots.png') 50% 100% no-repeat;
 }
 
 #mailinglistrow p,
 .afterfooter p,
 p.author {
   font-size: 16px;
+}
+
+#mailinglistrow p:nth-of-type(1) {
+  margin-top: 30px;
+  margin-bottom: 6px;
 }
 
 .afterfooter p {
@@ -417,10 +402,6 @@ button:focus {
 
 .tick {
   display: none;
-}
-
-#mailinglistrow div:nth-of-type(1) {
-  padding-top: 3em;
 }
 
 footer.row {
@@ -534,9 +515,14 @@ footer a img {
   .events p.name {
     margin-left: 0; margin-right: 0; font-size: 32px; line-height: 36px;
   }
+
+  #videorow {
+    width: 100%;
+    margin: 0 0 30px 0;
+  }
 }
 
-@media screen and (max-width: 1024px) { 
+@media screen and (max-width: 1045px) { 
   
   .event-container {
     display: table;
@@ -733,8 +719,10 @@ footer a img {
     height: 160px;
   }
 
+  .mailingform form {
+    width: 100%;
+  }
 }
-
 
 @media screen and (max-width: 364px) { 
 
@@ -813,10 +801,6 @@ footer a img {
     position: static;
     padding: 0 1em;
   }
-  
-  .mailingform form {
-    width: 100%;
-  }
 
   #mailinglistrow input {
     width: 60%;
@@ -828,9 +812,14 @@ footer a img {
 
    #mailinglistrow div:nth-of-type(1) {
     margin: 0 auto;
-    padding-top: 5em;
-    padding-bottom: 21px;
+    padding-top: 0;
+    padding-bottom: 8px;
    }
+
+   #mailinglistrow p:nth-of-type(2) {
+    margin-bottom: 16px;
+   }
+
   footer {
     height: auto;
   }

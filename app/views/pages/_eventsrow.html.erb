@@ -13,7 +13,7 @@
     
 
     <div class="event-inner">
-            <p class="time"><b><%= event.start_at.strftime('%d %^b') unless event.start_at.nil? %></b></p>
+            <p class="time"><b><%= event.start_at.strftime('%d %^B') unless event.start_at.nil? %></b></p>
             <p class="name"><b><%= event.name unless event.name.nil? %></b></p>
           </div>
     </a>
