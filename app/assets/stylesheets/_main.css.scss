@@ -147,10 +147,6 @@ footer a {
   float: left;
 }
 
-.events>div>a:nth-of-type(n+4) .event-container {
-  margin-right: 0;
-}
-
 .event-container {
   height: 250px;
   width: 250px;
@@ -210,7 +206,7 @@ footer a {
 .event-inner {
   color: #fff;
   clear: left;
-  min-height: 235px;
+  height: 235px;
   width: 250px;
   color: $bodycopy;
   padding-top: 10px;
@@ -235,21 +231,6 @@ footer a {
   font-size: 18px;
 }
 
-/* second blog row section (normally an image) */
-.blogrow div div:nth-of-type(2) {
-  width: 40%;
-}
-
-.blogrow {
-  clear: left;
-  float: left;
-}
-
-.blogrow .img {
-  background-size: cover;
-  background-position: 50% 50%;
-}
-
 #videorow {
   width: 1045px;
   margin: 0 117px 30px 118px;
@@ -262,71 +243,9 @@ footer a {
   height: 640px;
 }
 
-.blogrow>div:nth-of-type(1) {
-  display: table;
-  height: 100%;
-  width: 100%;
-}
-
-.blogrow div div {
-  display: table-cell;
-  vertical-align: middle;
-  padding: 0 70px;
-}
-
-.blogrow img {
-  width: 100%;
-  vertical-align: bottom;
-}
-
-.blogrow.even .txt {
-  position: relative;
-  left: 50%;
-}
-
-.blogrow.even .img {
-  position: relative;
-  left: -50%;
-}
-
-.blogrow h3 {
-  margin: 0.8em auto 0.5em auto;
-  text-align: center;
-
-}
-
-.blogrow p {
-  display: block;
-  text-align: center;
-  margin: 0 0 50px 0;
-  padding: 0;
-}
-
-.blogrow p.cat {
-  margin-bottom: 0.5em;
-  text-align: center;
-}
-
 .cat img {
   width: 50px;
   height: 50px;
-}
-
-.blogrow .desc,
-.blogrow h3 {
-  width: 70%;
-  text-align: left;
-  margin: 64px auto 0;
-}
-
-.blogrow .desc {
-  width: 80%;
-  text-align: left;
-  margin-top: 23px;
-}
-
-.blogrow.even .desc {
-  right: 2%;
 }
 
 .meta {
@@ -490,13 +409,17 @@ footer a img {
 }
 
 .events p.time {
-    margin-left: 0; margin-right: 0; margin-top: 0px; font-size: 16px; color: #f200ff
-  }
+  margin-left: 0; margin-right: 0; margin-top: 0px; font-size: 16px; color: #f200ff
+}
 
-  .events p.name {
-    margin-left: 0; margin-right: 0; font-size: 32px; line-height: 36px;
-  }
-  
+.events p.name {
+  margin-left: 0; margin-right: 0; font-size: 32px; line-height: 36px;
+}
+ 
+.events>div a:nth-of-type(4) .event-container {
+  margin-right: 0;
+}
+   
 @media screen and (max-width: 1279px) { 
  .events {
     width: 100%;
@@ -550,14 +473,6 @@ footer a img {
     margin: 0 auto;
   }
 
-  .events>div>a:nth-of-type(n+3) .event-container {
-    margin-right: 0;
-  }
-
-  .events>div>a:nth-of-type(n+4) .event-container {
-    margin-right: 15px;
-  }
-
   .events p.time {
     margin-left: 0; margin-right: 0; margin-top: 0px; font-size: 16px; color: #f200ff
   }
@@ -565,6 +480,7 @@ footer a img {
   .events p.name {
     margin-left: 0; margin-right: 0; font-size: 32px; line-height: 36px;
   }
+
 }
 
 @media screen and (max-width: 900px) { 
@@ -593,22 +509,29 @@ footer a img {
   .txt {
     width: 100%;
   }
-  .blogrow div div:nth-of-type(2) {
-    width: 100%;
-    display: block;
-  }
-  .blogrow .img {
-    height: 475px;
-    background-size: cover;
-  }
-  .blogrow {
-    height: auto;
+
+  .event-container {
+    margin-right: 15px;
   }
 
-  .blogrow div div {
-    padding: 32px;
-    font-size: 1em;
+  .events>div:nth-of-type(4n+4) a:nth-of-type(3) .event-container,
+  .events>div:nth-of-type(1) a:nth-of-type(3) .event-container {
+    margin-right: 0;
   }
+
+  .events>div:nth-of-type(2) a:nth-of-type(2) .event-container {
+    margin-right: 0;
+  }
+
+  .events>div:nth-of-type(3) a:nth-of-type(1) .event-container {
+    margin-right: 0;
+  }
+
+  .events>div:nth-of-type(3) a:nth-of-type(4) .event-container {
+    margin-right: 0;
+  }
+
+
 }
 
 @media screen and (min-width: 825px) and (max-width: 900px) { 
@@ -616,11 +539,12 @@ footer a img {
     width: 780px;
     margin: 0 auto;
   }
-  .events>div>a:nth-of-type(3n) .event-container {
-    margin-right: 0;
+
+  .events>div .event-container {
+    margin-right: 15px !important;
   }
-  .events>div>a:nth-of-type(n+4) .event-container {
-    margin-right: 15px;
+  .events>div a:nth-of-type(2) .event-container {
+    margin-right: 0;
   }
 }
 
@@ -630,11 +554,11 @@ footer a img {
     margin: 0 auto;
   }
 
-  .events>div>a:nth-of-type(n+2) .event-container {
-    margin-right: 0;
+  .events>div .event-container {
+    margin-right: 15px !important;
   }
-  .events>div>a:nth-of-type(n+3) .event-container {
-    margin-right: 15px;
+  .events>div a:nth-of-type(2) .event-container {
+    margin-right: 0;
   }
 }
 
@@ -680,6 +604,7 @@ footer a img {
 
   .event-inner {
     min-height: 50px;
+    height: auto;
     width: 90%;
     margin: 0 5% 0 5%;
     padding-bottom: 30px;
