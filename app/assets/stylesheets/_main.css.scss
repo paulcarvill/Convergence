@@ -481,6 +481,10 @@ footer a img {
     margin-left: 0; margin-right: 0; font-size: 32px; line-height: 36px;
   }
 
+  .events>div a:nth-of-type(4) .event-container {
+    margin-right: 15px;
+  }
+
 }
 
 @media screen and (max-width: 900px) { 
@@ -541,11 +545,9 @@ footer a img {
   }
 
   .events>div .event-container {
-    margin-right: 15px !important;
+    margin-right: 15px;
   }
-  .events>div a:nth-of-type(2) .event-container {
-    margin-right: 0;
-  }
+  
 }
 
 @media screen and (max-width: 825px) { 
