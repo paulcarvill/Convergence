@@ -3,7 +3,7 @@ class PagesController < ApplicationController
 
   def index
     @events = Event.published.where(featured: true)
-    @moreEvents = Event.published
+    @moreEvents = Event.published.order(start_at: :asc)
     @blogs = Blog.where("published = ?", true).order(published_at: :desc).limit(1)
     @embeds = Embed.all();
   end
