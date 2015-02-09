@@ -91,24 +91,6 @@ h3 {
 	font-size: 2em;
 }
 
-@media screen and (max-width: 364px) { 
-  h1 {
-    font-size: 40px;
-    margin-top: 24px;
-  }
-
-  .events-show p.address:nth-of-type(1),
-  .events-show p.time,
-  .events-index p.address:nth-of-type(1),
-  .events-index p.time {
-    margin-top: 16px;
-  }
-  .events-show p.time,
-  .events-index p.time {
-    margin-bottom: 0;
-  }
-}
-
 .splash.launch h1 {
   font-family: 'Oxygen', sans-serif;
   font-size: 4em;
@@ -127,6 +109,23 @@ h3 {
 }
 
 @media screen and (max-width: 615px) {
+
+  h1 {
+    font-size: 40px;
+    margin-top: 24px;
+  }
+  
+  .events-show p.address:nth-of-type(1),
+  .events-show p.time,
+  .events-index p.address:nth-of-type(1),
+  .events-index p.time {
+    margin-top: 16px;
+  }
+  .events-show p.time,
+  .events-index p.time {
+    margin-bottom: 0;
+  }
+
   .blogs-index h1,
   .blogs-show h1,
   .pages-about h1,
