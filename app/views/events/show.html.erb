@@ -30,13 +30,8 @@
           <p><%= @event.start_at.strftime("%d") unless @event.start_at.nil? %></p>
           <p><%= @event.end_at.strftime("%B") unless @event.end_at.nil? %></p>
         </div>
-        <p class="address"><svg x="0px" y="0px" width="30px"
-   height="30px" style="vertical-align: top" viewBox="0 0 7.68 7.68" enable-background="new 0 0 7.68 7.68" xml:space="preserve"><g id="Clock_copy_2_1_" enable-background="new    ">
-  <path fill="#444444" d="M3.84,1.67c-1.196,0-2.17,0.974-2.17,2.17s0.974,2.17,2.17,2.17s2.17-0.974,2.17-2.17S5.036,1.67,3.84,1.67
-    z M3.84,5.51c-0.921,0-1.67-0.749-1.67-1.67s0.749-1.67,1.67-1.67s1.67,0.749,1.67,1.67S4.761,5.51,3.84,5.51z M4.08,3.743V3.12
-    c0-0.132-0.107-0.24-0.24-0.24c-0.132,0-0.24,0.107-0.24,0.24v0.72c0,0.07,0.032,0.13,0.08,0.174
-    c0.003,0.004,0.002,0.009,0.005,0.013l0.468,0.469c0.094,0.094,0.246,0.094,0.34,0c0.093-0.094,0.093-0.246,0-0.34L4.08,3.743z"/>
-</g></svg><%=@event.start_at.strftime("%H:%M") unless @event.start_at.nil? %> - <%=@event.end_at.strftime("%H:%M") unless @event.end_at.nil? %></p>
+        <p class="time"><b><%= @event.start_at.strftime('%d %^B') unless @event.start_at.nil? %></b></p>
+        <p class="address"><%=@event.start_at.strftime("%H:%M") unless @event.start_at.nil? %> - <%=@event.end_at.strftime("%H:%M") unless @event.end_at.nil? %></p>
         <p class="address"><%=@event.venue.name.html_safe unless @event.venue.nil? %></p>
         <p><%=@event.venue.details unless @event.venue.nil? %></p>
 
