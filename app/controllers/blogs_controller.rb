@@ -1,6 +1,6 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
-  caches_page :show, :index
+  caches_page :show
 
   def index
     if params[:tag].present? 
