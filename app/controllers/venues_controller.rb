@@ -1,6 +1,6 @@
 class VenuesController < ApplicationController
   before_action :set_venue, only: [:show, :edit, :update, :destroy]
-  caches_page :index, :show
+  caches_page :show
   
   # GET /venues
   # GET /venues.json
