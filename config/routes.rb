@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   mount Ckeditor::Engine => '/ckeditor'
   
+  get '2015' => 'events#archiveIndex'
+
   resources :blogs,  :path => 'news' do
   	collection do
   		get :tag

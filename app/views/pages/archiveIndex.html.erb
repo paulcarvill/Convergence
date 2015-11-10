@@ -1,0 +1,82 @@
+<% pagetitle "music + art + technology" %>
+
+<% content_for :meta do %>
+<meta property="og:url" content="<%= request.url %>" /> 
+<meta property="og:title" content="Convergence" />
+<meta property="og:description" content="music + art + technology: Convergence is a series of events focusing on pioneers who use technology to innovate: to break the usual beat rather than getting stuck in a loop" /> 
+<meta property="og:image" content="http://<%= request.host %><%= asset_path 'socialconv.png' %>" />
+<meta property="og:type" content="website" />
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@ConvergenceLDN">
+<meta name="twitter:title" content="Convergence: music + art + technology">
+<meta name="twitter:description" content="Convergence is a series of events focusing on pioneers who use technology to innovate: to break the usual beat rather than getting stuck in a loop.">
+<meta name="twitter:image:src" content="http://<%= request.host %><%= asset_path 'socialconv.png' %>">
+<% end %>
+
+<div class="events row">
+  <div>
+    <h1>2015 archive</h1>
+  </div>
+</div>
+
+<%= render "pages/eventsrow" %>
+
+<%= render "pages/mailinglistrow" %>
+
+<% content_for :js do %>
+
+<script type="text/javascript">
+/* HANDLER FOR MAILING LIST FORM SUBMIT */
+function cvgMailchimp(resp){
+  if (resp.result === 'success') {
+    $('button svg.tick').show();
+    $('button svg.arrow').hide();
+    window.setTimeout(function(){
+      $('button svg.tick').hide();
+      $('button svg.arrow').show();
+      $('input').val("");
+    }, 2000);
+  } else {
+    $('.perror').show();
+    $('button svg.arrow').show();
+    window.setTimeout(function(){
+      $('.perror').hide();
+    }, 3000);
+  }
+}
+
+  /* STICKY NAV */
+  $('nav').waypoint('sticky', {
+    offset: 4
+  });
+
+  /* AJAXIFY MAILING LIST FORM */
+  $('form').submit(function(){
+    $('button svg.arrow').hide();
+  });
+
+  $('form#mailchimp').ajaxChimp({
+    callback: cvgMailchimp
+  });
+
+/* LOAD LOGOTYPE WEBFONT ASYNC */
+WebFontConfig = {
+  google: {
+    families: ['Oxygen'],
+    text: 'CONVERGENCE!'
+  }
+};
+
+(function() {
+  var wf = document.createElement('script');
+  wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+            '://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js';
+  wf.type = 'text/javascript';
+  wf.async = 'true';
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(wf, s);
+})();
+</script>
+
+<% end %>

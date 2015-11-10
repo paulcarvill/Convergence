@@ -24,4 +24,8 @@ class Event < ActiveRecord::Base
     end
 
   scope :published, -> { where("publish_at <= now()") }
+
+  def self.by_year(year)
+    where('extract(year from start_at) = ?', year)
+  end
 end
