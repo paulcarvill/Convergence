@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
-  caches_page :show
+  caches_page :show, :archiveIndex
   
   # GET /events
   # GET /events.json
@@ -21,7 +21,7 @@ class EventsController < ApplicationController
   end
   
   def archiveIndex
-    @moreEvents = Event.by_year(2015)
+    @moreEvents = Event.by_year(2015).order(start_at: :desc)
     render "pages/archiveIndex"
   end
 
