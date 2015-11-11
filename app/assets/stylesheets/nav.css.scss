@@ -29,29 +29,23 @@ nav .logo {
   background-color: #e7e8e7;
   text-align: center;
   padding-top: 17px;
-  border-bottom: 1px solid #d9dbd9;
 }
 
 nav p {
   margin-left: 96px;
-  height: 48px;
+  height: 20px;
   text-align: right;
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-color: $bordergrey;
   margin-bottom: 0;
   margin-top: 0 !important;
 }
 
 nav div {
   height: 48px;
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-color: $borderg;
   padding-top: 17px;
   margin-left: 96px;
   padding-left: 30px;
   background-color: $maingrey;
+  float: right;
 }
 
 nav li {
