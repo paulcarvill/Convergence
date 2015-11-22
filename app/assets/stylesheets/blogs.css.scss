@@ -22,7 +22,7 @@
 }
 
 .blog {
-	width: 545px;
+	width: 80%;
 	margin-left: 64px;
 }
 
@@ -120,6 +120,15 @@ p {
 
 p:nth-of-type(1) {
 	margin-top: 44px;
+}
+
+p:nth-of-type(1) {
+	margin-top: 44px;
+}
+
+.blog p:nth-of-type(1) {
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 #map-canvas p:nth-of-type(1) {

@@ -18,6 +18,10 @@
     <div class="body">
       <div class="blog">
 
+        <% if not @entries.length %>
+        <p style="height:600px;font-size:40px">Convergence 2016 programme coming soon&hellip;</p>
+        <% end %>
+
         <% @events.each do |event| %>
           <div style="position:relative">
             <h1><%= link_to event.name, event %></h1>
